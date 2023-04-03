@@ -104,11 +104,67 @@ public class THINGS {
         }
         int x,y;
         while (true) {
-            x=random.nextInt(5);
-            y=random.nextInt(1);
+            x=random.nextInt(2);
+            y=random.nextInt(5);
 
             treasure1 = 10*y+x;
-            if (treasure1 != market1 && treasure1 != market2 && treasure1!=5 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
+            if (treasure1!=0&& treasure1 != market1 && treasure1 != market2 && treasure1 != market3 && treasure1 != market4 && treasure1 != market5 && treasure1 != wall1 && treasure1 != wall2 && treasure1 != wall3 && treasure1 != wall4 && treasure1 != wall5 && treasure1 != wall6&& treasure1 != wall7 && treasure1 != trap1 && treasure1 != trap2 && treasure1 != trap3 && treasure1 != trap4 && treasure1!=loot1 && treasure1!=loot2 && treasure1!=loot3 && treasure1!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(3)+2;
+            y=random.nextInt(5);
+
+            treasure2 = 10*y+x;
+            if (treasure2!= 9&&treasure2 != market1 && treasure2 != market2 && treasure2 != market3 && treasure2 != market4 && treasure2 != market5 && treasure2 != wall1 && treasure2 != wall2 && treasure2 != wall3 && treasure2 != wall4 && treasure2 != wall5 && treasure2 != wall6&& treasure2 != wall7 && treasure2 != trap1 && treasure2 != trap2 && treasure2 != trap3 && treasure2 != trap4 && treasure2!=loot1 && treasure2!=loot2 && treasure2!=loot3 && treasure2!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(2)+5;
+            y=random.nextInt(5);
+
+            treasure3 = 10*y+x;
+            if (treasure3 != market1 && treasure3 != market2 && treasure3 != market3 && treasure3 != market4 && treasure3 != market5 && treasure3 != wall1 && treasure3 != wall2 && treasure3 != wall3 && treasure3 != wall4 && treasure3 != wall5 && treasure3 != wall6&& treasure3 != wall7 && treasure3 != trap1 && treasure3 != trap2 && treasure3 != trap3 && treasure3 != trap4 && treasure3!=loot1 && treasure3!=loot2 && treasure3!=loot3 && treasure3!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(3)+7;
+            y=random.nextInt(5);
+
+            treasure4 = 10*y+x;
+            if (treasure4 != market1 && treasure4 != market2 && treasure4 != market3 && treasure4 != market4 && treasure4 != market5 && treasure4 != wall1 && treasure4 != wall2 && treasure4 != wall3 && treasure4 != wall4 && treasure4 != wall5 && treasure4 != wall6&& treasure4 != wall7 && treasure4 != trap1 && treasure4 != trap2 && treasure4 != trap3 && treasure4 != trap4 && treasure4!=loot1 && treasure4!=loot2 && treasure4!=loot3 && treasure4!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(2);
+            y=random.nextInt(5)+5;
+
+            treasure5 = 10*y+x;
+            if (treasure5 != market1 && treasure5 != market2 && treasure5 != market3 && treasure5 != market4 && treasure5 != market5 && treasure5 != wall1 && treasure5 != wall2 && treasure5 != wall3 && treasure5 != wall4 && treasure5 != wall5 && treasure5 != wall6&& treasure5 != wall7 && treasure5 != trap1 && treasure5 != trap2 && treasure5 != trap3 && treasure5 != trap4 && treasure5!=loot1 && treasure5!=loot2 && treasure5!=loot3 && treasure5!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(3)+2;
+            y=random.nextInt(5)+5;
+
+            treasure6 = 10*y+x;
+            if (treasure6 != market1 && treasure6 != market2 && treasure6 != market3 && treasure6 != market4 && treasure6 != market5 && treasure6 != wall1 && treasure6 != wall2 && treasure6 != wall3 && treasure6 != wall4 && treasure6 != wall5 && treasure6 != wall6&& treasure6 != wall7 && treasure6 != trap1 && treasure6 != trap2 && treasure6 != trap3 && treasure6 != trap4 && treasure6!=loot1 && treasure6!=loot2 && treasure6!=loot3 && treasure6!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(2)+5;
+            y=random.nextInt(5)+5;
+
+            treasure7 = 10*y+x;
+            if (treasure7 != market1 && treasure7 != market2 && treasure7 != market3 && treasure7 != market4 && treasure7 != market5 && treasure7 != wall1 && treasure7 != wall2 && treasure7 != wall3 && treasure7 != wall4 && treasure7 != wall5 && treasure7 != wall6&& treasure7 != wall7 && treasure7 != trap1 && treasure7 != trap2 && treasure7 != trap3 && treasure7 != trap4 && treasure7!=loot1 && treasure7!=loot2 && treasure7!=loot3 && treasure7!=loot4)
+                break;
+        }
+        while (true) {
+            x=random.nextInt(3)+7;
+            y=random.nextInt(5)+5;
+
+            treasure8 = 10*y+x;
+            if (treasure8 != market1 && treasure8 != market2 && treasure8 != market3 && treasure8 != market4 && treasure8 != market5 && treasure8 != wall1 && treasure8 != wall2 && treasure8 != wall3 && treasure8 != wall4 && treasure8 != wall5 && treasure8 != wall6&& treasure8 != wall7 && treasure8 != trap1 && treasure8 != trap2 && treasure8 != trap3 && treasure8 != trap4 && treasure8!=loot1 && treasure8!=loot2 && treasure8!=loot3 && treasure8!=loot4)
                 break;
         }
     }
@@ -136,6 +192,7 @@ public class THINGS {
         System.out.println( t.loot2);
         System.out.println( t.loot3);
         System.out.println( t.loot4);
+        System.out.println(t.treasure1+" "+t.treasure2+" "+t.treasure3+" "+t.treasure4+" "+t.treasure5+" "+t.treasure6+" "+t.treasure7+" "+t.treasure8);
     }
 
 }
