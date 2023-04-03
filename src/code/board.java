@@ -12,6 +12,14 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int x1New = 0, y1New = 0, x1Old = 0, y1Old = 0;
     static int Dice_number, dice_number1;
     static int SW_PLAYER = 1;
+    static int POWER_PLAYER_1=500;
+    static int MONEY_PLAYER_1=1500;
+    static int POWER_PLAYER_2=500;
+    static int MONEY_PLAYER_2=1500;
+    String POWER_PLAYER_1_S=String.valueOf(POWER_PLAYER_1);
+    String MONEY_PLAYER_1_S=String.valueOf(MONEY_PLAYER_1);
+    String POWER_PLAYER_2_S=String.valueOf(POWER_PLAYER_2);
+    String MONEY_PLAYER_2_S=String.valueOf(MONEY_PLAYER_2);
     ImageIcon background = new ImageIcon("src/images/BackGround.jpg");
     ImageIcon board_pic = new ImageIcon("src/images/10.jpg");
     ImageIcon Icon = new ImageIcon("src/images/ICON.jpg");
@@ -49,6 +57,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     public static JLabel background_pic_l = new JLabel();
     JLabel p_p1 = new JLabel();
     JLabel p_p2 = new JLabel();
+    public static JLabel POWER_PLAYER_1_L=new JLabel();
+    public static JLabel MONEY_PLAYER_1_L=new JLabel();
+    public static JLabel POWER_PLAYER_2_L=new JLabel();
+    public static JLabel MONEY_PLAYER_2_L=new JLabel();
     JLabel turn_p1 = new JLabel();
     JLabel turn_p2 = new JLabel();
     JLabel market1 = new JLabel();
@@ -174,6 +186,30 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
 
         p_p2.setIcon(piece_player2);
         p_p2.setBounds(x1, y1, 50, 50);
+
+        POWER_PLAYER_1_L.setText(POWER_PLAYER_1_S);
+        POWER_PLAYER_1_L.setBounds(145,300,150,30);
+        POWER_PLAYER_1_L.setForeground(new Color(255, 69, 0 ));
+        POWER_PLAYER_1_L.setFont(new Font("breakaway", Font.BOLD, 45));
+        POWER_PLAYER_1_L.setVisible(false);
+
+        MONEY_PLAYER_1_L.setText(MONEY_PLAYER_1_S);
+        MONEY_PLAYER_1_L.setBounds(145,200,150,30);
+        MONEY_PLAYER_1_L.setForeground(new Color(255, 69, 0 ));
+        MONEY_PLAYER_1_L.setFont(new Font("breakaway", Font.BOLD, 45));
+        MONEY_PLAYER_1_L.setVisible(false);
+
+        POWER_PLAYER_2_L.setText(POWER_PLAYER_2_S);
+        POWER_PLAYER_2_L.setBounds(950,300,150,30);
+        POWER_PLAYER_2_L.setForeground(new Color(255, 69, 0 ));
+        POWER_PLAYER_2_L.setFont(new Font("breakaway", Font.BOLD, 45));
+        POWER_PLAYER_2_L.setVisible(false);
+
+        MONEY_PLAYER_2_L.setText(MONEY_PLAYER_2_S);
+        MONEY_PLAYER_2_L.setBounds(950,200,150,30);
+        MONEY_PLAYER_2_L.setForeground(new Color(255, 69, 0 ));
+        MONEY_PLAYER_2_L.setFont(new Font("breakaway", Font.BOLD, 45));
+        MONEY_PLAYER_2_L.setVisible(false);
 
         turn_p1.setBounds(140, 15, 120, 30);
         turn_p1.setForeground(new Color(50, 90, 255));
@@ -379,6 +415,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         background_pic_l.add(treasure8_l);
         background_pic_l.add(castle_l);
         background_pic_l.add(board_pic_l);
+        background_pic_l.add(POWER_PLAYER_1_L);
+        background_pic_l.add(MONEY_PLAYER_1_L);
+        background_pic_l.add(POWER_PLAYER_2_L);
+        background_pic_l.add(MONEY_PLAYER_2_L);
         background_pic_l.add(wallet_L1);
         background_pic_l.add(power_L1);
         background_pic_l.add(wallet_L2);
@@ -572,25 +612,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     x-=59;
                     dice_number1++;
                 }
+                ////////////////////////////////////////////////////////
+                if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                }
+                if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                }
+                if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                }
+                if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                }
+                if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                }
+                if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                }
+                if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                }
+                if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                ///////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
                     new Market2();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
                     new Market3();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
                     new Market4();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
+                    dice_number1++;
                 }
                 p_p1.setLocation(x, y);
                 System.out.println("CURRENT X : " + x);
@@ -659,25 +730,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     x1-=59;
                     dice_number1++;
                 }
+                /////////////////////////////////////////////////////////
+                if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                }
+                if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                }
+                if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                }
+                if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                }
+                if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                }
+                if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                }
+                if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                }
+                if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
                     new Market2();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
                     new Market3();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
                     new Market4();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
+                    dice_number1++;
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -812,25 +914,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     x+=59;
                     dice_number1++;
                 }
+                /////////////////////////////////////////////////////////////
+                if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                }
+                if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                }
+                if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                }
+                if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                }
+                if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                }
+                if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                }
+                if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                }
+                if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                ///////////////////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
                     new Market2();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
                     new Market3();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
                     new Market4();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
+                    dice_number1++;
                 }
                 p_p1.setLocation(x, y);
                 System.out.println("CURRENT X : " + x);
@@ -899,25 +1032,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     x1+=59;
                     dice_number1++;
                 }
+                ////////////////////////////////////////////////////////////
+                if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                }
+                if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                }
+                if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                }
+                if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                }
+                if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                }
+                if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                }
+                if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                }
+                if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                //////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
                     new Market2();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
                     new Market3();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
                     new Market4();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
+                    dice_number1++;
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1053,25 +1217,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     y+=59;
                     dice_number1++;
                 }
+                //////////////////////////////////////////////////////////////
+                if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                }
+                if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                }
+                if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                }
+                if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                }
+                if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                }
+                if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                }
+                if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                }
+                if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                ////////////////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
                     new Market2();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
                     new Market3();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
                     new Market4();
+                    dice_number1++;
                 }
                 if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
+                    dice_number1++;
                 }
                 p_p1.setLocation(x, y);
                 dice_number1--;
@@ -1140,25 +1335,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     y1+=59;
                     dice_number1++;
                 }
+                /////////////////////////////////////////////////////////////////
+                if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                }
+                if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                }
+                if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                }
+                if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                }
+                if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                }
+                if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                }
+                if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                }
+                if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                    System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                //////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
                     new Market2();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
                     new Market3();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
                     new Market4();
+                    dice_number1++;
                 }
                 if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
+                    dice_number1++;
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1296,25 +1522,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         y-=59;
                         dice_number1++;
                     }
+                    /////////////////////////////////////////////////////////////
+                    if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    }
+                    if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    }
+                    if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    }
+                    if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    }
+                    if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    }
+                    if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    }
+                    if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    }
+                    if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    }
+                    //////////////////////////////////////////////////////////////////
                     if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET1");
                         new Market1();
+                        dice_number1++;
                     }
                     if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET2");
                         new Market2();
+                        dice_number1++;
                     }
                     if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET3");
                         new Market3();
+                        dice_number1++;
                     }
                     if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET4");
                         new Market4();
+                        dice_number1++;
                     }
                     if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET5");
                         new Market5();
+                        dice_number1++;
                     }
                     p_p1.setLocation(x, y);
                     System.out.println("CURRENT X : " + x);
@@ -1387,25 +1644,56 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         y1-=59;
                         dice_number1++;
                     }
+                    //////////////////////////////////////////////////////////////
+                    if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    }
+                    if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    }
+                    if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    }
+                    if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    }
+                    if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    }
+                    if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    }
+                    if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    }
+                    if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                        System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    }
+                    /////////////////////////////////////////////////////////////////
                     if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET1");
                         new Market1();
+                        dice_number1++;
                     }
                     if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET2");
                         new Market2();
+                        dice_number1++;
                     }
                     if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET3");
                         new Market3();
+                        dice_number1++;
                     }
                     if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET4");
                         new Market4();
+                        dice_number1++;
                     }
                     if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET5");
                         new Market5();
+                        dice_number1++;
                     }
                     p_p2.setLocation(x1, y1);
                     System.out.println("CURRENT X1 : " + x1);
@@ -1541,22 +1829,30 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         public void actionPerformed(ActionEvent actionEvent) {
             if (actionEvent.getSource() == player1_info) {
                 System.out.println("pl1");
+                POWER_PLAYER_1_L.setVisible(true);
+                MONEY_PLAYER_1_L.setVisible(true);
                 wallet_L1.setVisible(true);
                 power_L1.setVisible(true);
                 Upper_b1.setVisible(true);
             }
             if (actionEvent.getSource() == Upper_b1) {
+                POWER_PLAYER_1_L.setVisible(false);
+                MONEY_PLAYER_1_L.setVisible(false);
                 wallet_L1.setVisible(false);
                 power_L1.setVisible(false);
                 Upper_b1.setVisible(false);
             }
             if (actionEvent.getSource() == player2_info) {
                 System.out.println("pl2");
+                POWER_PLAYER_2_L.setVisible(true);
+                MONEY_PLAYER_2_L.setVisible(true);
                 wallet_L2.setVisible(true);
                 power_L2.setVisible(true);
                 Upper_b2.setVisible(true);
             }
             if (actionEvent.getSource() == Upper_b2) {
+                POWER_PLAYER_2_L.setVisible(false);
+                MONEY_PLAYER_2_L.setVisible(false);
                 wallet_L2.setVisible(false);
                 power_L2.setVisible(false);
                 Upper_b2.setVisible(false);

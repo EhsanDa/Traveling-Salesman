@@ -26,7 +26,10 @@ public class Market1 extends JFrame implements ActionListener {
     JLabel MO_L =new JLabel();
     String text1="CLICK TO LOCATE A \n TREASURE";
     JButton Exit=new JButton();
+    int sw_t=0;
     Market1(){
+        board.dice_number1--;
+        sw_t=board.SW_PLAYER;
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setSize(500,500);
         this.setLocationRelativeTo(null);
@@ -50,12 +53,12 @@ public class Market1 extends JFrame implements ActionListener {
         PO_L.setIcon(PO);
         PO_L.setBounds(0,270,48,48);
 
-        money1.setText("-5000");
+        money1.setText("-500");
         money1.setBounds(80,280,100,36);
         money1.setForeground(new Color(255, 0, 0));
         money1.setFont(new Font("ZEROGIRL",Font.BOLD,30));
 
-        money2.setText("-7000");
+        money2.setText("-500");
         money2.setBounds(260,280,100,36);
         money2.setForeground(new Color(255, 0, 0));
         money2.setFont(new Font("ZEROGIRL",Font.BOLD,30));
@@ -81,12 +84,14 @@ public class Market1 extends JFrame implements ActionListener {
         w1_b.setBackground(new Color(192 , 255 , 246 ));
         w1_b.setOpaque(false);
         w1_b.setIcon(Weapon1);
+        w1_b.addActionListener(this);
 
         w2_b.setBounds(260,175,100,100);
         w2_b.setCursor(new Cursor(Cursor.HAND_CURSOR));
         w2_b.setBackground(new Color(192 , 255 , 246 ));
         w2_b.setOpaque(false);
         w2_b.setIcon(Weapon2);
+        w2_b.addActionListener(this);
 
         LOCATE_TREASURE.setBounds(5,390,475,36);
         LOCATE_TREASURE.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -122,6 +127,66 @@ public class Market1 extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource()==Exit){
             this.dispose();
+        }
+        if (actionEvent.getSource()==w1_b){
+            if (sw_t==1){
+                String p_t=power1.getText();
+                String M_t=money1.getText();
+                int temp=Integer.parseInt(p_t);
+                System.out.println(M_t);
+                int temp_M=Integer.parseInt(M_t);
+                if (board.MONEY_PLAYER_1+temp_M>=0){
+                    board.POWER_PLAYER_1+=temp;
+                    board.MONEY_PLAYER_1+=temp_M;
+                    board.POWER_PLAYER_1_L.setText(String.valueOf(board.POWER_PLAYER_1));
+                    board.MONEY_PLAYER_1_L.setText(String.valueOf(board.MONEY_PLAYER_1));
+                    System.out.println(board.POWER_PLAYER_1_L.getText());
+                }
+            }
+            if (sw_t==2){
+                String p_t=power1.getText();
+                String M_t=money1.getText();
+                int temp=Integer.parseInt(p_t);
+                System.out.println(M_t);
+                int temp_M=Integer.parseInt(M_t);
+                if (board.MONEY_PLAYER_2+temp_M>=0){
+                    board.POWER_PLAYER_2+=temp;
+                    board.MONEY_PLAYER_2+=temp_M;
+                    board.POWER_PLAYER_2_L.setText(String.valueOf(board.POWER_PLAYER_2));
+                    board.MONEY_PLAYER_2_L.setText(String.valueOf(board.MONEY_PLAYER_2));
+                    System.out.println(board.POWER_PLAYER_2_L.getText());
+                }
+            }
+        }
+        if (actionEvent.getSource()==w2_b){
+            if (sw_t==1){
+                String p_t=power2.getText();
+                String M_t=money2.getText();
+                int temp=Integer.parseInt(p_t);
+                System.out.println(M_t);
+                int temp_M=Integer.parseInt(M_t);
+                if (board.MONEY_PLAYER_1+temp_M>=0){
+                    board.POWER_PLAYER_1+=temp;
+                    board.MONEY_PLAYER_1+=temp_M;
+                    board.POWER_PLAYER_1_L.setText(String.valueOf(board.POWER_PLAYER_1));
+                    board.MONEY_PLAYER_1_L.setText(String.valueOf(board.MONEY_PLAYER_1));
+                    System.out.println(board.POWER_PLAYER_1_L.getText());
+                }
+            }
+            if (sw_t==2){
+                String p_t=power2.getText();
+                String M_t=money2.getText();
+                int temp=Integer.parseInt(p_t);
+                System.out.println(M_t);
+                int temp_M=Integer.parseInt(M_t);
+                if (board.MONEY_PLAYER_2+temp_M>=0){
+                    board.POWER_PLAYER_2+=temp;
+                    board.MONEY_PLAYER_2+=temp_M;
+                    board.POWER_PLAYER_2_L.setText(String.valueOf(board.POWER_PLAYER_2));
+                    board.MONEY_PLAYER_2_L.setText(String.valueOf(board.MONEY_PLAYER_2));
+                    System.out.println(board.POWER_PLAYER_2_L.getText());
+                }
+            }
         }
     }
 

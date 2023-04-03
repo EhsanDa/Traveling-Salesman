@@ -170,7 +170,7 @@ public class THINGS {
     }
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         THINGS t=new THINGS();
         System.out.println( t.trap1);
         System.out.println( t.trap2);
@@ -193,6 +193,6 @@ public class THINGS {
         System.out.println( t.loot3);
         System.out.println( t.loot4);
         System.out.println(t.treasure1+" "+t.treasure2+" "+t.treasure3+" "+t.treasure4+" "+t.treasure5+" "+t.treasure6+" "+t.treasure7+" "+t.treasure8);
-    }
+    }*/
 
 }
