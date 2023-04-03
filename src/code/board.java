@@ -66,6 +66,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     JLabel trap1_l=new JLabel();
     JLabel trap2_l=new JLabel();
     JLabel trap3_l=new JLabel();
+    JLabel trap4_l=new JLabel();
     JLabel treasure1_l=new JLabel();
     JLabel treasure2_l=new JLabel();
     JLabel treasure3_l=new JLabel();
@@ -246,16 +247,20 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         //System.out.println("THERE IS A CASTLE IN HOUSE "+(thing.wall7+1)+" BY COORDINATES { x is : "+houses[thing.wall7].x+" & Y IS : "+houses[thing.wall7].y+" }");
 
         trap1_l.setIcon(trap);
-        trap1_l.setBounds(houses[20].x,houses[20].y,50,50);
+        trap1_l.setBounds(houses[thing.trap1].x,houses[thing.trap1].y,50,50);
+        System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap1+1)+" BY COORDINATES { x is : "+houses[thing.trap1].x+" & Y IS : "+houses[thing.trap1].y+" }");
 
-        /**trap2_l.setIcon(trap);
-        trap2_l.setBounds(houses[20].x,houses[20].y,50,50);
+        trap2_l.setIcon(trap);
+        trap2_l.setBounds(houses[thing.trap2].x,houses[thing.trap2].y,50,50);
+        System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap2+1)+" BY COORDINATES { x is : "+houses[thing.trap2].x+" & Y IS : "+houses[thing.trap2].y+" }");
 
         trap3_l.setIcon(trap);
-        trap3_l.setBounds(houses[20].x,houses[20].y,50,50);
+        trap3_l.setBounds(houses[thing.trap3].x,houses[thing.trap3].y,50,50);
+        System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap3+1)+" BY COORDINATES { x is : "+houses[thing.trap3].x+" & Y IS : "+houses[thing.trap3].y+" }");
 
         trap4_l.setIcon(trap);
-        trap4_l.setBounds(houses[20].x,houses[20].y,50,50);**/
+        trap4_l.setBounds(houses[thing.trap4].x,houses[thing.trap4].y,50,50);
+        System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap4+1)+" BY COORDINATES { x is : "+houses[thing.trap4].x+" & Y IS : "+houses[thing.trap4].y+" }");
 
         treasure1_l.setIcon(treasure);
         treasure1_l.setBounds(houses[21].x,houses[21].y,50,50);
@@ -353,9 +358,9 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         background_pic_l.add(wall6);
         background_pic_l.add(wall7);
         background_pic_l.add(trap1_l);
-        /**background_pic_l.add(trap2_l);
+        background_pic_l.add(trap2_l);
         background_pic_l.add(trap3_l);
-        background_pic_l.add(trap4_l);**/
+        background_pic_l.add(trap4_l);
         background_pic_l.add(treasure1_l);
         /**background_pic_l.add(treasure2_l);
         background_pic_l.add(treasure3_l);

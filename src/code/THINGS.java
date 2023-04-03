@@ -71,7 +71,7 @@ public class THINGS {
         }
         while (true) {
             trap3 = random.nextInt(25)+50;
-            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap4!=54)
+            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap3!=54)
                 break;
         }
         while (true) {
@@ -88,7 +88,7 @@ public class THINGS {
     }
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         THINGS t=new THINGS();
         System.out.println( t.trap1);
         System.out.println( t.trap2);
@@ -107,5 +107,5 @@ public class THINGS {
         System.out.println(t.wall6);
         System.out.println(t.wall7);
 
-    }
+    }*/
 }
