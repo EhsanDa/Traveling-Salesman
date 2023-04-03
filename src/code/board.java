@@ -261,30 +261,38 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         trap4_l.setIcon(trap);
         trap4_l.setBounds(houses[thing.trap4].x,houses[thing.trap4].y,50,50);
         System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap4+1)+" BY COORDINATES { x is : "+houses[thing.trap4].x+" & Y IS : "+houses[thing.trap4].y+" }");
-
+/////////////////////////////////////////////////////////////
         treasure1_l.setIcon(treasure);
-        treasure1_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure1_l.setBounds(houses[thing.treasure1].x,houses[thing.treasure1].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure1+1)+" BY COORDINATES { x is : "+houses[thing.treasure1].x+" & Y IS : "+houses[thing.treasure1].y+" }");
 
-        /**treasure2_l.setIcon(treasure);
-        treasure2_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure2_l.setIcon(treasure);
+        treasure2_l.setBounds(houses[thing.treasure2].x,houses[thing.treasure2].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure2+1)+" BY COORDINATES { x is : "+houses[thing.treasure2].x+" & Y IS : "+houses[thing.treasure2].y+" }");
 
         treasure3_l.setIcon(treasure);
-        treasure3_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure3_l.setBounds(houses[thing.treasure3].x,houses[thing.treasure3].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure3+1)+" BY COORDINATES { x is : "+houses[thing.treasure3].x+" & Y IS : "+houses[thing.treasure3].y+" }");
 
         treasure4_l.setIcon(treasure);
-        treasure4_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure4_l.setBounds(houses[thing.treasure4].x,houses[thing.treasure4].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure4+1)+" BY COORDINATES { x is : "+houses[thing.treasure4].x+" & Y IS : "+houses[thing.treasure4].y+" }");
 
         treasure5_l.setIcon(treasure);
-        treasure5_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure5_l.setBounds(houses[thing.treasure5].x,houses[thing.treasure5].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure5)+" BY COORDINATES { x is : "+houses[thing.treasure5].x+" & Y IS : "+houses[thing.treasure5].y+" }");
 
         treasure6_l.setIcon(treasure);
-        treasure6_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure6_l.setBounds(houses[thing.treasure6].x,houses[thing.treasure6].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure6+1)+" BY COORDINATES { x is : "+houses[thing.treasure6].x+" & Y IS : "+houses[thing.treasure6].y+" }");
 
         treasure7_l.setIcon(treasure);
-        treasure7_l.setBounds(houses[21].x,houses[21].y,50,50);
+        treasure7_l.setBounds(houses[thing.treasure7].x,houses[thing.treasure7].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure7+1)+" BY COORDINATES { x is : "+houses[thing.treasure7].x+" & Y IS : "+houses[thing.treasure7].y+" }");
 
         treasure8_l.setIcon(treasure);
-        treasure8_l.setBounds(houses[21].x,houses[21].y,50,50);**/
+        treasure8_l.setBounds(houses[thing.treasure8].x,houses[thing.treasure8].y,50,50);
+        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure8+1)+" BY COORDINATES { x is : "+houses[thing.treasure8].x+" & Y IS : "+houses[thing.treasure8].y+" }");
 
 
         wallet_L1.setIcon(wallet);
@@ -362,13 +370,13 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         background_pic_l.add(trap3_l);
         background_pic_l.add(trap4_l);
         background_pic_l.add(treasure1_l);
-        /**background_pic_l.add(treasure2_l);
+        background_pic_l.add(treasure2_l);
         background_pic_l.add(treasure3_l);
         background_pic_l.add(treasure4_l);
         background_pic_l.add(treasure5_l);
         background_pic_l.add(treasure6_l);
         background_pic_l.add(treasure7_l);
-        background_pic_l.add(treasure8_l);**/
+        background_pic_l.add(treasure8_l);
         background_pic_l.add(castle_l);
         background_pic_l.add(board_pic_l);
         background_pic_l.add(wallet_L1);
@@ -566,18 +574,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
+                    new Market1();
                 }
                 if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
+                    new Market2();
                 }
                 if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
+                    new Market3();
                 }
                 if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
+                    new Market4();
                 }
                 if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
+                    new Market5();
                 }
                 p_p1.setLocation(x, y);
                 System.out.println("CURRENT X : " + x);
@@ -648,18 +661,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
+                    new Market1();
                 }
                 if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
+                    new Market2();
                 }
                 if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
+                    new Market3();
                 }
                 if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
+                    new Market4();
                 }
                 if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
+                    new Market5();
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -796,18 +814,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
+                    new Market1();
                 }
                 if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
+                    new Market2();
                 }
                 if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
+                    new Market3();
                 }
                 if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
+                    new Market4();
                 }
                 if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
+                    new Market5();
                 }
                 p_p1.setLocation(x, y);
                 System.out.println("CURRENT X : " + x);
@@ -878,18 +901,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
+                    new Market1();
                 }
                 if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
+                    new Market2();
                 }
                 if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
+                    new Market3();
                 }
                 if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
+                    new Market4();
                 }
                 if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
+                    new Market5();
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1027,18 +1055,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
+                    new Market1();
                 }
                 if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
+                    new Market2();
                 }
                 if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
+                    new Market3();
                 }
                 if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
+                    new Market4();
                 }
                 if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
+                    new Market5();
                 }
                 p_p1.setLocation(x, y);
                 dice_number1--;
@@ -1109,18 +1142,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
+                    new Market1();
                 }
                 if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET2");
+                    new Market2();
                 }
                 if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET3");
+                    new Market3();
                 }
                 if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET4");
+                    new Market4();
                 }
                 if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
+                    new Market5();
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1260,18 +1298,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     }
                     if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET1");
+                        new Market1();
                     }
                     if (x==houses[thing.market2].x && y==houses[thing.market2].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET2");
+                        new Market2();
                     }
                     if (x==houses[thing.market3].x && y==houses[thing.market3].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET3");
+                        new Market3();
                     }
                     if (x==houses[thing.market4].x && y==houses[thing.market4].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET4");
+                        new Market4();
                     }
                     if (x==houses[thing.market5].x && y==houses[thing.market5].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET5");
+                        new Market5();
                     }
                     p_p1.setLocation(x, y);
                     System.out.println("CURRENT X : " + x);
@@ -1346,18 +1389,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     }
                     if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET1");
+                        new Market1();
                     }
                     if (x1==houses[thing.market2].x && y1==houses[thing.market2].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET2");
+                        new Market2();
                     }
                     if (x1==houses[thing.market3].x && y1==houses[thing.market3].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET3");
+                        new Market3();
                     }
                     if (x1==houses[thing.market4].x && y1==houses[thing.market4].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET4");
+                        new Market4();
                     }
                     if (x1==houses[thing.market5].x && y1==houses[thing.market5].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET5");
+                        new Market5();
                     }
                     p_p2.setLocation(x1, y1);
                     System.out.println("CURRENT X1 : " + x1);

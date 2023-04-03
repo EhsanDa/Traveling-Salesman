@@ -71,7 +71,7 @@ public class Market4 extends JFrame implements ActionListener {
         power2.setFont(new Font("ZEROGIRL",Font.BOLD,30));
 
         top.setBounds(0,0,600,70);
-        top.setText("    WELCOME TO MARKET 1");
+        top.setText("    WELCOME TO MARKET 4");
         top.setFont(new Font("ZEROGIRL",Font.BOLD,36));
         top.setBackground(new Color(192 , 255 , 246 ));
         top.setOpaque(true);
