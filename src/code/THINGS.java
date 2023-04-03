@@ -116,7 +116,7 @@ public class THINGS {
             y=random.nextInt(5);
 
             treasure2 = 10*y+x;
-            if (treasure2!= 9&&treasure2 != market1 && treasure2 != market2 && treasure2 != market3 && treasure2 != market4 && treasure2 != market5 && treasure2 != wall1 && treasure2 != wall2 && treasure2 != wall3 && treasure2 != wall4 && treasure2 != wall5 && treasure2 != wall6&& treasure2 != wall7 && treasure2 != trap1 && treasure2 != trap2 && treasure2 != trap3 && treasure2 != trap4 && treasure2!=loot1 && treasure2!=loot2 && treasure2!=loot3 && treasure2!=loot4)
+            if (treasure2!= 54&&treasure2 != market1 && treasure2 != market2 && treasure2 != market3 && treasure2 != market4 && treasure2 != market5 && treasure2 != wall1 && treasure2 != wall2 && treasure2 != wall3 && treasure2 != wall4 && treasure2 != wall5 && treasure2 != wall6&& treasure2 != wall7 && treasure2 != trap1 && treasure2 != trap2 && treasure2 != trap3 && treasure2 != trap4 && treasure2!=loot1 && treasure2!=loot2 && treasure2!=loot3 && treasure2!=loot4)
                 break;
         }
         while (true) {
@@ -132,7 +132,7 @@ public class THINGS {
             y=random.nextInt(5);
 
             treasure4 = 10*y+x;
-            if (treasure4 != market1 && treasure4 != market2 && treasure4 != market3 && treasure4 != market4 && treasure4 != market5 && treasure4 != wall1 && treasure4 != wall2 && treasure4 != wall3 && treasure4 != wall4 && treasure4 != wall5 && treasure4 != wall6&& treasure4 != wall7 && treasure4 != trap1 && treasure4 != trap2 && treasure4 != trap3 && treasure4 != trap4 && treasure4!=loot1 && treasure4!=loot2 && treasure4!=loot3 && treasure4!=loot4)
+            if (treasure4!=9&&treasure4 != market1 && treasure4 != market2 && treasure4 != market3 && treasure4 != market4 && treasure4 != market5 && treasure4 != wall1 && treasure4 != wall2 && treasure4 != wall3 && treasure4 != wall4 && treasure4 != wall5 && treasure4 != wall6&& treasure4 != wall7 && treasure4 != trap1 && treasure4 != trap2 && treasure4 != trap3 && treasure4 != trap4 && treasure4!=loot1 && treasure4!=loot2 && treasure4!=loot3 && treasure4!=loot4)
                 break;
         }
         while (true) {
@@ -148,7 +148,7 @@ public class THINGS {
             y=random.nextInt(5)+5;
 
             treasure6 = 10*y+x;
-            if (treasure6 != market1 && treasure6 != market2 && treasure6 != market3 && treasure6 != market4 && treasure6 != market5 && treasure6 != wall1 && treasure6 != wall2 && treasure6 != wall3 && treasure6 != wall4 && treasure6 != wall5 && treasure6 != wall6&& treasure6 != wall7 && treasure6 != trap1 && treasure6 != trap2 && treasure6 != trap3 && treasure6 != trap4 && treasure6!=loot1 && treasure6!=loot2 && treasure6!=loot3 && treasure6!=loot4)
+            if (treasure6!=54&&treasure6 != market1 && treasure6 != market2 && treasure6 != market3 && treasure6 != market4 && treasure6 != market5 && treasure6 != wall1 && treasure6 != wall2 && treasure6 != wall3 && treasure6 != wall4 && treasure6 != wall5 && treasure6 != wall6&& treasure6 != wall7 && treasure6 != trap1 && treasure6 != trap2 && treasure6 != trap3 && treasure6 != trap4 && treasure6!=loot1 && treasure6!=loot2 && treasure6!=loot3 && treasure6!=loot4)
                 break;
         }
         while (true) {

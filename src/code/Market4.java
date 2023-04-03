@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 public class Market4 extends JFrame implements ActionListener {
     ImageIcon market=new ImageIcon("src/images/market (50).png");
     ImageIcon exit=new ImageIcon("src/images/icons8-go-back-48.png");
-    ImageIcon Weapon1=new ImageIcon("src/images/WEAPONS/sword (1).png");
-    ImageIcon Weapon2=new ImageIcon("src/images/WEAPONS/axe (1).png");
+    ImageIcon Weapon1=new ImageIcon("src/images/WEAPONS/flail (1).png");
+    ImageIcon Weapon2=new ImageIcon("src/images/WEAPONS/spear (1).png");
     ImageIcon PO=new ImageIcon("src/images/wallet (1) (50).png");
     ImageIcon MO=new ImageIcon("src/images/muscle.png");
     JButton w1_b=new JButton();
@@ -71,7 +71,7 @@ public class Market4 extends JFrame implements ActionListener {
         power2.setFont(new Font("ZEROGIRL",Font.BOLD,30));
 
         top.setBounds(0,0,600,70);
-        top.setText("    WELCOME TO MARKET 1");
+        top.setText("    WELCOME TO MARKET 4");
         top.setFont(new Font("ZEROGIRL",Font.BOLD,36));
         top.setBackground(new Color(192 , 255 , 246 ));
         top.setOpaque(true);
