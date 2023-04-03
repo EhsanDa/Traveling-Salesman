@@ -9,6 +9,8 @@ public class THINGS {
     int wall1,wall2,wall3,wall4,wall5,wall6,wall7;
     int trap1,trap2,trap3,trap4;
     int castle;
+    int loot1,loot2,loot3,loot4;
+    int treasure1,treasure2,treasure3,treasure4,treasure5,treasure6,treasure7,treasure8;
     THINGS() {
         Random random = new Random();
         market1 = random.nextInt(20);
@@ -21,12 +23,12 @@ public class THINGS {
         market5 = random.nextInt(20)+20+20+20+20;
         while (true) {
             wall1 = random.nextInt(12);
-            if (wall1!= market1 && wall1 != 0 && wall1 != 10 && wall1 != 9)
+            if (wall1!= market1 && wall1 != 0 && wall1 != 10 && wall1 != 9&& wall1!=8)
                 break;
         }
         while (true) {
             wall2 = random.nextInt(12) + 13;
-            if (wall2 != market1 && wall2!= market2)
+            if (wall2 != market1 && wall2!= market2 && wall2!=18)
                 break;
         }
         while (true) {
@@ -71,7 +73,7 @@ public class THINGS {
         }
         while (true) {
             trap3 = random.nextInt(25)+50;
-            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap4!=54)
+            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap3!=54)
                 break;
         }
         while (true) {
@@ -80,6 +82,26 @@ public class THINGS {
                 break;
         }
         castle=54;
+        while (true) {
+            loot1 = random.nextInt(25);
+            if (loot1 != market1 && loot1!= market2 && loot1!= wall1 && loot1!= wall2 &&loot1!=0 &&loot1!=9&&loot1!=10&&loot1!=11)
+                break;
+        }
+        while (true) {
+            loot2 = random.nextInt(25)+25;
+            if (loot2 != market2 && loot2!= market3 && loot2!= wall2 && loot2!= wall3)
+                break;
+        }
+        while (true) {
+            loot3 = random.nextInt(25)+50;
+            if (loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4&&loot3!=54)
+                break;
+        }
+        while (true) {
+            loot4 = random.nextInt(25)+75;
+            if (loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5)
+                break;
+        }
     }
 
     @Override
@@ -106,6 +128,9 @@ public class THINGS {
         System.out.println(t.wall5);
         System.out.println(t.wall6);
         System.out.println(t.wall7);
-
+        System.out.println( t.loot1);
+        System.out.println( t.loot2);
+        System.out.println( t.loot3);
+        System.out.println( t.loot4);
     }
 }
