@@ -1,0 +1,165 @@
+package code;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+public class board extends JFrame implements ActionListener {
+
+    int x= 300,y=607;
+    int x1=50,y1=50;
+    int Dice_number,dice_number1;
+    int SW_PLAYER=2;
+    ImageIcon background = new ImageIcon("src/images/BackGround.jpg");
+    ImageIcon board_pic=new ImageIcon("src/images/10.jpg");
+    ImageIcon Icon = new ImageIcon("src/images/ICON.jpg");
+    BufferedImage piece1= null,piece2=null;
+    JLabel board_pic_l=new JLabel();
+    JLabel background_pic_l=new JLabel();
+    JButton buttonR=new JButton("R");
+    JButton buttonL=new JButton("L");
+    JButton buttonU=new JButton("U");
+    JButton buttonD=new JButton("D");
+    dice dice;
+    String  buttons="african";
+   // Timer timer;
+    //piece1 player1=new piece1();
+
+    //CONSTRUCTOR
+    board(){
+       // timer=new Timer(500,null);
+        /***********************************************/
+        dice=new dice();
+        Dice_number=dice.getDice_num();
+        System.out.println("DICE NUMBER : "+Dice_number);
+        /***********************************************/
+
+
+        board_pic_l=new JLabel(board_pic);
+        board_pic_l.setBounds(285,35,598,596);
+        //board_pic_l.add(player1);
+
+        background_pic_l=new JLabel(background);
+        background_pic_l.setBounds(0,0,1200,700);
+        background_pic_l.add(board_pic_l);
+
+
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(1200, 700);
+        this.setResizable(false);
+        this.setTitle("TRAVELLING SALESMAN");
+        this.setIconImage(Icon.getImage());
+        this.setLocationRelativeTo(null);
+
+        this.setLayout(null);
+
+
+        buttonR.setBounds(1055,550,50,50);
+        buttonR.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        buttonR.setBackground(new Color(255, 218, 185));
+        buttonR.setFont(new Font(buttons,Font.BOLD,15));
+        buttonR.addActionListener(this);
+
+        buttonL.setBounds(955,550,50,50);
+        buttonL.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        buttonL.setBackground(new Color(255, 218, 185));
+        buttonL.setFont(new Font(buttons,Font.BOLD,15));
+        buttonL.addActionListener(this);
+
+        buttonU.setBounds(1005,500,50,50);
+        buttonU.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        buttonU.setBackground(new Color(255, 218, 185));
+        buttonU.setFont(new Font(buttons,Font.BOLD,15));
+        buttonU.addActionListener(this);
+
+        buttonD.setBounds(1005,600,50,50);
+        buttonD.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        buttonD.setBackground(new Color(255, 218, 185));
+        buttonD.setFont(new Font(buttons,Font.BOLD,15));
+        buttonD.addActionListener(this);
+
+        this.setVisible(true);
+        this.add(buttonR);
+        this.add(buttonL);
+        this.add(buttonU);
+        this.add(buttonD);
+        this.add(background_pic_l);
+        //this.add(player1);
+        this.revalidate();
+        this.paint(this.getGraphics());
+    }
+    //
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        this.revalidate();
+        this.paint(this.getGraphics());
+        if (actionEvent.getSource()==buttonR){
+            System.out.println("saf");
+            if (SW_PLAYER==1)
+                x+=59;
+            if (SW_PLAYER==2)
+                x1+=59;
+            this.revalidate();
+            this.paint(this.getGraphics());
+        }
+        if (actionEvent.getSource()==buttonL){
+            System.out.println("saf");
+            if (SW_PLAYER==1)
+                x-=59;
+            if (SW_PLAYER==2)
+                x1-=59;
+            this.revalidate();
+            this.paint(this.getGraphics());
+        }
+        if (actionEvent.getSource()==buttonU){
+            System.out.println("saf");
+            if (SW_PLAYER==1)
+                y-=59;
+            if (SW_PLAYER==2)
+                y1-=59;
+            this.revalidate();
+            this.paint(this.getGraphics());
+        }
+        if (actionEvent.getSource()==buttonD){
+            System.out.println("saf");
+            if (SW_PLAYER==1)
+                y+=59;
+            if (SW_PLAYER==2)
+                y1+=59;
+            this.revalidate();
+            this.paint(this.getGraphics());
+        }
+        this.revalidate();
+        this.paint(this.getGraphics());
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        Graphics2D graphics2D=(Graphics2D) g;
+        super.paint(g);
+        try {
+            piece1= ImageIO.read(new File("src/images/pawn-50.png"));
+            this.revalidate();
+            //this.paint(this.getGraphics());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        try {
+            piece2= ImageIO.read(new File("src/images/pawn-50 (1).png"));
+            this.revalidate();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        graphics2D.drawImage(piece1,x,y,null);
+        graphics2D.drawImage(piece2,x1,y1,null);
+        graphics2D.setStroke(new BasicStroke(4));
+
+    }
+}

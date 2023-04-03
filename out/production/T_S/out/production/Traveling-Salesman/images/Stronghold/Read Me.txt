@@ -1,0 +1,11 @@
+Thank You for downloading my replacement icons, below you will find some tips for changing and making these icons look their very best on Windows XP.
+
+All icons at 48x48 & larger:
+You can display you’re Icons at 48x48 by right clicking on the desktop & selecting Properties, Appearance, Effects & select Use large Icons.
+Folders:
+
+You can change most folder icons by right clicking on the one you want to change & clicking on Properties, go to the Customise tab then select Change.
+File Types:
+
+To change icon file types (e.g. wav, mp3, gif, jpg) you can do it in windows without using any other software. You can also do it with software. The advantage of using software in that you can save the changes you make as a theme.
+To change file types in windows open a folder (any folder) & on the menu at the top select Tools, Folder Options & select the File Types tab. Select the file type you want to change (e.g. mp3) & click on Advanced then Change Icon. Then browse to wherever you have the new icons on your PC. Select the one you want & click on OK, then OK again.  This is how you can change the default unkown file type icon for .map to the icon in the stronghold package.
