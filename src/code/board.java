@@ -25,6 +25,9 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     ImageIcon piece_player2 = new ImageIcon("src/images/pawn-50 (1).png");
     ImageIcon market = new ImageIcon("src/images/market (50).png");
     ImageIcon wall=new ImageIcon("src/images/wall (50).png");
+    ImageIcon trap =new ImageIcon("src/images/caution (50).png");
+    ImageIcon treasure=new ImageIcon("src/images/treasure (50).png");
+    ImageIcon castle=new ImageIcon("src/images/castle (50).png");
     ImageIcon wallet = new ImageIcon("src/images/wallet (1).png");
     ImageIcon power = new ImageIcon("src/images/muscle (1).png");
     ImageIcon Upper1 = new ImageIcon("src/images/up-p1.png");
@@ -60,6 +63,18 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     JLabel wall5=new JLabel();
     JLabel wall6=new JLabel();
     JLabel wall7=new JLabel();
+    JLabel trap1_l=new JLabel();
+    JLabel trap2_l=new JLabel();
+    JLabel trap3_l=new JLabel();
+    JLabel treasure1_l=new JLabel();
+    JLabel treasure2_l=new JLabel();
+    JLabel treasure3_l=new JLabel();
+    JLabel treasure4_l=new JLabel();
+    JLabel treasure5_l=new JLabel();
+    JLabel treasure6_l=new JLabel();
+    JLabel treasure7_l=new JLabel();
+    JLabel treasure8_l=new JLabel();
+    JLabel castle_l=new JLabel();
     JLabel wallet_L1 = new JLabel();
     JLabel power_L1 = new JLabel();
     JLabel power_L2 = new JLabel();
@@ -226,6 +241,46 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         wall7.setBounds(houses[thing.wall7].x,houses[thing.wall7].y,50,50);
         System.out.println("THERE IS A WALL IN HOUSE "+(thing.wall7+1)+" BY COORDINATES { x is : "+houses[thing.wall7].x+" & Y IS : "+houses[thing.wall7].y+" }");
 
+        castle_l.setIcon(castle);
+        castle_l.setBounds(houses[54].x,houses[54].y,50,50);
+        //System.out.println("THERE IS A CASTLE IN HOUSE "+(thing.wall7+1)+" BY COORDINATES { x is : "+houses[thing.wall7].x+" & Y IS : "+houses[thing.wall7].y+" }");
+
+        trap1_l.setIcon(trap);
+        trap1_l.setBounds(houses[20].x,houses[20].y,50,50);
+
+        /**trap2_l.setIcon(trap);
+        trap2_l.setBounds(houses[20].x,houses[20].y,50,50);
+
+        trap3_l.setIcon(trap);
+        trap3_l.setBounds(houses[20].x,houses[20].y,50,50);
+
+        trap4_l.setIcon(trap);
+        trap4_l.setBounds(houses[20].x,houses[20].y,50,50);**/
+
+        treasure1_l.setIcon(treasure);
+        treasure1_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        /**treasure2_l.setIcon(treasure);
+        treasure2_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        treasure3_l.setIcon(treasure);
+        treasure3_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        treasure4_l.setIcon(treasure);
+        treasure4_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        treasure5_l.setIcon(treasure);
+        treasure5_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        treasure6_l.setIcon(treasure);
+        treasure6_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        treasure7_l.setIcon(treasure);
+        treasure7_l.setBounds(houses[21].x,houses[21].y,50,50);
+
+        treasure8_l.setIcon(treasure);
+        treasure8_l.setBounds(houses[21].x,houses[21].y,50,50);**/
+
 
         wallet_L1.setIcon(wallet);
         wallet_L1.setBounds(28, 155, 96, 96);
@@ -297,6 +352,19 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         background_pic_l.add(wall5);
         background_pic_l.add(wall6);
         background_pic_l.add(wall7);
+        background_pic_l.add(trap1_l);
+        /**background_pic_l.add(trap2_l);
+        background_pic_l.add(trap3_l);
+        background_pic_l.add(trap4_l);**/
+        background_pic_l.add(treasure1_l);
+        /**background_pic_l.add(treasure2_l);
+        background_pic_l.add(treasure3_l);
+        background_pic_l.add(treasure4_l);
+        background_pic_l.add(treasure5_l);
+        background_pic_l.add(treasure6_l);
+        background_pic_l.add(treasure7_l);
+        background_pic_l.add(treasure8_l);**/
+        background_pic_l.add(castle_l);
         background_pic_l.add(board_pic_l);
         background_pic_l.add(wallet_L1);
         background_pic_l.add(power_L1);

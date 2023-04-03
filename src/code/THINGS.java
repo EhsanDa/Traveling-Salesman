@@ -16,7 +16,6 @@ public class THINGS {
         market5 = random.nextInt(20)+20+20+20+20;
         while (true) {
             wall1 = random.nextInt(12);
-            board market_h=null;
             if (wall1!= market1 && wall1 != 0 && wall1 != 10 && wall1 != 9)
                 break;
         }
