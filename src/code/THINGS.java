@@ -104,11 +104,6 @@ public class THINGS {
         }
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
 
     public static void main(String[] args) {
         THINGS t=new THINGS();
@@ -133,4 +128,5 @@ public class THINGS {
         System.out.println( t.loot3);
         System.out.println( t.loot4);
     }
+
 }
