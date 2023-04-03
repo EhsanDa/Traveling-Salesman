@@ -73,33 +73,42 @@ public class THINGS {
         }
         while (true) {
             trap3 = random.nextInt(25)+50;
-            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap3!=54 &&trap3!=wall5)
+            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap3!=54 &&trap3!=wall5&&trap3!=wall6)
                 break;
         }
         while (true) {
             trap4 = random.nextInt(25)+75;
-            if (trap4 != market4 && trap4!= market5 && trap4!= wall4 && trap4!= wall5 && trap4!=wall6)
+            if (trap4 != market4 && trap4!= market5 && trap4!= wall4 && trap4!= wall5 && trap4!=wall6&&trap4!=wall7)
                 break;
         }
         castle=54;
         while (true) {
             loot1 = random.nextInt(25);
-            if (loot1 != market1 && loot1!= market2 && loot1!= wall1 && loot1!= wall2 &&loot1!=0 &&loot1!=9&&loot1!=10&&loot1!=11)
+            if (loot1 != market1 && loot1!= market2 && loot1!= wall1 && loot1!= wall2 &&loot1!=0 &&loot1!=9&&loot1!=10&&loot1!=11&&loot1!=trap1)
                 break;
         }
         while (true) {
             loot2 = random.nextInt(25)+25;
-            if (loot2 != market2 && loot2!= market3 && loot2!= wall2 && loot2!= wall3)
+            if (loot2 != market2 && loot2!= market3 && loot2!= wall2 && loot2!= wall3&&loot2!=wall4&&loot2!=trap2)
                 break;
         }
         while (true) {
             loot3 = random.nextInt(25)+50;
-            if (loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4&&loot3!=54)
+            if (loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4&&loot3!=54 &&loot3!=wall5&&loot3!=wall6&&loot3!=trap3)
                 break;
         }
         while (true) {
             loot4 = random.nextInt(25)+75;
-            if (loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5)
+            if (loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
+                break;
+        }
+        int x,y;
+        while (true) {
+            x=random.nextInt(5);
+            y=random.nextInt(1);
+
+            treasure1 = 10*y+x;
+            if (treasure1 != market1 && treasure1 != market2 && treasure1!=5 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
                 break;
         }
     }
