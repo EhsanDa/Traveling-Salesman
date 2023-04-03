@@ -68,17 +68,17 @@ public class THINGS {
         }
         while (true) {
             trap2 = random.nextInt(25)+25;
-            if (trap2 != market2 && trap2!= market3 && trap2!= wall2 && trap2!= wall3)
+            if (trap2 != market2 && trap2!= market3 && trap2!= wall2 && trap2!= wall3&&trap2!=wall4)
                 break;
         }
         while (true) {
             trap3 = random.nextInt(25)+50;
-            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap3!=54)
+            if (trap3 != market3 && trap3!= market4 && trap3!= wall3 && trap3!= wall4&&trap3!=54 &&trap3!=wall5)
                 break;
         }
         while (true) {
             trap4 = random.nextInt(25)+75;
-            if (trap4 != market4 && trap4!= market5 && trap4!= wall4 && trap4!= wall5)
+            if (trap4 != market4 && trap4!= market5 && trap4!= wall4 && trap4!= wall5 && trap4!=wall6)
                 break;
         }
         castle=54;
