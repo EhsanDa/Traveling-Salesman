@@ -5,8 +5,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class board extends JFrame implements ActionListener /*,KeyListener*/ {
+
+
+
+
     int M = 280;
     static int x = 243, y = 62;
+
     static int xNew = 0, yNew = 0, xOld = 0, yOld = 0;
     static int x1 = 243 + 11 * 59, y1 = 62;
     static int x1New = 0, y1New = 0, x1Old = 0, y1Old = 0;
@@ -130,7 +135,15 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     TURN turn;
     String buttons = "african";
     Coordinates[] houses;
-    THINGS thing = new THINGS();
+    static THINGS thing = new THINGS();
+    Castle c= new Castle();
+    /*****************************************************/
+    static Quest quest=new Quest();
+    static int quest1=quest.newQuest();
+    static int questplace1=quest.questplace;
+    static int quest2=quest.newQuest();
+    static int questplace2=quest.questplace;
+    /*****************************************************/
     //Timer timer;
     //piece1 player1=new piece1();
 
@@ -630,8 +643,9 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     public void actionPerformed(ActionEvent actionEvent) {
         this.revalidate();
         this.paint(this.getGraphics());
+        System.out.println("Quest place 1 is"+questplace1+ "  "+quest1);
+        System.out.println("Quest place 2 is"+questplace2+ "  "+quest2);
 
-        //
         if (actionEvent.getSource() == buttonR) {
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("SW_PLAYER IS (NOW) : " + SW_PLAYER);
@@ -728,6 +742,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
                     dice_number1++;
+                }
+                if (x==houses[thing.castle].x && y==houses[thing.castle].y){
+                    System.out.println("YOU GOT IT !!!!!! CASTLE");
+                    new Castle_checker();
                 }
                 p_p1.setLocation(x, y);
                 System.out.println("CURRENT X : " + x);
@@ -846,6 +864,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
                     dice_number1++;
+                }
+                if (x1==houses[thing.castle].x && y1==houses[thing.castle].y){
+                    System.out.println("YOU GOT IT !!!!!! CASTLE");
+                    new Castle_checker();
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1031,6 +1053,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     new Market5();
                     dice_number1++;
                 }
+                if (x==houses[thing.castle].x && y==houses[thing.castle].y){
+                    System.out.println("YOU GOT IT !!!!!! CASTLE");
+                    new Castle_checker();
+                }
                 p_p1.setLocation(x, y);
                 System.out.println("CURRENT X : " + x);
                 System.out.println("CURRENT Y : " + y);
@@ -1148,6 +1174,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
                     dice_number1++;
+                }
+                if (x1==houses[thing.castle].x && y1==houses[thing.castle].y){
+                    System.out.println("YOU GOT IT !!!!!! CASTLE");
+                    new Castle_checker();
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1334,6 +1364,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     new Market5();
                     dice_number1++;
                 }
+                if (x==houses[thing.castle].x && y==houses[thing.castle].y){
+                    System.out.println("YOU GOT IT !!!!!! CASTLE");
+                    new Castle_checker();
+                }
                 p_p1.setLocation(x, y);
                 dice_number1--;
                 System.out.println("CURRENT X : " + x);
@@ -1451,6 +1485,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("YOU GOT IT !!!!!! MARKET5");
                     new Market5();
                     dice_number1++;
+                }
+                if (x1==houses[thing.castle].x && y1==houses[thing.castle].y){
+                    System.out.println("YOU GOT IT !!!!!! CASTLE");
+                    new Castle_checker();
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1639,6 +1677,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         new Market5();
                         dice_number1++;
                     }
+                    if (x==houses[thing.castle].x && y==houses[thing.castle].y){
+                        System.out.println("YOU GOT IT !!!!!! CASTLE");
+                        new Castle_checker();
+                    }
                     p_p1.setLocation(x, y);
                     System.out.println("CURRENT X : " + x);
                     System.out.println("CURRENT Y : " + y);
@@ -1760,6 +1802,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         System.out.println("YOU GOT IT !!!!!! MARKET5");
                         new Market5();
                         dice_number1++;
+                    }
+                    if (x1==houses[thing.castle].x && y1==houses[thing.castle].y){
+                        System.out.println("YOU GOT IT !!!!!! CASTLE");
+                        new Castle_checker();
                     }
                     p_p2.setLocation(x1, y1);
                     System.out.println("CURRENT X1 : " + x1);

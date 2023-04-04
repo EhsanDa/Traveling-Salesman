@@ -10,13 +10,15 @@ public class Castle_checker extends JFrame implements ActionListener {
     JLabel Background=new JLabel();
     JTextField HORIZONTAL=new JTextField();
     JTextField VERTICAL=new JTextField();
-    int home;
+    static int home;
     JButton OK =new JButton();
     JLabel VER_L=new JLabel();
     JLabel HOR_L=new JLabel();
     JLabel yes=new JLabel();
+    int sw_t=0;
     Castle_checker(){
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        sw_t=board.SW_PLAYER;
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setIconImage(CASTLE.getImage());
         this.setTitle("CASTLE");
         this.setResizable(false);
@@ -71,6 +73,26 @@ public class Castle_checker extends JFrame implements ActionListener {
             int b = Integer.parseInt(s2);
             home=(a-1)*10+(b-1);
             System.out.println(home);
+            System.out.println(board.quest1);
+            if (sw_t==1) {
+                if (board.questplace1 == home) {
+                    System.out.println("PREVIOUS QUEST : " + board.quest1 + " - " + board.questplace1);
+                    board.quest.endQuest(board.quest1 - 1);
+                    board.quest1 = board.quest.newQuest();
+                    board.questplace1 = board.quest.questplace;
+                    System.out.println("CURRENT QUEST : " + board.quest1 + " _ " + board.questplace1);
+                }
+            }
+            if (sw_t==2){
+                if (board.questplace2 == home) {
+                    System.out.println("PREVIOUS QUEST : " + board.quest2 + " - " + board.questplace2);
+                    board.quest.endQuest(board.quest2 - 1);
+                    board.quest2 = board.quest.newQuest();
+                    board.questplace2 = board.quest.questplace;
+                    System.out.println("CURRENT QUEST : " + board.quest2 + " _ " + board.questplace2);
+                }
+            }
+
         }
     }
 
