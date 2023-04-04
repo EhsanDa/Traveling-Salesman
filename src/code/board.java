@@ -35,6 +35,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     ImageIcon wall=new ImageIcon("src/images/wall (50).png");
     ImageIcon trap =new ImageIcon("src/images/caution (50).png");
     ImageIcon treasure=new ImageIcon("src/images/treasure (50).png");
+    ImageIcon loot=new ImageIcon("src/images/LOOT.png");
     ImageIcon castle=new ImageIcon("src/images/castle (50).png");
     ImageIcon wallet = new ImageIcon("src/images/wallet (1).png");
     ImageIcon power = new ImageIcon("src/images/muscle (1).png");
@@ -75,6 +76,19 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     JLabel wall5=new JLabel();
     JLabel wall6=new JLabel();
     JLabel wall7=new JLabel();
+    JLabel loot1=new JLabel();
+    JLabel loot2=new JLabel();
+    JLabel loot3=new JLabel();
+    JLabel loot4=new JLabel();
+    JLabel loot5=new JLabel();
+    JLabel loot6=new JLabel();
+    JLabel loot7=new JLabel();
+    JLabel loot8=new JLabel();
+    JLabel loot9=new JLabel();
+    JLabel loot10=new JLabel();
+    JLabel loot11=new JLabel();
+    JLabel loot12=new JLabel();
+    JLabel loot13=new JLabel();
     JLabel trap1_l=new JLabel();
     JLabel trap2_l=new JLabel();
     JLabel trap3_l=new JLabel();
@@ -300,35 +314,74 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
 /////////////////////////////////////////////////////////////
         treasure1_l.setIcon(treasure);
         treasure1_l.setBounds(houses[thing.treasure1].x,houses[thing.treasure1].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure1+1)+" BY COORDINATES { x is : "+houses[thing.treasure1].x+" & Y IS : "+houses[thing.treasure1].y+" }");
+        System.out.println("THERE IS A TREASURE 1 IN HOUSE "+(thing.treasure1+1)+" BY COORDINATES { x is : "+houses[thing.treasure1].x+" & Y IS : "+houses[thing.treasure1].y+" }");
 
         treasure2_l.setIcon(treasure);
         treasure2_l.setBounds(houses[thing.treasure2].x,houses[thing.treasure2].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure2+1)+" BY COORDINATES { x is : "+houses[thing.treasure2].x+" & Y IS : "+houses[thing.treasure2].y+" }");
+        System.out.println("THERE IS A TREASURE 2 IN HOUSE "+(thing.treasure2+1)+" BY COORDINATES { x is : "+houses[thing.treasure2].x+" & Y IS : "+houses[thing.treasure2].y+" }");
 
         treasure3_l.setIcon(treasure);
         treasure3_l.setBounds(houses[thing.treasure3].x,houses[thing.treasure3].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure3+1)+" BY COORDINATES { x is : "+houses[thing.treasure3].x+" & Y IS : "+houses[thing.treasure3].y+" }");
+        System.out.println("THERE IS A TREASURE 3 IN HOUSE "+(thing.treasure3+1)+" BY COORDINATES { x is : "+houses[thing.treasure3].x+" & Y IS : "+houses[thing.treasure3].y+" }");
 
         treasure4_l.setIcon(treasure);
         treasure4_l.setBounds(houses[thing.treasure4].x,houses[thing.treasure4].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure4+1)+" BY COORDINATES { x is : "+houses[thing.treasure4].x+" & Y IS : "+houses[thing.treasure4].y+" }");
+        System.out.println("THERE IS A TREASURE 4 IN HOUSE "+(thing.treasure4+1)+" BY COORDINATES { x is : "+houses[thing.treasure4].x+" & Y IS : "+houses[thing.treasure4].y+" }");
 
         treasure5_l.setIcon(treasure);
         treasure5_l.setBounds(houses[thing.treasure5].x,houses[thing.treasure5].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure5)+" BY COORDINATES { x is : "+houses[thing.treasure5].x+" & Y IS : "+houses[thing.treasure5].y+" }");
+        System.out.println("THERE IS A TREASURE 5 IN HOUSE "+(thing.treasure5)+" BY COORDINATES { x is : "+houses[thing.treasure5].x+" & Y IS : "+houses[thing.treasure5].y+" }");
 
         treasure6_l.setIcon(treasure);
         treasure6_l.setBounds(houses[thing.treasure6].x,houses[thing.treasure6].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure6+1)+" BY COORDINATES { x is : "+houses[thing.treasure6].x+" & Y IS : "+houses[thing.treasure6].y+" }");
+        System.out.println("THERE IS A TREASURE 6 IN HOUSE "+(thing.treasure6+1)+" BY COORDINATES { x is : "+houses[thing.treasure6].x+" & Y IS : "+houses[thing.treasure6].y+" }");
 
         treasure7_l.setIcon(treasure);
         treasure7_l.setBounds(houses[thing.treasure7].x,houses[thing.treasure7].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure7+1)+" BY COORDINATES { x is : "+houses[thing.treasure7].x+" & Y IS : "+houses[thing.treasure7].y+" }");
+        System.out.println("THERE IS A TREASURE 7 IN HOUSE "+(thing.treasure7+1)+" BY COORDINATES { x is : "+houses[thing.treasure7].x+" & Y IS : "+houses[thing.treasure7].y+" }");
 
         treasure8_l.setIcon(treasure);
         treasure8_l.setBounds(houses[thing.treasure8].x,houses[thing.treasure8].y,50,50);
-        System.out.println("THERE IS A TREASURE IN HOUSE "+(thing.treasure8+1)+" BY COORDINATES { x is : "+houses[thing.treasure8].x+" & Y IS : "+houses[thing.treasure8].y+" }");
+        System.out.println("THERE IS A TREASURE 8 IN HOUSE "+(thing.treasure8+1)+" BY COORDINATES { x is : "+houses[thing.treasure8].x+" & Y IS : "+houses[thing.treasure8].y+" }");
+//////////////////////////////////////////////////////////////////////////
+        loot1.setIcon(loot);
+        loot1.setBounds(houses[thing.loot1].x,houses[thing.loot1].y,50,50);
+
+        loot2.setIcon(loot);
+        loot2.setBounds(houses[thing.loot2].x,houses[thing.loot2].y,50,50);
+
+        loot3.setIcon(loot);
+        loot3.setBounds(houses[thing.loot3].x,houses[thing.loot3].y,50,50);
+
+        loot4.setIcon(loot);
+        loot4.setBounds(houses[thing.loot4].x,houses[thing.loot4].y,50,50);
+
+        loot5.setIcon(loot);
+        loot5.setBounds(houses[thing.loot5].x,houses[thing.loot5].y,50,50);
+
+        loot6.setIcon(loot);
+        loot6.setBounds(houses[thing.loot6].x,houses[thing.loot6].y,50,50);
+
+        loot7.setIcon(loot);
+        loot7.setBounds(houses[thing.loot7].x,houses[thing.loot7].y,50,50);
+
+        loot8.setIcon(loot);
+        loot8.setBounds(houses[thing.loot8].x,houses[thing.loot8].y,50,50);
+
+        loot9.setIcon(loot);
+        loot9.setBounds(houses[thing.loot9].x,houses[thing.loot9].y,50,50);
+
+        loot10.setIcon(loot);
+        loot10.setBounds(houses[thing.loot10].x,houses[thing.loot10].y,50,50);
+
+        loot11.setIcon(loot);
+        loot11.setBounds(houses[thing.loot11].x,houses[thing.loot11].y,50,50);
+
+        loot12.setIcon(loot);
+        loot12.setBounds(houses[thing.loot12].x,houses[thing.loot12].y,50,50);
+
+        loot13.setIcon(loot);
+        loot13.setBounds(houses[thing.loot13].x,houses[thing.loot13].y,50,50);
 
 
         wallet_L1.setIcon(wallet);
@@ -413,6 +466,19 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         background_pic_l.add(treasure6_l);
         background_pic_l.add(treasure7_l);
         background_pic_l.add(treasure8_l);
+        background_pic_l.add(loot1);
+        background_pic_l.add(loot2);
+        background_pic_l.add(loot3);
+        background_pic_l.add(loot4);
+        background_pic_l.add(loot5);
+        background_pic_l.add(loot6);
+        background_pic_l.add(loot7);
+        background_pic_l.add(loot8);
+        background_pic_l.add(loot9);
+        background_pic_l.add(loot10);
+        background_pic_l.add(loot11);
+        background_pic_l.add(loot12);
+        background_pic_l.add(loot13);
         background_pic_l.add(castle_l);
         background_pic_l.add(board_pic_l);
         background_pic_l.add(POWER_PLAYER_1_L);

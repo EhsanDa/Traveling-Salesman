@@ -39,7 +39,7 @@ public class Menu extends JFrame implements ActionListener {
         Exit.setBounds(57,222,96,96);
         Exit.setBackground(new Color(255, 240, 245));
         Exit.setOpaque(false);
-        Exit.setIcon(new ImageIcon("src/images/exit-exit-svgrepo-com (1).png"));
+        Exit.setIcon(new ImageIcon("src/images/OK-OK-svgrepo-com (1).png"));
         Exit.addActionListener(this);
 
         this.setVisible(true);

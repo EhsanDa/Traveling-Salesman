@@ -14,7 +14,7 @@ public class EXIT extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setTitle("EXIT");
         this.setResizable(false);
-        this.setIconImage(new ImageIcon("src/images/exit-exit-svgrepo-com (1).png").getImage());
+        this.setIconImage(new ImageIcon("src/images/OK-OK-svgrepo-com (1).png").getImage());
         this.setSize(400, 165);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
