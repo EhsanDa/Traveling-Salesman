@@ -89,17 +89,17 @@ public class THINGS {
         }
         while (true) {
             loot2 = random.nextInt(8)+8;
-            if (loot2 != market2 && loot2!= market3 && loot2!= wall2 && loot2!= wall3&&loot2!=wall4&&loot2!=trap2 &&loot2!=9&&loot2!=10&&loot2!=11)
+            if (loot2!=market1&&loot2 != market2 && loot2!= market3 && loot2!=wall1 && loot2!= wall2 && loot2!= wall3 && loot2!=wall4 && loot2!=trap2 && loot2!=trap1 &&loot2!=9&&loot2!=10&&loot2!=11)
                 break;
         }
         while (true) {
             loot3 = random.nextInt(7)+16;
-            if (loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4 &&loot3!=wall5&&loot3!=wall6&&loot3!=trap3)
+            if (loot3!=market2&&loot3!=wall2&& loot3!=wall1&& loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4 &&loot3!=wall5&&loot3!=wall6&&loot3!=trap3)
                 break;
         }
         while (true) {
             loot4 = random.nextInt(8)+23;
-            if (loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
+            if (loot4!=wall3&&loot4!=market3&&loot4!=trap1&&loot4!=trap2&&loot4!=trap3&&loot4!=trap4&& loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
                 break;
         }
         int x,y;
@@ -216,7 +216,7 @@ public class THINGS {
     }
 
 
-   /* public static void main(String[] args) {
+    public static void main(String[] args) {
         THINGS t=new THINGS();
         System.out.println( t.trap1);
         System.out.println( t.trap2);
@@ -248,6 +248,6 @@ public class THINGS {
         System.out.println(t.loot12);
         System.out.println(t.loot13);
         System.out.println(t.treasure1+" "+t.treasure2+" "+t.treasure3+" "+t.treasure4+" "+t.treasure5+" "+t.treasure6+" "+t.treasure7+" "+t.treasure8);
-    }*/
+    }
 
 }
