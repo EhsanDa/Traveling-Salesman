@@ -76,20 +76,44 @@ public class Castle_checker extends JFrame implements ActionListener {
             System.out.println(board.quest1);
             if (sw_t==1) {
                 if (board.questplace1 == home) {
-                    System.out.println("PREVIOUS QUEST : " + board.quest1 + " - " + board.questplace1);
-                    board.quest.endQuest(board.quest1 - 1);
-                    board.quest1 = board.quest.newQuest();
-                    board.questplace1 = board.quest.questplace;
-                    System.out.println("CURRENT QUEST : " + board.quest1 + " _ " + board.questplace1);
+                    System.out.println("PREVIOUS QUEST 1: " + board.quest1 + " - " + board.questplace1);
+                    if (board.quest1 == board.quest2) {
+                        board.quest.endQuest(board.quest1 - 1);
+                        board.quest1 = board.quest.newQuest();
+                        board.questplace1 = board.quest.questplace;
+                        System.out.println("CURRENT QUEST 1: " + board.quest1 + " _ " + board.questplace1);
+                        board.quest.endQuest(board.quest2 - 1);
+                        board.quest2 = board.quest.newQuest();
+                        board.questplace2 = board.quest.questplace;
+                        System.out.println("CURRENT QUEST 2: " + board.quest2 + " _ " + board.questplace2);
+                    } else {
+                        board.quest.endQuest(board.quest1 - 1);
+                        board.quest1 = board.quest.newQuest();
+                        board.questplace1 = board.quest.questplace;
+                        System.out.println("CURRENT QUEST : " + board.quest1 + " _ " + board.questplace1);
+                    }
+
                 }
             }
             if (sw_t==2){
                 if (board.questplace2 == home) {
-                    System.out.println("PREVIOUS QUEST : " + board.quest2 + " - " + board.questplace2);
-                    board.quest.endQuest(board.quest2 - 1);
-                    board.quest2 = board.quest.newQuest();
-                    board.questplace2 = board.quest.questplace;
-                    System.out.println("CURRENT QUEST : " + board.quest2 + " _ " + board.questplace2);
+                    if (board.quest1 == board.quest2) {
+                        board.quest.endQuest(board.quest1 - 1);
+                        board.quest1 = board.quest.newQuest();
+                        board.questplace1 = board.quest.questplace;
+                        System.out.println("CURRENT QUEST 1: " + board.quest1 + " _ " + board.questplace1);
+                        board.quest2 = board.quest.newQuest();
+                        board.questplace2 = board.quest.questplace;
+                        System.out.println("CURRENT QUEST 2: " + board.quest2 + " _ " + board.questplace2);
+                    }
+                    else {
+                        System.out.println("PREVIOUS QUEST 2: " + board.quest2 + " - " + board.questplace2);
+                        board.quest.endQuest(board.quest2 - 1);
+                        board.quest2 = board.quest.newQuest();
+                        board.questplace2 = board.quest.questplace;
+                        System.out.println("CURRENT QUEST 2: " + board.quest2 + " _ " + board.questplace2);
+
+                    }
                 }
             }
 

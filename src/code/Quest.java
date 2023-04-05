@@ -17,6 +17,7 @@ public class Quest {
         while (quest == 0) {
             a = rand.nextInt(8);
             quest = numbers[a];
+            count=0;
             for (int i = 0; i < 8; i++) {
                 if (i == 0) {
                     count++;
