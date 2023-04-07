@@ -22,6 +22,15 @@ public class first_page implements ActionListener {
 
     first_page(){
 
+        first_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        first_frame.setSize(1200, 700);
+        first_frame.setResizable(false);
+        first_frame.setLayout(null);
+        first_frame.setLocationRelativeTo(null);
+        first_frame.setIconImage(ICON.getImage());
+
+
+
         start.setBounds(300,300,200,80);
         start.setBackground(new Color(255,228,181));
         //start.setOpaque(false);
@@ -60,12 +69,11 @@ public class first_page implements ActionListener {
         pregame.addActionListener(this);
         /******************************************************************/
         first_page_pic.setIcon(background);
+        first_page_pic.setOpaque(true);
+        first_page_pic.setBounds(0,0,1200,700);
         first_page_pic.add(name);
 
-        first_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        first_frame.setSize(1200, 700);
-        first_frame.setResizable(false);
-        first_frame.setIconImage(ICON.getImage());
+
         first_frame.setVisible(true);
         first_frame.add(start);
         first_frame.add(tutorial);
@@ -79,8 +87,10 @@ public class first_page implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource()==start){
-            new board();
             first_frame.dispose();
+            System.out.println("dast");
+            new board();
+            //LOADING1.iterate();
         }
         if (actionEvent.getSource()==pregame){
 
@@ -94,5 +104,9 @@ public class first_page implements ActionListener {
         if (actionEvent.getSource()==Exit){
             System.exit(0);
         }
+    }
+
+    public static void main(String[] args) {
+        new first_page();
     }
 }

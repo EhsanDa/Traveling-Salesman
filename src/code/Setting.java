@@ -36,7 +36,7 @@ public class Setting extends JFrame implements ActionListener, KeyListener {
     JSlider sound=new JSlider(SwingConstants.HORIZONTAL,0,100,25);
     JButton Exit=new JButton();
     Setting(){
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setSize(400,500);
         this.setLocationRelativeTo(null);
         this.setLayout(null);

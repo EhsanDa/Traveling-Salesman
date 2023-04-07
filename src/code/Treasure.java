@@ -14,14 +14,14 @@ public class Treasure extends JFrame implements ActionListener {
     ImageIcon T6=new ImageIcon("src/images/Treasure/icons8-heart-key-80.png");
     ImageIcon T7=new ImageIcon("src/images/Treasure/shield.png");
     ImageIcon T8=new ImageIcon("src/images/Treasure/icons8-jim-trollhunters-sword-96.png");
-    String T1_s="YOU FOUND GOLDEN GLASS";
-    String T2_s="YOU FOUND ";
-    String T3_s="YOU FOUND ";
-    String T4_s="YOU FOUND ";
-    String T5_s="YOU FOUND ";
-    String T6_s="YOU FOUND ";
-    String T7_s="YOU FOUND ";
-    String T8_s="YOU FOUND ";
+    String T1_s="YOU FOUND WOODEN BOW";
+    String T2_s="YOU FOUND GOLDEN GLASS";
+    String T3_s="YOU FOUND DIAMOND RING";
+    String T4_s="YOU FOUND GLASS CUP";
+    String T5_s="YOU FOUND DRAGONSCROLL";
+    String T6_s="YOU FOUND GOLDEN KEY";
+    String T7_s="YOU FOUND STEEL SHIELD";
+    String T8_s="YOU FOUND THE SWORD";
     JLabel T1_l=new JLabel();
     JLabel T2_l=new JLabel();
     JLabel T3_l=new JLabel();
@@ -33,7 +33,7 @@ public class Treasure extends JFrame implements ActionListener {
     JLabel Background=new JLabel();
     JLabel text=new JLabel();
     Treasure(int T_N){
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setTitle("TREASURE");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -102,9 +102,5 @@ public class Treasure extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
-    }
-
-    public static void main(String[] args) {
-        new Treasure(1);
     }
 }

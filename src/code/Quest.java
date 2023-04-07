@@ -55,7 +55,7 @@ public class Quest {
         return quest;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         for(int i=0;i<7;i++) {
             Quest q=new Quest();
@@ -67,5 +67,5 @@ public class Quest {
         }
 
 
-    }
+    }*/
 }

@@ -1,0 +1,16 @@
+    static Quest q=new Quest();
+    static int quest1=q.newQuest();
+    static int questplace1=q.questplace;
+    static int quest2=q.newQuest();
+    static int questplace2=q.questplace;
+
+
+
+
+
+
+
+
+
+
+

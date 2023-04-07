@@ -21,6 +21,19 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int MONEY_PLAYER_1=1500;
     static int POWER_PLAYER_2=500;
     static int MONEY_PLAYER_2=1500;
+    static int sw_loot_1=1;
+    static int sw_loot_2=1;
+    static int sw_loot_3=1;
+    static int sw_loot_4=1;
+    static int sw_loot_5=1;
+    static int sw_loot_6=1;
+    static int sw_loot_7=1;
+    static int sw_loot_8=1;
+    static int sw_loot_9=1;
+    static int sw_loot_10=1;
+    static int sw_loot_11=1;
+    static int sw_loot_12=1;
+    static int sw_loot_13=1;
     String POWER_PLAYER_1_S=String.valueOf(POWER_PLAYER_1);
     String MONEY_PLAYER_1_S=String.valueOf(MONEY_PLAYER_1);
     String POWER_PLAYER_2_S=String.valueOf(POWER_PLAYER_2);
@@ -136,7 +149,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     String buttons = "african";
     Coordinates[] houses;
     static THINGS thing = new THINGS();
-    Castle c= new Castle();
+    //Castle c= new Castle();
     /*****************************************************/
     static Quest quest=new Quest();
     static int quest1=quest.newQuest();
@@ -237,6 +250,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         MONEY_PLAYER_2_L.setForeground(new Color(255, 69, 0 ));
         MONEY_PLAYER_2_L.setFont(new Font("breakaway", Font.BOLD, 45));
         MONEY_PLAYER_2_L.setVisible(false);
+
 
         turn_p1.setBounds(140, 15, 120, 30);
         turn_p1.setForeground(new Color(50, 90, 255));
@@ -694,27 +708,35 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 ////////////////////////////////////////////////////////
                 if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                    new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                 }
                 if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                    new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                 }
                 if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                    new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                 }
                 if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                    new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                 }
                 if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                    new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                 }
                 if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                    new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                 }
                 if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                    new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                 }
                 if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                    new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                 }
                 ///////////////////////////////////////////////////////
@@ -743,6 +765,122 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     new Market5();
                     dice_number1++;
                 }
+                ////////////////////////////////////////////////////////////////////
+                if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 1");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 2");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 3");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 4");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
+                    sw_loot_1=0;
+                    loot1.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
+                    sw_loot_2=0;
+                    loot2.setVisible(true);
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
+                    sw_loot_3=0;
+                    loot3.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
+                    sw_loot_4=0;
+                    loot4.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
+                    sw_loot_5=0;
+                    loot5.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
+                    sw_loot_6=0;
+                    loot6.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
+                    sw_loot_7=0;
+                    loot7.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
+                    sw_loot_8=0;
+                    loot8.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
+                    sw_loot_9=0;
+                    loot9.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
+                    sw_loot_10=0;
+                    loot10.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
+                    sw_loot_11=0;
+                    loot11.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
+                    sw_loot_12=0;
+                    loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
+                    sw_loot_13=0;
+                    loot13.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.castle].x && y==houses[thing.castle].y){
                     System.out.println("YOU GOT IT !!!!!! CASTLE");
                     new Castle_checker();
@@ -816,28 +954,151 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 /////////////////////////////////////////////////////////
                 if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                    new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                 }
                 if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                    new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                 }
                 if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                    new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                 }
                 if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                    new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                 }
                 if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                    new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                 }
                 if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                    new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                 }
                 if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                    new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                 }
                 if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                    new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 1");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 2");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 3");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 4");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
+                    sw_loot_1=0;
+                    loot1.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
+                    sw_loot_2=0;
+                    loot2.setVisible(true);
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
+                    sw_loot_3=0;
+                    loot3.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
+                    sw_loot_4=0;
+                    loot4.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
+                    sw_loot_5=0;
+                    loot5.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
+                    sw_loot_6=0;
+                    loot6.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
+                    sw_loot_7=0;
+                    loot7.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
+                    sw_loot_8=0;
+                    loot8.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
+                    sw_loot_9=0;
+                    loot9.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
+                    sw_loot_10=0;
+                    loot10.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
+                    sw_loot_11=0;
+                    loot11.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
+                    sw_loot_12=0;
+                    loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                    sw_loot_13=0;
+                    loot13.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
@@ -1004,30 +1265,153 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 /////////////////////////////////////////////////////////////
                 if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                    new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                 }
                 if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                    new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                 }
                 if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                    new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                 }
                 if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                    new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                 }
                 if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                    new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                 }
                 if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                    new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                 }
                 if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                    new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                 }
                 if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                    new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                 }
                 ///////////////////////////////////////////////////////////////////
+                if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 1");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 2");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 3");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 4");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
+                    sw_loot_1=0;
+                    loot1.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
+                    sw_loot_2=0;
+                    loot2.setVisible(true);
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
+                    sw_loot_3=0;
+                    loot3.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
+                    sw_loot_4=0;
+                    loot4.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
+                    sw_loot_5=0;
+                    loot5.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
+                    sw_loot_6=0;
+                    loot6.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
+                    sw_loot_7=0;
+                    loot7.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
+                    sw_loot_8=0;
+                    loot8.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
+                    sw_loot_9=0;
+                    loot9.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
+                    sw_loot_10=0;
+                    loot10.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
+                    sw_loot_11=0;
+                    loot11.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
+                    sw_loot_12=0;
+                    loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
+                    sw_loot_13=0;
+                    loot13.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
@@ -1126,30 +1510,153 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 ////////////////////////////////////////////////////////////
                 if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                    new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                 }
                 if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                    new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                 }
                 if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                    new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                 }
                 if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                    new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                 }
                 if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                    new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                 }
                 if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                    new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                 }
                 if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                    new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                 }
                 if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                    new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                 }
                 //////////////////////////////////////////////////////////////
+                if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 1");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 2");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 3");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 4");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
+                    sw_loot_1=0;
+                    loot1.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
+                    sw_loot_2=0;
+                    loot2.setVisible(true);
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
+                    sw_loot_3=0;
+                    loot3.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
+                    sw_loot_4=0;
+                    loot4.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
+                    sw_loot_5=0;
+                    loot5.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
+                    sw_loot_6=0;
+                    loot6.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
+                    sw_loot_7=0;
+                    loot7.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
+                    sw_loot_8=0;
+                    loot8.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
+                    sw_loot_9=0;
+                    loot9.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
+                    sw_loot_10=0;
+                    loot10.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
+                    sw_loot_11=0;
+                    loot11.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
+                    sw_loot_12=0;
+                    loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                    sw_loot_13=0;
+                    loot13.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
@@ -1315,30 +1822,153 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 //////////////////////////////////////////////////////////////
                 if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                    new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                 }
                 if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                    new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                 }
                 if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                    new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                 }
                 if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                    new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                 }
                 if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                    new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                 }
                 if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                    new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                 }
                 if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                    new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                 }
                 if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                    new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                 }
                 ////////////////////////////////////////////////////////////////
+                if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 1");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 2");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 3");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
+                    MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                    System.out.println("TRAP 4");
+                    System.out.println((int) MONEY_PLAYER_1);
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
+                    sw_loot_1=0;
+                    loot1.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
+                    sw_loot_2=0;
+                    loot2.setVisible(true);
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
+                    sw_loot_3=0;
+                    loot3.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
+                    sw_loot_4=0;
+                    loot4.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
+                    sw_loot_5=0;
+                    loot5.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
+                    sw_loot_6=0;
+                    loot6.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
+                    sw_loot_7=0;
+                    loot7.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
+                    sw_loot_8=0;
+                    loot8.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
+                    sw_loot_9=0;
+                    loot9.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
+                    sw_loot_10=0;
+                    loot10.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
+                    sw_loot_11=0;
+                    loot11.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
+                    sw_loot_12=0;
+                    loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
+                    sw_loot_13=0;
+                    loot13.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_1+=1000;
+                    MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                }
+                ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
@@ -1437,30 +2067,153 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 /////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                    new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                 }
                 if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                    new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                 }
                 if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                    new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                 }
                 if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                    new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                 }
                 if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                    new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                 }
                 if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                    new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                 }
                 if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                    new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                 }
                 if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                    new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                 }
                 //////////////////////////////////////////////////////////////////
+                if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 1");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 2");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 3");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
+                    MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                    System.out.println("TRAP 4");
+                    System.out.println((int) MONEY_PLAYER_2);
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                ////////////////////////////////////////////////////////////////////
+                if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
+                    sw_loot_1=0;
+                    loot1.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
+                    sw_loot_2=0;
+                    loot2.setVisible(true);
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
+                    sw_loot_3=0;
+                    loot3.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
+                    sw_loot_4=0;
+                    loot4.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
+                    sw_loot_5=0;
+                    loot5.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
+                    sw_loot_6=0;
+                    loot6.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
+                    sw_loot_7=0;
+                    loot7.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
+                    sw_loot_8=0;
+                    loot8.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
+                    sw_loot_9=0;
+                    loot9.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
+                    sw_loot_10=0;
+                    loot10.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
+                    sw_loot_11=0;
+                    loot11.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
+                    sw_loot_12=0;
+                    loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                    sw_loot_13=0;
+                    loot13.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                }
+                ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                     System.out.println("YOU GOT IT !!!!!! MARKET1");
                     new Market1();
@@ -1628,30 +2381,153 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     }
                     /////////////////////////////////////////////////////////////
                     if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
+                        new Treasure(1);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                     }
                     if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
+                        new Treasure(2);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                     }
                     if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
+                        new Treasure(3);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                     }
                     if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
+                        new Treasure(4);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                     }
                     if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
+                        new Treasure(5);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                     }
                     if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
+                        new Treasure(6);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                     }
                     if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
+                        new Treasure(7);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                     }
                     if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
+                        new Treasure(8);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                     }
                     //////////////////////////////////////////////////////////////////
+                    if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
+                        MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                        System.out.println("TRAP 1");
+                        System.out.println((int) MONEY_PLAYER_1);
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
+                        MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                        System.out.println("TRAP 2");
+                        System.out.println((int) MONEY_PLAYER_1);
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
+                        MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                        System.out.println("TRAP 3");
+                        System.out.println((int) MONEY_PLAYER_1);
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
+                        MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
+                        System.out.println("TRAP 4");
+                        System.out.println((int) MONEY_PLAYER_1);
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    ////////////////////////////////////////////////////////////////////
+                    if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
+                        sw_loot_1=0;
+                        loot1.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
+                        sw_loot_2=0;
+                        loot2.setVisible(true);
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
+                        sw_loot_3=0;
+                        loot3.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
+                        sw_loot_4=0;
+                        loot4.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
+                        sw_loot_5=0;
+                        loot5.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
+                        sw_loot_6=0;
+                        loot6.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
+                        sw_loot_7=0;
+                        loot7.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
+                        sw_loot_8=0;
+                        loot8.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
+                        sw_loot_9=0;
+                        loot9.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
+                        sw_loot_10=0;
+                        loot10.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
+                        sw_loot_11=0;
+                        loot11.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
+                        sw_loot_12=0;
+                        loot12.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
+                        sw_loot_13=0;
+                        loot13.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_1+=1000;
+                        MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    }
+                    ////////////////////////////////////////////////////////////////////
                     if (x==houses[thing.market1].x && y==houses[thing.market1].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET1");
                         new Market1();
@@ -1754,30 +2630,153 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     }
                     //////////////////////////////////////////////////////////////
                     if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
+                        new Treasure(1);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 1");
                     }
                     if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
+                        new Treasure(2);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 2");
                     }
                     if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
+                        new Treasure(3);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 3");
                     }
                     if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
+                        new Treasure(4);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 4");
                     }
                     if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
+                        new Treasure(5);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 5");
                     }
                     if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
+                        new Treasure(6);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 6");
                     }
                     if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
+                        new Treasure(7);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 7");
                     }
                     if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
+                        new Treasure(8);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 8");
                     }
                     /////////////////////////////////////////////////////////////////
+                    if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
+                        MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                        System.out.println("TRAP 1");
+                        System.out.println((int) MONEY_PLAYER_2);
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
+                        MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                        System.out.println("TRAP 2");
+                        System.out.println((int) MONEY_PLAYER_2);
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
+                        MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                        System.out.println("TRAP 3");
+                        System.out.println((int) MONEY_PLAYER_2);
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
+                        MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
+                        System.out.println("TRAP 4");
+                        System.out.println((int) MONEY_PLAYER_2);
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    ////////////////////////////////////////////////////////////////////
+                    if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
+                        sw_loot_1=0;
+                        loot1.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
+                        sw_loot_2=0;
+                        loot2.setVisible(true);
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
+                        sw_loot_3=0;
+                        loot3.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
+                        sw_loot_4=0;
+                        loot4.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
+                        sw_loot_5=0;
+                        loot5.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
+                        sw_loot_6=0;
+                        loot6.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
+                        sw_loot_7=0;
+                        loot7.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
+                        sw_loot_8=0;
+                        loot8.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
+                        sw_loot_9=0;
+                        loot9.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
+                        sw_loot_10=0;
+                        loot10.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
+                        sw_loot_11=0;
+                        loot11.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
+                        sw_loot_12=0;
+                        loot12.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                        sw_loot_13=0;
+                        loot13.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    }
+                    ////////////////////////////////////////////////////////////////////
                     if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
                         System.out.println("YOU GOT IT !!!!!! MARKET1");
                         new Market1();
@@ -1976,10 +2975,42 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             if (actionEvent.getSource() == Setting_button) {
-                new Setting();
+                Setting_button.setEnabled(false);
+                final Setting x=new Setting();
+                x.addWindowListener(new WindowAdapter(){
+                    @Override
+                    public void windowClosing(WindowEvent e){
+                        x.dispose();
+                        Setting_button.setEnabled(true);
+                    }
+
+                });
             }
             if (actionEvent.getSource() == Menu_button) {
-                new Menu();
+                Menu_button.setEnabled(false);
+                final Menu x= new Menu();
+                x.addWindowListener(new WindowAdapter(){
+                    @Override
+                    public void windowClosing(WindowEvent e){
+                        x.dispose();
+                        Menu_button.setEnabled(true);
+                    }
+
+                });
+            }
+            if (actionEvent.getSource() == Info_button){
+                Info_button.setEnabled(false);
+                final information x= new information();
+                x.addWindowListener(new WindowAdapter(){
+                    @Override
+                    public void windowClosing(WindowEvent e){
+                        x.dispose();
+                        Info_button.setEnabled(true);
+
+
+                    }
+
+                });
             }
         }
     };

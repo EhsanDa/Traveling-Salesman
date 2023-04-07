@@ -18,11 +18,11 @@ public class Castle {
         return false;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Castle c=new Castle();
 
     c.find(2,5);
 
-    }
+    }*/
 }
 
