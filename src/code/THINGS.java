@@ -94,12 +94,12 @@ public class THINGS {
         }
         while (true) {
             loot3 = random.nextInt(7)+16;
-            if (loot3!=trap1&&loot3!=market2&&loot3!=wall2&& loot3!=wall1&& loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4 &&loot3!=wall5&&loot3!=wall6&&loot3!=trap3)
+            if (loot3!=market1&&loot3!=trap1&&loot3!=market2&&loot3!=wall2&& loot3!=wall1&& loot3 != market3 && loot3!= market4 && loot3!= wall3 && loot3!= wall4 &&loot3!=wall5&&loot3!=wall6&&loot3!=trap3)
                 break;
         }
         while (true) {
             loot4 = random.nextInt(8)+23;
-            if (loot4!=wall3&&loot4!=market3&&loot4!=trap1&&loot4!=trap2&&loot4!=trap3&&loot4!=trap4&& loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
+            if (loot4!=wall2 && loot4!=wall1&& loot4!=market2&& loot4!=market1 && loot4!=wall3 && loot4!=market3&&loot4!=trap1&&loot4!=trap2&&loot4!=trap3&&loot4!=trap4&& loot4 != market4 && loot4!= market5 && loot4!= wall4 && loot4!= wall5 && loot4!=wall6&&loot4!=wall7&&loot4!=trap4)
                 break;
         }
         int x,y;
