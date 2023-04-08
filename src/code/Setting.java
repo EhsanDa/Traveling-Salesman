@@ -62,6 +62,7 @@ public class Setting extends JFrame implements ActionListener, KeyListener {
         sound.setBounds(200,32,150,20);
         sound.setOpaque(false);
         sound.setBackground(new Color(255,20,147));
+        sound.setCursor(new Cursor(Cursor.HAND_CURSOR));
         sound.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
@@ -126,6 +127,7 @@ public class Setting extends JFrame implements ActionListener, KeyListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource()==Exit){
+            board.Setting_button.setEnabled(true);
             this.dispose();
         }
         if (actionEvent.getSource()==b1_b){

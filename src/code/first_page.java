@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class first_page implements ActionListener {
     JFrame first_frame=new JFrame("WELCOME");
@@ -96,7 +98,18 @@ public class first_page implements ActionListener {
 
         }
         if (actionEvent.getSource()==contactus){
+            contactus.setEnabled(false);
+            first_frame.setVisible(false);
+            final Contact_Us x= new Contact_Us();
+            x.addWindowListener(new WindowAdapter(){
+                @Override
+                public void windowClosing(WindowEvent e){
+                    x.dispose();
+                    contactus.setEnabled(true);
+                    first_frame.setVisible(true);
+                }
 
+            });
         }
         if (actionEvent.getSource()==tutorial){
 
@@ -106,7 +119,7 @@ public class first_page implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         new first_page();
-    }
+    }*/
 }

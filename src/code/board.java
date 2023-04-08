@@ -1,14 +1,11 @@
 package code;
-
+//TODO لوت های همه اطراف برای هر دو پلیر
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class board extends JFrame implements ActionListener /*,KeyListener*/ {
-
-
-
-
+    int SW=-1;
     int M = 280;
     static int x = 243, y = 62;
 
@@ -34,6 +31,16 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int sw_loot_11=1;
     static int sw_loot_12=1;
     static int sw_loot_13=1;
+    static int sw_trap1_p1=0;
+    static int sw_trap1_p2=0;
+    static int sw_trap2_p1=0;
+    static int sw_trap2_p2=0;
+    static int sw_trap3_p1=0;
+    static int sw_trap3_p2=0;
+    static int sw_trap4_p1=0;
+    static int sw_trap4_p2=0;
+    static int sw_loot_1_p1 =0;
+    static int sw_loot_1_p2=0;
     String POWER_PLAYER_1_S=String.valueOf(POWER_PLAYER_1);
     String MONEY_PLAYER_1_S=String.valueOf(MONEY_PLAYER_1);
     String POWER_PLAYER_2_S=String.valueOf(POWER_PLAYER_2);
@@ -141,9 +148,9 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     JButton Upper_b2 = new JButton();
     JButton player2_info = new JButton();
     JButton dice_button = new JButton();
-    JButton Setting_button = new JButton();
+    static JButton Setting_button = new JButton();
     JButton Info_button = new JButton();
-    JButton Menu_button = new JButton();
+    static JButton Menu_button = new JButton();
     dice dice;
     TURN turn;
     String buttons = "african";
@@ -156,12 +163,22 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int questplace1=quest.questplace;
     static int quest2=quest.newQuest();
     static int questplace2=quest.questplace;
+    static int[] previous_x={0,0,0,0,0,0};
+    static int[] previous_y={0,0,0,0,0,0};
     /*****************************************************/
     //Timer timer;
     //piece1 player1=new piece1();
 
     //CONSTRUCTOR
     public board() {
+        for (int i = 0; i < previous_x.length; i++) {
+            System.out.printf("pre_x : %d ",previous_x[i]);
+        }
+        System.out.println();
+        for (int i = 0; i < previous_y.length; i++) {
+            System.out.printf("pre_y : %d ",previous_y[i]);
+        }
+        System.out.println();
         /************************************************/
         houses = new Coordinates[100];
         for (int i = 0; i < 100; i++) {
@@ -326,19 +343,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         trap1_l.setIcon(trap);
         trap1_l.setBounds(houses[thing.trap1].x,houses[thing.trap1].y,50,50);
         System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap1+1)+" BY COORDINATES { x is : "+houses[thing.trap1].x+" & Y IS : "+houses[thing.trap1].y+" }");
+        trap1_l.setVisible(false);
 
         trap2_l.setIcon(trap);
         trap2_l.setBounds(houses[thing.trap2].x,houses[thing.trap2].y,50,50);
         System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap2+1)+" BY COORDINATES { x is : "+houses[thing.trap2].x+" & Y IS : "+houses[thing.trap2].y+" }");
+        trap2_l.setVisible(false);
 
         trap3_l.setIcon(trap);
         trap3_l.setBounds(houses[thing.trap3].x,houses[thing.trap3].y,50,50);
         System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap3+1)+" BY COORDINATES { x is : "+houses[thing.trap3].x+" & Y IS : "+houses[thing.trap3].y+" }");
+        trap3_l.setVisible(false);
 
         trap4_l.setIcon(trap);
         trap4_l.setBounds(houses[thing.trap4].x,houses[thing.trap4].y,50,50);
         System.out.println("THERE IS A TRAP IN HOUSE "+(thing.trap4+1)+" BY COORDINATES { x is : "+houses[thing.trap4].x+" & Y IS : "+houses[thing.trap4].y+" }");
-/////////////////////////////////////////////////////////////
+        trap4_l.setVisible(false);
+        /////////////////////////////////////////////////////////////
         treasure1_l.setIcon(treasure);
         treasure1_l.setBounds(houses[thing.treasure1].x,houses[thing.treasure1].y,50,50);
         System.out.println("THERE IS A TREASURE 1 IN HOUSE "+(thing.treasure1+1)+" BY COORDINATES { x is : "+houses[thing.treasure1].x+" & Y IS : "+houses[thing.treasure1].y+" }");
@@ -373,6 +394,8 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
 //////////////////////////////////////////////////////////////////////////
         loot1.setIcon(loot);
         loot1.setBounds(houses[thing.loot1].x,houses[thing.loot1].y,50,50);
+        loot1.setVisible(false);
+        System.out.println("THERE IS A LOOT 8 IN HOUSE "+(thing.loot1+1)+" BY COORDINATES { x is : "+houses[thing.loot1].x+" & Y IS : "+houses[thing.loot1].y+" }");
 
         loot2.setIcon(loot);
         loot2.setBounds(houses[thing.loot2].x,houses[thing.loot2].y,50,50);
@@ -659,18 +682,91 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         this.paint(this.getGraphics());
         System.out.println("Quest place 1 is"+questplace1+ "  "+quest1);
         System.out.println("Quest place 2 is"+questplace2+ "  "+quest2);
+/*************************************************************************/
+        for (int i = 0; i < previous_x.length; i++) {
+            System.out.printf("pre_x : %d ",previous_x[i]);
+        }
+        System.out.println();
+        for (int i = 0; i < previous_y.length; i++) {
+            System.out.printf("pre_y : %d ",previous_y[i]);
+        }
+        System.out.println();
+/*******************************************************************************/
 
+        if(SW_PLAYER==1){
+            if (sw_trap1_p1==1){
+                trap1_l.setVisible(true);
+            }
+            else
+                trap1_l.setVisible(false);
+            if (sw_trap2_p1==1){
+                trap2_l.setVisible(true);
+            }
+            else
+                trap2_l.setVisible(false);
+            if (sw_trap3_p1==1){
+                trap3_l.setVisible(true);
+            }
+            else
+                trap3_l.setVisible(false);
+            if (sw_trap4_p1==1){
+                trap4_l.setVisible(true);
+            }
+            else
+                trap4_l.setVisible(false);
+            if(sw_loot_1_p1 ==1){
+                loot1.setVisible(true);
+            }
+            else
+                loot1.setVisible(false);
+        }
+        if(SW_PLAYER==2){
+            if (sw_trap1_p2==2){
+                trap1_l.setVisible(true);
+            }
+            else
+                trap1_l.setVisible(false);
+            if (sw_trap2_p2==2){
+                trap2_l.setVisible(true);
+            }
+            else
+                trap2_l.setVisible(false);
+            if (sw_trap3_p2==2){
+                trap3_l.setVisible(true);
+            }
+            else
+                trap3_l.setVisible(false);
+            if (sw_trap4_p2==2){
+                trap4_l.setVisible(true);
+            }
+            else
+                trap4_l.setVisible(false);
+            if(sw_loot_1_p2 ==2){
+                loot1.setVisible(true);
+            }
+            else
+                loot1.setVisible(false);
+        }
         if (actionEvent.getSource() == buttonR) {
+            SW=1;
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("SW_PLAYER IS (NOW) : " + SW_PLAYER);
             System.out.println("BUTTON RIGHT CLICKED ! ");
-            if (SW_PLAYER == 1 && x + 59 != xOld && dice_number1 > 0 && x + 59 < 900) {
+            for (int i = 0; i < 6; i++) {
+                if (x+59==previous_x[i] && y==previous_y[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && x + 59 < 900) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
                 yOld = 0;
                 xOld = x;
                 xNew = x + 59;
                 x = xNew;
+                previous_x[dice_number1-1]=x;
+                previous_y[dice_number1-1]=y;
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x-=59;
@@ -771,32 +867,40 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("TRAP 1");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap1_p1=1;
+                    trap1_l.setVisible(true);
                 }
                 if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 2");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap2_p1=1;
+                    trap2_l.setVisible(true);
                 }
                 if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 3");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap3_p1=1;
+                    trap3_l.setVisible(true);
                 }
                 if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 4");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap4_p1=1;
+                    trap4_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    loot1.setVisible(true);
-                    int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot1.setVisible(true);
+                    sw_loot_1_p1 =1;
                 }
                 if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
@@ -910,13 +1014,21 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 System.out.println("dice_number1 : " + dice_number1);
             }
-            if (SW_PLAYER == 2 && x1 + 59 != x1Old && dice_number1 > 0 && x1 + 59 < 900) {
+            for (int i = 0; i < 6; i++) {
+                if (x1+59==previous_x[i] && y1==previous_y[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && x1 + 59 < 900) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
                 y1Old = 0;
                 x1Old = x1;
                 x1New = x1 + 59;
                 x1 = x1New;
+                previous_x[dice_number1-1]=x1;
+                previous_y[dice_number1-1]=y1;
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x1-=59;
@@ -991,32 +1103,41 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("TRAP 1");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap1_p2=2;
+                    trap1_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 2");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap2_p2=2;
+                    trap2_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 3");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap3_p2=2;
+                    trap3_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 4");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap4_p2=2;
+                    trap4_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    loot1.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_1_p2=2;
+                    loot1.setVisible(true);
                 }
                 if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
@@ -1156,6 +1277,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 System.out.println("dice_number1 : " + dice_number1);
             }
             if (dice_number1 == 0) {
+                for (int i = 0; i < 6; i++) {
+                    previous_x[i]=0;
+                    previous_y[i]=0;
+                }
                 dice_button.setVisible(true);
                 dice1_l.setVisible(false);
                 dice2_l.setVisible(false);
@@ -1218,16 +1343,25 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         }
         //
         if (actionEvent.getSource() == buttonL) {
+            SW=1;
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("SW_PLAYER IS (NOW) : " + SW_PLAYER);
             System.out.println("BUTTON LEFT CLICKED ! ");
-            if (SW_PLAYER == 1 && x - 59 != xOld && dice_number1 > 0 && x - 59 > 295) {
+            for (int i = 0; i < 6; i++) {
+                if (x-59==previous_x[i] && y==previous_y[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && x - 59 > 295) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
                 yOld = 0;
                 xOld = x;
                 xNew = x - 59;
                 x = xNew;
+                previous_x[dice_number1-1]=x;
+                previous_y[dice_number1-1]=y;
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x+=59;
@@ -1302,32 +1436,40 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("TRAP 1");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap1_p1=1;
+                    trap1_l.setVisible(true);
                 }
                 if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 2");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap2_p1=1;
+                    trap2_l.setVisible(true);
                 }
                 if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 3");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap3_p1=1;
+                    trap3_l.setVisible(true);
                 }
                 if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 4");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap4_p1=1;
+                    trap4_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    loot1.setVisible(true);
-                    int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot1.setVisible(true);
+                    sw_loot_1_p1 =1;
                 }
                 if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
@@ -1466,13 +1608,21 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 System.out.println("dice_number1 : " + dice_number1);
             }
-            if (SW_PLAYER == 2 && x1 - 59 != x1Old && dice_number1 > 0 && x1 - 59 > 295) {
+            for (int i = 0; i < 6; i++) {
+                if (x1-59==previous_x[i] && y1==previous_y[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && x1 - 59 > 295) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
                 y1Old = 0;
                 x1Old = x1;
                 x1New = x1 - 59;
                 x1 = x1New;
+                previous_x[dice_number1-1]=x1;
+                previous_y[dice_number1-1]=y1;
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x1+=59;
@@ -1547,24 +1697,32 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("TRAP 1");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap1_p2=2;
+                    trap1_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 2");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap2_p2=2;
+                    trap2_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 3");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap3_p2=2;
+                    trap3_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 4");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap4_p2=2;
+                    trap4_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
@@ -1712,6 +1870,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 System.out.println("dice_number1 : " + dice_number1);
             }
             if (dice_number1 == 0) {
+                for (int i = 0; i < 6; i++) {
+                    previous_x[i]=0;
+                    previous_y[i]=0;
+                }
                 dice_button.setVisible(true);
                 dice1_l.setVisible(false);
                 dice2_l.setVisible(false);
@@ -1775,16 +1937,25 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         }
         //
         if (actionEvent.getSource() == buttonU) {
+            SW=1;
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("SW_PLAYER IS (NOW) : " + SW_PLAYER);
             System.out.println("BUTTON UP CLICKED ! ");
-            if (SW_PLAYER == 1 && y - 59 != yOld && dice_number1 > 0 && y - 59 > 55) {
+            for (int i = 0; i < 6; i++) {
+                if (y-59==previous_y[i] && x==previous_x[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && y - 59 > 55) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
                 xOld = 0;
                 yOld = y;
                 yNew = y - 59;
                 y = yNew;
+                previous_x[dice_number1-1]=x;
+                previous_y[dice_number1-1]=y;
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     y+=59;
@@ -1859,32 +2030,41 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("TRAP 1");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap1_p1=1;
+                    trap1_l.setVisible(false);
                 }
                 if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 2");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap2_p1=1;
+                    trap2_l.setVisible(false);
                 }
                 if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 3");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap3_p1=1;
+                    trap3_l.setVisible(false);
                 }
                 if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
                     MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                     System.out.println("TRAP 4");
                     System.out.println((int) MONEY_PLAYER_1);
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_trap4_p1=1;
+                    trap4_l.setVisible(false);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    loot1.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot1.setVisible(true);
+                    sw_loot_1_p1 =1;
                 }
                 if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
@@ -2023,13 +2203,21 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 System.out.println("dice_number1 : " + dice_number1);
             }
-            if (SW_PLAYER == 2 && y1 - 59 != y1Old && dice_number1 > 0 && y1 - 59 > 55) {
+            for (int i = 0; i < 6; i++) {
+                if (y1-59==previous_y[i] && x1==previous_x[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && y1 - 59 > 55) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
                 x1Old = 0;
                 y1Old = y1;
                 y1New = y1 - 59;
                 y1 = y1New;
+                previous_x[dice_number1-1]=x1;
+                previous_y[dice_number1-1]=y1;
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     y1+=59;
@@ -2104,24 +2292,32 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("TRAP 1");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap1_p2=2;
+                    trap1_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 2");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap2_p2=2;
+                    trap2_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 3");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap3_p2=2;
+                    trap3_l.setVisible(true);
                 }
                 if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
                     MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                     System.out.println("TRAP 4");
                     System.out.println((int) MONEY_PLAYER_2);
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_trap4_p2=2;
+                    trap4_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
@@ -2269,6 +2465,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 System.out.println("dice_number1 : " + dice_number1);
             }
             if (dice_number1 == 0) {
+                for (int i = 0; i < 6; i++) {
+                    previous_x[i]=0;
+                    previous_y[i]=0;
+                }
                 dice_button.setVisible(true);
                 dice1_l.setVisible(false);
                 dice2_l.setVisible(false);
@@ -2331,10 +2531,17 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         }
         //
         if (actionEvent.getSource() == buttonD) {
+            SW=1;
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("SW_PLAYER IS (NOW) : " + SW_PLAYER);
             System.out.println("BUTTON DOWN CLICKED ! ");
-            if (SW_PLAYER == 1 && y + 59 != yOld && dice_number1 > 0 && y + 59 < 596 + 55) {
+            for (int i = 0; i < 6; i++) {
+                if (y+59==previous_y[i] && x==previous_x[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && y + 59 < 596 + 55) {
                 if (x == 243 && y == 62) {
 
                 } else {
@@ -2344,6 +2551,8 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     yOld = y;
                     yNew = y + 59;
                     y = yNew;
+                    previous_x[dice_number1-1]=x;
+                    previous_y[dice_number1-1]=y;
                     if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                         System.out.println("THERE IS A BLOCK :D !!");
                         y-=59;
@@ -2418,32 +2627,41 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         System.out.println("TRAP 1");
                         System.out.println((int) MONEY_PLAYER_1);
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        sw_trap1_p1=1;
+                        trap1_l.setVisible(true);
                     }
                     if (x==houses[thing.trap2].x && y== houses[thing.trap2].y){
                         MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                         System.out.println("TRAP 2");
                         System.out.println((int) MONEY_PLAYER_1);
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        sw_trap2_p1=1;
+                        trap2_l.setVisible(true);
                     }
                     if (x==houses[thing.trap3].x && y== houses[thing.trap3].y){
                         MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                         System.out.println("TRAP 3");
                         System.out.println((int) MONEY_PLAYER_1);
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        sw_trap3_p1=1;
+                        trap3_l.setVisible(true);
                     }
                     if (x==houses[thing.trap4].x && y== houses[thing.trap4].y){
                         MONEY_PLAYER_1=MONEY_PLAYER_1*3/4;
                         System.out.println("TRAP 4");
                         System.out.println((int) MONEY_PLAYER_1);
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        sw_trap4_p1=1;
+                        trap4_l.setVisible(true);
                     }
                     ////////////////////////////////////////////////////////////////////
                     if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
                         sw_loot_1=0;
-                        loot1.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot1.setVisible(true);
+                        sw_loot_1_p1 =1;
                     }
                     if (x==houses[thing.loot2].x && y==houses[thing.loot2].y && sw_loot_2==1){
                         sw_loot_2=0;
@@ -2583,7 +2801,13 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     System.out.println("dice_number1 : " + dice_number1);
                 }
             }
-            if (SW_PLAYER == 2 && y1 + 59 != y1Old && dice_number1 > 0 && y1 + 59 < 596 + 55) {
+            for (int i = 0; i < 6; i++) {
+                if (y1+59==previous_y[i] && x1==previous_x[i]){
+                    SW=0;
+                    break;
+                }
+            }
+            if (SW_PLAYER == 2 &&SW!=0 && dice_number1 > 0 && y1 + 59 < 596 + 55) {
                 if (x1 == 243 + 11 * 59 && y1 == 62) {
                     System.out.println("WRONG !");
                 } else {
@@ -2593,6 +2817,8 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     y1Old = y1;
                     y1New = y1 + 59;
                     y1 = y1New;
+                    previous_x[dice_number1-1]=x1;
+                    previous_y[dice_number1-1]=y1;
                     if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                         System.out.println("THERE IS A BLOCK :D !!");
                         y1-=59;
@@ -2667,24 +2893,32 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         System.out.println("TRAP 1");
                         System.out.println((int) MONEY_PLAYER_2);
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_trap1_p2=2;
+                        trap1_l.setVisible(true);
                     }
                     if (x1==houses[thing.trap2].x && y1== houses[thing.trap2].y){
                         MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                         System.out.println("TRAP 2");
                         System.out.println((int) MONEY_PLAYER_2);
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_trap2_p2=2;
+                        trap2_l.setVisible(true);
                     }
                     if (x1==houses[thing.trap3].x && y1== houses[thing.trap3].y){
                         MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                         System.out.println("TRAP 3");
                         System.out.println((int) MONEY_PLAYER_2);
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_trap3_p2=2;
+                        trap3_l.setVisible(true);
                     }
                     if (x1==houses[thing.trap4].x && y1== houses[thing.trap4].y){
                         MONEY_PLAYER_2=MONEY_PLAYER_2*3/4;
                         System.out.println("TRAP 4");
                         System.out.println((int) MONEY_PLAYER_2);
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_trap4_p2=2;
+                        trap4_l.setVisible(true);
                     }
                     ////////////////////////////////////////////////////////////////////
                     if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
@@ -2881,6 +3115,10 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 dice6_l.setVisible(true);
             }
             if (dice_number1 == 0) {
+                for (int i = 0; i < 6; i++) {
+                    previous_x[i]=0;
+                    previous_y[i]=0;
+                }
                 dice_button.setVisible(true);
                 dice1_l.setVisible(false);
                 dice2_l.setVisible(false);
@@ -2900,6 +3138,27 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     ActionListener dice_move = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            if(sw_loot_1_p1 ==1){
+                loot1.setVisible(true);
+            }
+            else
+                loot1.setVisible(false);
+
+
+            if(SW_PLAYER==1){
+                if (sw_trap1_p1==1){
+                    trap1_l.setVisible(true);
+                }
+                else
+                    trap1_l.setVisible(false);
+            }
+            if(SW_PLAYER==2){
+                if (sw_trap1_p2==2){
+                    trap1_l.setVisible(true);
+                }
+                else
+                    trap1_l.setVisible(false);
+            }
             if (actionEvent.getSource() == dice_button) {
                 dice_button.setVisible(false);
                 dice = new dice();
@@ -3066,4 +3325,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
      @Override public void keyReleased(KeyEvent keyEvent) {
 
      }*/
+    public static void main(String[] args) {
+        new board();
+    }
 }

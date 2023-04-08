@@ -26,12 +26,14 @@ public class Menu extends JFrame implements ActionListener {
 
         Continue.setBounds(57,10,96,96);
         Continue.setBackground(new Color(255, 240, 245));
+        Continue.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Continue.setOpaque(false);
         Continue.setIcon(new ImageIcon("src/images/icons8-next-96.png"));
         Continue.addActionListener(this);
 
         Save.setBounds(57,116,96,96);
         Save.setBackground(new Color(255, 240, 245));
+        Save.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Save.setOpaque(false);
         Save.setIcon(new ImageIcon("src/images/icons8-save-64 (1).png"));
         Save.addActionListener(this);
@@ -39,7 +41,8 @@ public class Menu extends JFrame implements ActionListener {
         Exit.setBounds(57,222,96,96);
         Exit.setBackground(new Color(255, 240, 245));
         Exit.setOpaque(false);
-        Exit.setIcon(new ImageIcon("src/images/OK-OK-svgrepo-com (1).png"));
+        Exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        Exit.setIcon(new ImageIcon("src/images/exit-exit-svgrepo-com (1).png"));
         Exit.addActionListener(this);
 
         this.setVisible(true);
@@ -55,6 +58,7 @@ public class Menu extends JFrame implements ActionListener {
             new EXIT();
         }
         if (actionEvent.getSource()==Continue){
+            board.Menu_button.setEnabled(true);
             this.dispose();
         }
     }

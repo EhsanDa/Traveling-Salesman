@@ -100,6 +100,7 @@ public class Market1 extends JFrame implements ActionListener {
         LOCATE_TREASURE.setForeground(new Color( 0 , 167 , 147));
         LOCATE_TREASURE.setFont(new Font("ZEROGIRL",Font.BOLD,28));
         LOCATE_TREASURE.setText(text1);
+        LOCATE_TREASURE.addActionListener(this);
 
         Exit.setBounds(0,10,50,50);
         Exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -187,6 +188,12 @@ public class Market1 extends JFrame implements ActionListener {
                     System.out.println(board.POWER_PLAYER_2_L.getText());
                 }
             }
+        }
+        if (actionEvent.getSource()==LOCATE_TREASURE){
+            Quest q=new Quest();
+            int a=q.newQuest();
+            a=q.questplace;
+            System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh : "+a);
         }
     }
 

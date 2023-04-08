@@ -24,6 +24,7 @@ public class Quest {
                 }
             }if(count==8){
                 //todo end of game
+                System.out.println("THE END**********************");
                 break;
             }
 
@@ -58,7 +59,7 @@ public class Quest {
 
     /*public static void main(String[] args) {
 
-        for(int i=0;i<7;i++) {
+        for(int i=0;i<8;i++) {
             Quest q=new Quest();
             int a=q.newQuest();
             System.out.println(a);
