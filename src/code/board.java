@@ -31,6 +31,23 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int sw_loot_11=1;
     static int sw_loot_12=1;
     static int sw_loot_13=1;
+    static int sw_treasure1_p1=0;
+    static int sw_treasure1_p2=0;
+    static int sw_treasure2_p1=0;
+    static int sw_treasure2_p2=0;
+    static int sw_treasure3_p1=0;
+    static int sw_treasure3_p2=0;
+    static int sw_treasure4_p1=0;
+    static int sw_treasure4_p2=0;
+    static int sw_treasure5_p1=0;
+    static int sw_treasure5_p2=0;
+    static int sw_treasure6_p1=0;
+    static int sw_treasure6_p2=0;
+    static int sw_treasure7_p1=0;
+    static int sw_treasure7_p2=0;
+    static int sw_treasure8_p1=0;
+    static int sw_treasure8_p2=0;
+
     static int sw_trap1_p1=0;
     static int sw_trap1_p2=0;
     static int sw_trap2_p1=0;
@@ -41,6 +58,30 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int sw_trap4_p2=0;
     static int sw_loot_1_p1 =0;
     static int sw_loot_1_p2=0;
+    static int sw_loot_2_p1 =0;
+    static int sw_loot_2_p2=0;
+    static int sw_loot_3_p1 =0;
+    static int sw_loot_3_p2=0;
+    static int sw_loot_4_p1 =0;
+    static int sw_loot_4_p2=0;
+    static int sw_loot_5_p1 =0;
+    static int sw_loot_5_p2=0;
+    static int sw_loot_6_p1 =0;
+    static int sw_loot_6_p2=0;
+    static int sw_loot_7_p1 =0;
+    static int sw_loot_7_p2=0;
+    static int sw_loot_8_p1 =0;
+    static int sw_loot_8_p2=0;
+    static int sw_loot_9_p1 =0;
+    static int sw_loot_9_p2=0;
+    static int sw_loot_10_p1 =0;
+    static int sw_loot_10_p2=0;
+    static int sw_loot_11_p1 =0;
+    static int sw_loot_11_p2=0;
+    static int sw_loot_12_p1 =0;
+    static int sw_loot_12_p2=0;
+    static int sw_loot_13_p1 =0;
+    static int sw_loot_13_p2=0;
     String POWER_PLAYER_1_S=String.valueOf(POWER_PLAYER_1);
     String MONEY_PLAYER_1_S=String.valueOf(MONEY_PLAYER_1);
     String POWER_PLAYER_2_S=String.valueOf(POWER_PLAYER_2);
@@ -166,11 +207,156 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     static int[] previous_x={0,0,0,0,0,0};
     static int[] previous_y={0,0,0,0,0,0};
     /*****************************************************/
-    //Timer timer;
-    //piece1 player1=new piece1();
+    Timer timer;
 
+    Timer timer1;
+    int sw=0;
+    int v=-100;
+    int v1=-100;
+    int v3=-100,v4=-100;
+    int v5=1300,v6=1300,v7=1300,v8=1300;
+    //piece1 player1=new piece1();
+    public void moveRPM_p2(){
+        v5--;
+        v6--;
+        //v7--;
+        //v8--;
+        power_L2.setLocation(v5,260);
+        wallet_L2.setLocation(v6,155);
+        //MONEY_PLAYER_2_L.setLocation(v7,200);
+        //POWER_PLAYER_2_L.setLocation(v8,300);
+        System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        if (v5==1086){
+            timer1.stop();
+            System.out.println("ssssssssssssssssss");
+            System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        }
+    }
+    public void moveRPM_p2_LEFT(){
+        v7--;
+        v8--;
+        MONEY_PLAYER_2_L.setLocation(v7,200);
+        POWER_PLAYER_2_L.setLocation(v8,300);
+        System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        if (v7==950){
+            timer.stop();
+            System.out.println("ssssssssssssssssss");
+            System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        }
+    }
+    public void moveLPM_p2(){
+        v5++;
+        v6++;
+        power_L2.setLocation(v5,260);
+        wallet_L2.setLocation(v6,155);
+        System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        if (v5==1300){
+            timer.stop();
+            System.out.println("ssssssssssssssssss");
+            System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        }
+    }
+    public void moveLPM_p2_LEFT(){
+        v7++;
+        v8++;
+        MONEY_PLAYER_2_L.setLocation(v7,200);
+        POWER_PLAYER_2_L.setLocation(v8,300);
+        System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        if (v7==1300){
+            timer1.stop();
+            System.out.println("ssssssssssssssssss");
+            System.out.println(v5+" "+v6+" "+v7+" "+v8);
+        }
+    }
+    public void moveLP_p1(){
+        v+=2;
+        v1+=2;
+        v3+=2;
+        v4+=2;
+        power_L1.setLocation(v1,260);
+        wallet_L1.setLocation(v,155);
+        MONEY_PLAYER_1_L.setLocation(v4,200);
+        POWER_PLAYER_1_L.setLocation(v3,300);
+        if (v==28){
+            timer.stop();
+        }
+    }
+    public void moveLP_p1_LEFT(){
+        v-=2;
+        v1-=2;
+        v3-=2;
+        v4-=2;
+        power_L1.setLocation(v1,260);
+        wallet_L1.setLocation(v,155);
+        MONEY_PLAYER_1_L.setLocation(v4,200);
+        POWER_PLAYER_1_L.setLocation(v3,300);
+        System.out.println(v+" "+v1+" "+v3+" "+v4);
+        if (v==-100){
+            System.out.println(v+" "+v1+" "+v3+" "+v4);
+            timer.stop();
+        }
+    }
+    public void moveMP_p1_l(){
+        v3+=1;
+        v4+=1;
+        System.out.println(v3+" "+v4);
+        MONEY_PLAYER_1_L.setLocation(v4,200);
+        POWER_PLAYER_1_L.setLocation(v3,300);
+        if (v3==140){
+            timer1.stop();
+            System.out.println("SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        }
+    }
+    public void moveMP_p1_l_LEFT(){
+        v3-=1;
+        v4-=1;
+        System.out.println(v3+" "+v4);
+        MONEY_PLAYER_1_L.setLocation(v4,200);
+        POWER_PLAYER_1_L.setLocation(v3,300);
+        if (v3==-100){
+            timer1.stop();
+        }
+        //System.out.println("SSDSFSDfsdf");
+    }
     //CONSTRUCTOR
     public board() {
+        //اضافه کردن لیبل ها
+        timer1=new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (sw==1){
+                    moveMP_p1_l();
+                }
+                if (sw==2){
+                    moveMP_p1_l_LEFT();
+                }
+                if (sw==3){
+                    moveRPM_p2();
+                }
+                if (sw==4){
+                    moveLPM_p2_LEFT();
+                }
+            }
+        });
+        //جمع کردن لیبل ها
+        timer=new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (sw==1){
+                    moveLP_p1();
+                }
+                if (sw==2){
+                    moveLP_p1_LEFT();
+                }
+                if (sw==3){
+                    moveRPM_p2_LEFT();
+                }
+                if (sw==4){
+                    moveLPM_p2();
+                }
+            }
+        });
+        /***************************************************/
         for (int i = 0; i < previous_x.length; i++) {
             System.out.printf("pre_x : %d ",previous_x[i]);
         }
@@ -245,39 +431,42 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         p_p2.setBounds(x1, y1, 50, 50);
 
         POWER_PLAYER_1_L.setText(POWER_PLAYER_1_S);
-        POWER_PLAYER_1_L.setBounds(145,300,150,30);
+        POWER_PLAYER_1_L.setBounds(v3,300,150,30);
         POWER_PLAYER_1_L.setForeground(new Color(255, 69, 0 ));
         POWER_PLAYER_1_L.setFont(new Font("breakaway", Font.BOLD, 45));
         POWER_PLAYER_1_L.setVisible(false);
 
         MONEY_PLAYER_1_L.setText(MONEY_PLAYER_1_S);
-        MONEY_PLAYER_1_L.setBounds(145,200,150,30);
+        MONEY_PLAYER_1_L.setBounds(v4,200,150,30);
         MONEY_PLAYER_1_L.setForeground(new Color(255, 69, 0 ));
         MONEY_PLAYER_1_L.setFont(new Font("breakaway", Font.BOLD, 45));
         MONEY_PLAYER_1_L.setVisible(false);
 
         POWER_PLAYER_2_L.setText(POWER_PLAYER_2_S);
-        POWER_PLAYER_2_L.setBounds(950,300,150,30);
+        POWER_PLAYER_2_L.setBounds(v7,300,150,30);
         POWER_PLAYER_2_L.setForeground(new Color(255, 69, 0 ));
         POWER_PLAYER_2_L.setFont(new Font("breakaway", Font.BOLD, 45));
         POWER_PLAYER_2_L.setVisible(false);
 
         MONEY_PLAYER_2_L.setText(MONEY_PLAYER_2_S);
-        MONEY_PLAYER_2_L.setBounds(950,200,150,30);
+        //950
+        MONEY_PLAYER_2_L.setBounds(v8,200,150,30);
         MONEY_PLAYER_2_L.setForeground(new Color(255, 69, 0 ));
         MONEY_PLAYER_2_L.setFont(new Font("breakaway", Font.BOLD, 45));
         MONEY_PLAYER_2_L.setVisible(false);
 
 
-        turn_p1.setBounds(140, 15, 120, 30);
+        turn_p1.setBounds(140, 15, 150, 30);
         turn_p1.setForeground(new Color(50, 90, 255));
-        turn_p1.setText("PLAYER 1");
+        turn_p1.setText(enter_name.name1_s);
+        //turn_p1.setText("Player 1");
         turn_p1.setFont(new Font("breakaway", Font.BOLD, 36));
         turn_p1.setVisible(false);
 
-        turn_p2.setBounds(930, 15, 130, 30);
+        turn_p2.setBounds(930, 15, 150, 30);
         turn_p2.setForeground(new Color(255, 80, 20));
-        turn_p2.setText("PLAYER 2");
+        turn_p2.setText(enter_name.name2_s);
+        //turn_p2.setText("player 2");
         turn_p2.setFont(new Font("breakaway", Font.BOLD, 36));
         turn_p2.setVisible(false);
 
@@ -362,88 +551,122 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         /////////////////////////////////////////////////////////////
         treasure1_l.setIcon(treasure);
         treasure1_l.setBounds(houses[thing.treasure1].x,houses[thing.treasure1].y,50,50);
+        treasure1_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 1 IN HOUSE "+(thing.treasure1+1)+" BY COORDINATES { x is : "+houses[thing.treasure1].x+" & Y IS : "+houses[thing.treasure1].y+" }");
 
         treasure2_l.setIcon(treasure);
         treasure2_l.setBounds(houses[thing.treasure2].x,houses[thing.treasure2].y,50,50);
+        treasure2_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 2 IN HOUSE "+(thing.treasure2+1)+" BY COORDINATES { x is : "+houses[thing.treasure2].x+" & Y IS : "+houses[thing.treasure2].y+" }");
 
         treasure3_l.setIcon(treasure);
         treasure3_l.setBounds(houses[thing.treasure3].x,houses[thing.treasure3].y,50,50);
+        treasure3_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 3 IN HOUSE "+(thing.treasure3+1)+" BY COORDINATES { x is : "+houses[thing.treasure3].x+" & Y IS : "+houses[thing.treasure3].y+" }");
 
         treasure4_l.setIcon(treasure);
         treasure4_l.setBounds(houses[thing.treasure4].x,houses[thing.treasure4].y,50,50);
+        treasure4_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 4 IN HOUSE "+(thing.treasure4+1)+" BY COORDINATES { x is : "+houses[thing.treasure4].x+" & Y IS : "+houses[thing.treasure4].y+" }");
 
         treasure5_l.setIcon(treasure);
         treasure5_l.setBounds(houses[thing.treasure5].x,houses[thing.treasure5].y,50,50);
+        treasure5_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 5 IN HOUSE "+(thing.treasure5)+" BY COORDINATES { x is : "+houses[thing.treasure5].x+" & Y IS : "+houses[thing.treasure5].y+" }");
 
         treasure6_l.setIcon(treasure);
         treasure6_l.setBounds(houses[thing.treasure6].x,houses[thing.treasure6].y,50,50);
+        treasure6_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 6 IN HOUSE "+(thing.treasure6+1)+" BY COORDINATES { x is : "+houses[thing.treasure6].x+" & Y IS : "+houses[thing.treasure6].y+" }");
 
         treasure7_l.setIcon(treasure);
         treasure7_l.setBounds(houses[thing.treasure7].x,houses[thing.treasure7].y,50,50);
+        treasure7_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 7 IN HOUSE "+(thing.treasure7+1)+" BY COORDINATES { x is : "+houses[thing.treasure7].x+" & Y IS : "+houses[thing.treasure7].y+" }");
 
         treasure8_l.setIcon(treasure);
         treasure8_l.setBounds(houses[thing.treasure8].x,houses[thing.treasure8].y,50,50);
+        treasure8_l.setVisible(false);
         System.out.println("THERE IS A TREASURE 8 IN HOUSE "+(thing.treasure8+1)+" BY COORDINATES { x is : "+houses[thing.treasure8].x+" & Y IS : "+houses[thing.treasure8].y+" }");
 //////////////////////////////////////////////////////////////////////////
         loot1.setIcon(loot);
         loot1.setBounds(houses[thing.loot1].x,houses[thing.loot1].y,50,50);
         loot1.setVisible(false);
-        System.out.println("THERE IS A LOOT 8 IN HOUSE "+(thing.loot1+1)+" BY COORDINATES { x is : "+houses[thing.loot1].x+" & Y IS : "+houses[thing.loot1].y+" }");
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot1+1)+" BY COORDINATES { x is : "+houses[thing.loot1].x+" & Y IS : "+houses[thing.loot1].y+" }");
 
         loot2.setIcon(loot);
         loot2.setBounds(houses[thing.loot2].x,houses[thing.loot2].y,50,50);
+        loot2.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot2+1)+" BY COORDINATES { x is : "+houses[thing.loot2].x+" & Y IS : "+houses[thing.loot2].y+" }");
 
         loot3.setIcon(loot);
         loot3.setBounds(houses[thing.loot3].x,houses[thing.loot3].y,50,50);
+        loot3.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot3+1)+" BY COORDINATES { x is : "+houses[thing.loot3].x+" & Y IS : "+houses[thing.loot3].y+" }");
 
         loot4.setIcon(loot);
         loot4.setBounds(houses[thing.loot4].x,houses[thing.loot4].y,50,50);
+        loot4.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot4+1)+" BY COORDINATES { x is : "+houses[thing.loot4].x+" & Y IS : "+houses[thing.loot4].y+" }");
 
         loot5.setIcon(loot);
         loot5.setBounds(houses[thing.loot5].x,houses[thing.loot5].y,50,50);
+        loot5.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot5+1)+" BY COORDINATES { x is : "+houses[thing.loot5].x+" & Y IS : "+houses[thing.loot5].y+" }");
 
         loot6.setIcon(loot);
         loot6.setBounds(houses[thing.loot6].x,houses[thing.loot6].y,50,50);
+        loot6.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot6+1)+" BY COORDINATES { x is : "+houses[thing.loot6].x+" & Y IS : "+houses[thing.loot6].y+" }");
 
         loot7.setIcon(loot);
         loot7.setBounds(houses[thing.loot7].x,houses[thing.loot7].y,50,50);
+        loot7.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot7+1)+" BY COORDINATES { x is : "+houses[thing.loot7].x+" & Y IS : "+houses[thing.loot7].y+" }");
 
         loot8.setIcon(loot);
         loot8.setBounds(houses[thing.loot8].x,houses[thing.loot8].y,50,50);
+        loot8.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot8+1)+" BY COORDINATES { x is : "+houses[thing.loot8].x+" & Y IS : "+houses[thing.loot8].y+" }");
 
         loot9.setIcon(loot);
         loot9.setBounds(houses[thing.loot9].x,houses[thing.loot9].y,50,50);
+        loot9.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot9+1)+" BY COORDINATES { x is : "+houses[thing.loot9].x+" & Y IS : "+houses[thing.loot9].y+" }");
 
         loot10.setIcon(loot);
         loot10.setBounds(houses[thing.loot10].x,houses[thing.loot10].y,50,50);
+        loot10.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot10+1)+" BY COORDINATES { x is : "+houses[thing.loot10].x+" & Y IS : "+houses[thing.loot10].y+" }");
 
         loot11.setIcon(loot);
         loot11.setBounds(houses[thing.loot11].x,houses[thing.loot11].y,50,50);
+        loot11.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot11+1)+" BY COORDINATES { x is : "+houses[thing.loot11].x+" & Y IS : "+houses[thing.loot11].y+" }");
 
         loot12.setIcon(loot);
         loot12.setBounds(houses[thing.loot12].x,houses[thing.loot12].y,50,50);
+        loot12.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot12+1)+" BY COORDINATES { x is : "+houses[thing.loot12].x+" & Y IS : "+houses[thing.loot12].y+" }");
 
         loot13.setIcon(loot);
         loot13.setBounds(houses[thing.loot13].x,houses[thing.loot13].y,50,50);
+        loot13.setVisible(false);
+        System.out.println("THERE IS A LOOT IN HOUSE "+(thing.loot13+1)+" BY COORDINATES { x is : "+houses[thing.loot13].x+" & Y IS : "+houses[thing.loot13].y+" }");
 
 
         wallet_L1.setIcon(wallet);
-        wallet_L1.setBounds(28, 155, 96, 96);
+        //155
+        wallet_L1.setBounds(v, 155, 96, 96);
         wallet_L1.setVisible(false);
 
         wallet_L2.setIcon(wallet);
-        wallet_L2.setBounds(1086, 155, 96, 96);
+        wallet_L2.setBounds(v6, 155, 96, 96);
         wallet_L2.setVisible(false);
 
         power_L2.setIcon(power);
-        power_L2.setBounds(1086, 260, 96, 96);
+        //1086
+        power_L2.setBounds(v5, 260, 96, 96);
         power_L2.setVisible(false);
 
         power_L1.setIcon(power);
@@ -682,6 +905,11 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         this.paint(this.getGraphics());
         System.out.println("Quest place 1 is"+questplace1+ "  "+quest1);
         System.out.println("Quest place 2 is"+questplace2+ "  "+quest2);
+        /*******************************************************************/
+        if(Castle_checker.count==1){
+
+            System.exit(0);
+        }
 /*************************************************************************/
         for (int i = 0; i < previous_x.length; i++) {
             System.out.printf("pre_x : %d ",previous_x[i]);
@@ -694,6 +922,46 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
 /*******************************************************************************/
 
         if(SW_PLAYER==1){
+            if (sw_treasure1_p1==1){
+                treasure1_l.setVisible(true);
+            }
+            else
+                treasure1_l.setVisible(false);
+            if (sw_treasure2_p1==1){
+                treasure2_l.setVisible(true);
+            }
+            else
+                treasure2_l.setVisible(false);
+            if (sw_treasure3_p1==1){
+                treasure3_l.setVisible(true);
+            }
+            else
+                treasure3_l.setVisible(false);
+            if (sw_treasure4_p1==1){
+                treasure4_l.setVisible(true);
+            }
+            else
+                treasure4_l.setVisible(false);
+            if (sw_treasure5_p1==1){
+                treasure5_l.setVisible(true);
+            }
+            else
+                treasure5_l.setVisible(false);
+            if (sw_treasure6_p1==1){
+                treasure6_l.setVisible(true);
+            }
+            else
+                treasure6_l.setVisible(false);
+            if (sw_treasure7_p1==1){
+                treasure7_l.setVisible(true);
+            }
+            else
+                treasure7_l.setVisible(false);
+            if (sw_treasure8_p1==1){
+                treasure8_l.setVisible(true);
+            }
+            else
+                treasure8_l.setVisible(false);
             if (sw_trap1_p1==1){
                 trap1_l.setVisible(true);
             }
@@ -719,8 +987,110 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             }
             else
                 loot1.setVisible(false);
+            if(sw_loot_2_p1 ==1){
+                loot2.setVisible(true);
+            }
+            else
+                loot2.setVisible(false);
+            if(sw_loot_3_p1 ==1){
+                loot3.setVisible(true);
+            }
+            else
+                loot3.setVisible(false);
+
+            if(sw_loot_4_p1 ==1){
+                loot4.setVisible(true);
+            }
+            else
+                loot4.setVisible(false);
+
+            if(sw_loot_5_p1 ==1){
+                loot5.setVisible(true);
+            }
+            else
+                loot5.setVisible(false);
+            if(sw_loot_6_p1 ==1){
+                loot6.setVisible(true);
+            }
+            else
+                loot6.setVisible(false);
+            if(sw_loot_7_p1 ==1){
+                loot7.setVisible(true);
+            }
+            else
+                loot7.setVisible(false);
+            if(sw_loot_8_p1 ==1){
+                loot8.setVisible(true);
+            }
+            else
+                loot8.setVisible(false);
+            if(sw_loot_9_p1 ==1){
+                loot9.setVisible(true);
+            }
+            else
+                loot9.setVisible(false);
+            if(sw_loot_10_p1 ==1){
+                loot10.setVisible(true);
+            }
+            else
+                loot10.setVisible(false);
+            if(sw_loot_11_p1 ==1){
+                loot11.setVisible(true);
+            }
+            else
+                loot11.setVisible(false);
+            if(sw_loot_12_p1 ==1){
+                loot12.setVisible(true);
+            }
+            else
+                loot12.setVisible(false);
+            if(sw_loot_13_p1 ==1){
+                loot13.setVisible(true);
+            }
+            else
+                loot13.setVisible(false);
         }
         if(SW_PLAYER==2){
+            if (sw_treasure1_p2==2){
+                treasure1_l.setVisible(true);
+            }
+            else
+                treasure1_l.setVisible(false);
+            if (sw_treasure2_p2==2){
+                treasure2_l.setVisible(true);
+            }
+            else
+                treasure2_l.setVisible(false);
+            if (sw_treasure3_p2==2){
+                treasure3_l.setVisible(true);
+            }
+            else
+                treasure3_l.setVisible(false);
+            if (sw_treasure4_p2==2){
+                treasure4_l.setVisible(true);
+            }
+            else
+                treasure4_l.setVisible(false);
+            if (sw_treasure5_p2==2){
+                treasure5_l.setVisible(true);
+            }
+            else
+                treasure5_l.setVisible(false);
+            if (sw_treasure6_p2==2){
+                treasure6_l.setVisible(true);
+            }
+            else
+                treasure6_l.setVisible(false);
+            if (sw_treasure7_p2==2){
+                treasure7_l.setVisible(true);
+            }
+            else
+                treasure7_l.setVisible(false);
+            if (sw_treasure8_p2==2){
+                treasure8_l.setVisible(true);
+            }
+            else
+                treasure8_l.setVisible(false);
             if (sw_trap1_p2==2){
                 trap1_l.setVisible(true);
             }
@@ -746,8 +1116,72 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             }
             else
                 loot1.setVisible(false);
+            if(sw_loot_2_p2 ==2){
+                loot2.setVisible(true);
+            }
+            else
+                loot2.setVisible(false);
+            if(sw_loot_3_p2 ==2){
+                loot3.setVisible(true);
+            }
+            else
+                loot3.setVisible(false);
+
+            if(sw_loot_4_p2 ==2){
+                loot4.setVisible(true);
+            }
+            else
+                loot4.setVisible(false);
+
+            if(sw_loot_5_p2 ==2){
+                loot5.setVisible(true);
+            }
+            else
+                loot5.setVisible(false);
+            if(sw_loot_6_p2 ==2){
+                loot6.setVisible(true);
+            }
+            else
+                loot6.setVisible(false);
+            if(sw_loot_7_p2 ==2){
+                loot7.setVisible(true);
+            }
+            else
+                loot7.setVisible(false);
+            if(sw_loot_8_p2 ==2){
+                loot8.setVisible(true);
+            }
+            else
+                loot8.setVisible(false);
+            if(sw_loot_9_p2==2){
+                loot9.setVisible(true);
+            }
+            else
+                loot9.setVisible(false);
+            if(sw_loot_10_p2 ==2){
+                loot10.setVisible(true);
+            }
+            else
+                loot10.setVisible(false);
+            if(sw_loot_11_p2 ==2){
+                loot11.setVisible(true);
+            }
+            else
+                loot11.setVisible(false);
+            if(sw_loot_12_p2 ==2){
+                loot12.setVisible(true);
+            }
+            else
+                loot12.setVisible(false);
+            if(sw_loot_13_p2 ==2){
+                loot13.setVisible(true);
+            }
+            else
+                loot13.setVisible(false);
         }
         if (actionEvent.getSource() == buttonR) {
+            //timer.start();
+            //sw=1;
             SW=1;
             System.out.println("----------------------------------------------------------------------------------------");
             System.out.println("SW_PLAYER IS (NOW) : " + SW_PLAYER);
@@ -761,12 +1195,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && x + 59 < 900) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
-                yOld = 0;
-                xOld = x;
-                xNew = x + 59;
-                x = xNew;
                 previous_x[dice_number1-1]=x;
                 previous_y[dice_number1-1]=y;
+                //yOld = 0;
+                //xOld = x;
+                xNew = x + 59;
+                x = xNew;
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x-=59;
@@ -806,34 +1240,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
                     new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    sw_treasure1_p1=1;
+                    treasure1_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
                     new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    sw_treasure2_p1=1;
+                    treasure2_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
                     new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    sw_treasure3_p1=1;
+                    treasure3_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
                     new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    sw_treasure4_p1=1;
+                    treasure4_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
                     new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    sw_treasure5_p1=1;
+                    treasure5_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
                     new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    sw_treasure6_p1=1;
+                    treasure6_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
                     new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    sw_treasure7_p1=1;
+                    treasure7_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
                     new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    sw_treasure8_p1=1;
+                    treasure8_l.setVisible(true);
                 }
                 ///////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
@@ -907,82 +1357,94 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     loot2.setVisible(true);
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_loot_2_p1 =1;
                 }
                 if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
                     sw_loot_3=0;
-                    loot3.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot3.setVisible(true);
+                    sw_loot_3_p1 =1;
                 }
                 if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
                     sw_loot_4=0;
-                    loot4.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot4.setVisible(true);
+                    sw_loot_4_p1 =1;
                 }
                 if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
                     sw_loot_5=0;
-                    loot5.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot5.setVisible(true);
+                    sw_loot_5_p1 =1;
                 }
                 if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
                     sw_loot_6=0;
-                    loot6.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot6.setVisible(true);
+                    sw_loot_6_p1 =1;
                 }
                 if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
                     sw_loot_7=0;
-                    loot7.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot7.setVisible(true);
+                    sw_loot_7_p1 =1;
                 }
                 if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
                     sw_loot_8=0;
-                    loot8.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot8.setVisible(true);
+                    sw_loot_8_p1 =1;
                 }
                 if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
                     sw_loot_9=0;
-                    loot9.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot9.setVisible(true);
+                    sw_loot_9_p1 =1;
                 }
                 if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
                     sw_loot_10=0;
-                    loot10.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot10.setVisible(true);
+                    sw_loot_10_p1 =1;
                 }
                 if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
                     sw_loot_11=0;
-                    loot11.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot11.setVisible(true);
+                    sw_loot_11_p1 =1;
                 }
                 if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
                     sw_loot_12=0;
-                    loot12.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot12.setVisible(true);
+                    sw_loot_12_p1 =1;
                 }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
                     sw_loot_13=0;
-                    loot13.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot13.setVisible(true);
+                    sw_loot_13_p1 =1;
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.castle].x && y==houses[thing.castle].y){
@@ -1023,12 +1485,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && x1 + 59 < 900) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
+                previous_x[dice_number1-1]=x1;
+                previous_y[dice_number1-1]=y1;
                 y1Old = 0;
                 x1Old = x1;
                 x1New = x1 + 59;
                 x1 = x1New;
-                previous_x[dice_number1-1]=x1;
-                previous_y[dice_number1-1]=y1;
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x1-=59;
@@ -1068,34 +1530,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
                     new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    sw_treasure1_p2=2;
+                    treasure1_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
                     new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    sw_treasure2_p2=2;
+                    treasure2_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
                     new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    sw_treasure3_p2=2;
+                    treasure3_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
                     new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    sw_treasure4_p2=2;
+                    treasure4_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
                     new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    sw_treasure5_p2=2;
+                    treasure5_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
                     new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    sw_treasure6_p2=2;
+                    treasure6_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
                     new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    sw_treasure7_p2=2;
+                    treasure7_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
                     new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    sw_treasure8_p2=2;
+                    treasure8_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
@@ -1141,85 +1619,110 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 }
                 if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
-                    loot2.setVisible(true);
+                    //loot2.setVisible(true);
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_2_p2=2;
+                    loot2.setVisible(true);
                 }
                 if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
                     sw_loot_3=0;
-                    loot3.setVisible(true);
+                    //loot3.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_3_p2=2;
+                    loot3.setVisible(true);
                 }
                 if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
                     sw_loot_4=0;
-                    loot4.setVisible(true);
+                    //loot4.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_4_p2=2;
+                    loot4.setVisible(true);
                 }
                 if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
                     sw_loot_5=0;
-                    loot5.setVisible(true);
+                    //loot5.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_5_p2=2;
+                    loot5.setVisible(true);
                 }
                 if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
                     sw_loot_6=0;
-                    loot6.setVisible(true);
+                    //loot6.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_6_p2=2;
+                    loot6.setVisible(true);
                 }
                 if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
                     sw_loot_7=0;
-                    loot7.setVisible(true);
+                    //loot7.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_7_p2=2;
+                    loot7.setVisible(true);
                 }
                 if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
                     sw_loot_8=0;
-                    loot8.setVisible(true);
+                    //loot8.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_8_p2=2;
+                    loot8.setVisible(true);
                 }
                 if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
                     sw_loot_9=0;
-                    loot9.setVisible(true);
+                    //loot9.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_9_p2=2;
+                    loot9.setVisible(true);
                 }
                 if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
                     sw_loot_10=0;
-                    loot10.setVisible(true);
+                    //loot10.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_10_p2=2;
+                    loot10.setVisible(true);
                 }
                 if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
                     sw_loot_11=0;
-                    loot11.setVisible(true);
+                    //loot11.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_11_p2=2;
+                    loot11.setVisible(true);
                 }
                 if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
                     sw_loot_12=0;
+                    //loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_12_p2=2;
                     loot12.setVisible(true);
-                    int temp;
-                    MONEY_PLAYER_2+=1000;
-                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
-                }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                }
+                if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
                     sw_loot_13=0;
-                    loot13.setVisible(true);
+                    //loot13.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_13_p2=2;
+                    loot13.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
@@ -1250,6 +1753,9 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x1==houses[thing.castle].x && y1==houses[thing.castle].y){
                     System.out.println("YOU GOT IT !!!!!! CASTLE");
                     new Castle_checker();
+                    if(Castle_checker.count==1){
+                        this.dispose();
+                    }
                 }
                 p_p2.setLocation(x1, y1);
                 System.out.println("CURRENT X1 : " + x1);
@@ -1356,12 +1862,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && x - 59 > 295) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
+                previous_x[dice_number1-1]=x;
+                previous_y[dice_number1-1]=y;
                 yOld = 0;
                 xOld = x;
                 xNew = x - 59;
                 x = xNew;
-                previous_x[dice_number1-1]=x;
-                previous_y[dice_number1-1]=y;
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x+=59;
@@ -1401,34 +1907,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
                     new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    sw_treasure1_p1=1;
+                    treasure1_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
                     new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    sw_treasure2_p1=1;
+                    treasure2_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
                     new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    sw_treasure3_p1=1;
+                    treasure3_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
                     new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    sw_treasure4_p1=1;
+                    treasure4_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
                     new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    sw_treasure5_p1=1;
+                    treasure5_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
                     new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    sw_treasure6_p1=1;
+                    treasure6_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
                     new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    sw_treasure7_p1=1;
+                    treasure7_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
                     new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    sw_treasure8_p1=1;
+                    treasure8_l.setVisible(true);
                 }
                 ///////////////////////////////////////////////////////////////////
                 if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
@@ -1476,82 +1998,94 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     loot2.setVisible(true);
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_loot_2_p1 =1;
                 }
                 if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
                     sw_loot_3=0;
-                    loot3.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot3.setVisible(true);
+                    sw_loot_3_p1 =1;
                 }
                 if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
                     sw_loot_4=0;
-                    loot4.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot4.setVisible(true);
+                    sw_loot_4_p1 =1;
                 }
                 if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
                     sw_loot_5=0;
-                    loot5.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot5.setVisible(true);
+                    sw_loot_5_p1 =1;
                 }
                 if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
                     sw_loot_6=0;
-                    loot6.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot6.setVisible(true);
+                    sw_loot_6_p1 =1;
                 }
                 if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
                     sw_loot_7=0;
-                    loot7.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot7.setVisible(true);
+                    sw_loot_7_p1 =1;
                 }
                 if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
                     sw_loot_8=0;
-                    loot8.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot8.setVisible(true);
+                    sw_loot_8_p1 =1;
                 }
                 if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
                     sw_loot_9=0;
-                    loot9.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot9.setVisible(true);
+                    sw_loot_9_p1 =1;
                 }
                 if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
                     sw_loot_10=0;
-                    loot10.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot10.setVisible(true);
+                    sw_loot_10_p1 =1;
                 }
                 if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
                     sw_loot_11=0;
-                    loot11.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot11.setVisible(true);
+                    sw_loot_11_p1 =1;
                 }
                 if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
                     sw_loot_12=0;
-                    loot12.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot12.setVisible(true);
+                    sw_loot_12_p1 =1;
                 }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
                     sw_loot_13=0;
-                    loot13.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot13.setVisible(true);
+                    sw_loot_13_p1 =1;
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
@@ -1617,12 +2151,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && x1 - 59 > 295) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
+                previous_x[dice_number1-1]=x1;
+                previous_y[dice_number1-1]=y1;
                 y1Old = 0;
                 x1Old = x1;
                 x1New = x1 - 59;
                 x1 = x1New;
-                previous_x[dice_number1-1]=x1;
-                previous_y[dice_number1-1]=y1;
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x1+=59;
@@ -1662,34 +2196,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
                     new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    sw_treasure1_p2=2;
+                    treasure1_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
                     new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    sw_treasure2_p2=2;
+                    treasure2_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
                     new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    sw_treasure3_p2=2;
+                    treasure3_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
                     new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    sw_treasure4_p2=2;
+                    treasure4_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
                     new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    sw_treasure5_p2=2;
+                    treasure5_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
                     new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    sw_treasure6_p2=2;
+                    treasure6_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
                     new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    sw_treasure7_p2=2;
+                    treasure7_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
                     new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    sw_treasure8_p2=2;
+                    treasure8_l.setVisible(true);
                 }
                 //////////////////////////////////////////////////////////////
                 if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
@@ -1727,92 +2277,118 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    loot1.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_1_p2=2;
+                    loot1.setVisible(true);
                 }
                 if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
-                    loot2.setVisible(true);
+                    //loot2.setVisible(true);
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_2_p2=2;
+                    loot2.setVisible(true);
                 }
                 if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
                     sw_loot_3=0;
-                    loot3.setVisible(true);
+                    //loot3.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_3_p2=2;
+                    loot3.setVisible(true);
                 }
                 if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
                     sw_loot_4=0;
-                    loot4.setVisible(true);
+                    //loot4.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_4_p2=2;
+                    loot4.setVisible(true);
                 }
                 if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
                     sw_loot_5=0;
-                    loot5.setVisible(true);
+                    //loot5.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_5_p2=2;
+                    loot5.setVisible(true);
                 }
                 if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
                     sw_loot_6=0;
-                    loot6.setVisible(true);
+                    //loot6.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_6_p2=2;
+                    loot6.setVisible(true);
                 }
                 if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
                     sw_loot_7=0;
-                    loot7.setVisible(true);
+                    //loot7.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_7_p2=2;
+                    loot7.setVisible(true);
                 }
                 if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
                     sw_loot_8=0;
-                    loot8.setVisible(true);
+                    //loot8.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_8_p2=2;
+                    loot8.setVisible(true);
                 }
                 if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
                     sw_loot_9=0;
-                    loot9.setVisible(true);
+                    //loot9.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_9_p2=2;
+                    loot9.setVisible(true);
                 }
                 if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
                     sw_loot_10=0;
-                    loot10.setVisible(true);
+                    //loot10.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_10_p2=2;
+                    loot10.setVisible(true);
                 }
                 if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
                     sw_loot_11=0;
-                    loot11.setVisible(true);
+                    //loot11.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_11_p2=2;
+                    loot11.setVisible(true);
                 }
                 if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
                     sw_loot_12=0;
+                    //loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_12_p2=2;
                     loot12.setVisible(true);
-                    int temp;
-                    MONEY_PLAYER_2+=1000;
-                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
-                }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                }
+                if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
                     sw_loot_13=0;
-                    loot13.setVisible(true);
+                    //loot13.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_13_p2=2;
+                    loot13.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
@@ -1950,12 +2526,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && y - 59 > 55) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
+                previous_x[dice_number1-1]=x;
+                previous_y[dice_number1-1]=y;
                 xOld = 0;
                 yOld = y;
                 yNew = y - 59;
                 y = yNew;
-                previous_x[dice_number1-1]=x;
-                previous_y[dice_number1-1]=y;
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     y+=59;
@@ -1995,34 +2571,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
                     new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    sw_treasure1_p1=1;
+                    treasure1_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
                     new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    sw_treasure2_p1=1;
+                    treasure2_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
                     new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    sw_treasure3_p1=1;
+                    treasure3_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
                     new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    sw_treasure4_p1=1;
+                    treasure4_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
                     new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    sw_treasure5_p1=1;
+                    treasure5_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
                     new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    sw_treasure6_p1=1;
+                    treasure6_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
                     new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    sw_treasure7_p1=1;
+                    treasure7_l.setVisible(true);
                 }
                 if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
                     new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    sw_treasure8_p1=1;
+                    treasure8_l.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////
                 if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
@@ -2060,7 +2652,6 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
                     loot1.setVisible(true);
@@ -2071,82 +2662,94 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     loot2.setVisible(true);
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    sw_loot_2_p1 =1;
                 }
                 if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
                     sw_loot_3=0;
-                    loot3.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot3.setVisible(true);
+                    sw_loot_3_p1 =1;
                 }
                 if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
                     sw_loot_4=0;
-                    loot4.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot4.setVisible(true);
+                    sw_loot_4_p1 =1;
                 }
                 if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
                     sw_loot_5=0;
-                    loot5.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot5.setVisible(true);
+                    sw_loot_5_p1 =1;
                 }
                 if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
                     sw_loot_6=0;
-                    loot6.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot6.setVisible(true);
+                    sw_loot_6_p1 =1;
                 }
                 if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
                     sw_loot_7=0;
-                    loot7.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot7.setVisible(true);
+                    sw_loot_7_p1 =1;
                 }
                 if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
                     sw_loot_8=0;
-                    loot8.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot8.setVisible(true);
+                    sw_loot_8_p1 =1;
                 }
                 if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
                     sw_loot_9=0;
-                    loot9.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot9.setVisible(true);
+                    sw_loot_9_p1 =1;
                 }
                 if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
                     sw_loot_10=0;
-                    loot10.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot10.setVisible(true);
+                    sw_loot_10_p1 =1;
                 }
                 if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
                     sw_loot_11=0;
-                    loot11.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot11.setVisible(true);
+                    sw_loot_11_p1 =1;
                 }
                 if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
                     sw_loot_12=0;
-                    loot12.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot12.setVisible(true);
+                    sw_loot_12_p1 =1;
                 }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
                     sw_loot_13=0;
-                    loot13.setVisible(true);
                     int temp;
                     MONEY_PLAYER_1+=1000;
                     MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                    loot13.setVisible(true);
+                    sw_loot_13_p1 =1;
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x==houses[thing.market1].x && y==houses[thing.market1].y){
@@ -2212,12 +2815,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
             if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && y1 - 59 > 55) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
+                previous_x[dice_number1-1]=x1;
+                previous_y[dice_number1-1]=y1;
                 x1Old = 0;
                 y1Old = y1;
                 y1New = y1 - 59;
                 y1 = y1New;
-                previous_x[dice_number1-1]=x1;
-                previous_y[dice_number1-1]=y1;
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     y1+=59;
@@ -2257,34 +2860,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
                     new Treasure(1);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                    sw_treasure1_p2=2;
+                    treasure1_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
                     new Treasure(2);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                    sw_treasure2_p2=2;
+                    treasure2_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
                     new Treasure(3);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                    sw_treasure3_p2=2;
+                    treasure3_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
                     new Treasure(4);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                    sw_treasure4_p2=2;
+                    treasure4_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
                     new Treasure(5);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                    sw_treasure5_p2=2;
+                    treasure5_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
                     new Treasure(6);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                    sw_treasure6_p2=2;
+                    treasure6_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
                     new Treasure(7);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                    sw_treasure7_p2=2;
+                    treasure7_l.setVisible(true);
                 }
                 if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
                     new Treasure(8);
                     System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                    sw_treasure8_p2=2;
+                    treasure8_l.setVisible(true);
                 }
                 //////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
@@ -2322,92 +2941,118 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
                     sw_loot_1=0;
-                    loot1.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_1_p2=2;
+                    loot1.setVisible(true);
                 }
                 if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
                     sw_loot_2=0;
-                    loot2.setVisible(true);
+                    //loot2.setVisible(true);
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_2_p2=2;
+                    loot2.setVisible(true);
                 }
                 if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
                     sw_loot_3=0;
-                    loot3.setVisible(true);
+                    //loot3.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_3_p2=2;
+                    loot3.setVisible(true);
                 }
                 if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
                     sw_loot_4=0;
-                    loot4.setVisible(true);
+                    //loot4.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_4_p2=2;
+                    loot4.setVisible(true);
                 }
                 if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
                     sw_loot_5=0;
-                    loot5.setVisible(true);
+                    //loot5.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_5_p2=2;
+                    loot5.setVisible(true);
                 }
                 if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
                     sw_loot_6=0;
-                    loot6.setVisible(true);
+                    //loot6.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_6_p2=2;
+                    loot6.setVisible(true);
                 }
                 if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
                     sw_loot_7=0;
-                    loot7.setVisible(true);
+                    //loot7.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_7_p2=2;
+                    loot7.setVisible(true);
                 }
                 if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
                     sw_loot_8=0;
-                    loot8.setVisible(true);
+                    //loot8.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_8_p2=2;
+                    loot8.setVisible(true);
                 }
                 if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
                     sw_loot_9=0;
-                    loot9.setVisible(true);
+                    //loot9.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_9_p2=2;
+                    loot9.setVisible(true);
                 }
                 if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
                     sw_loot_10=0;
-                    loot10.setVisible(true);
+                    //loot10.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_10_p2=2;
+                    loot10.setVisible(true);
                 }
                 if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
                     sw_loot_11=0;
-                    loot11.setVisible(true);
+                    //loot11.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_11_p2=2;
+                    loot11.setVisible(true);
                 }
                 if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
                     sw_loot_12=0;
+                    //loot12.setVisible(true);
+                    int temp;
+                    MONEY_PLAYER_2+=1000;
+                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_12_p2=2;
                     loot12.setVisible(true);
-                    int temp;
-                    MONEY_PLAYER_2+=1000;
-                    MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
-                }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                }
+                if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
                     sw_loot_13=0;
-                    loot13.setVisible(true);
+                    //loot13.setVisible(true);
                     int temp;
                     MONEY_PLAYER_2+=1000;
                     MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                    sw_loot_13_p2=2;
+                    loot13.setVisible(true);
                 }
                 ////////////////////////////////////////////////////////////////////
                 if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
@@ -2547,12 +3192,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 } else {
                     System.out.println("PREVIOUS X : " + x);
                     System.out.println("PREVIOUS Y : " + y);
+                    previous_x[dice_number1-1]=x;
+                    previous_y[dice_number1-1]=y;
                     xOld = 0;
                     yOld = y;
                     yNew = y + 59;
                     y = yNew;
-                    previous_x[dice_number1-1]=x;
-                    previous_y[dice_number1-1]=y;
                     if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                         System.out.println("THERE IS A BLOCK :D !!");
                         y-=59;
@@ -2592,34 +3237,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     if (x==houses[thing.treasure1].x && y==houses[thing.treasure1].y){
                         new Treasure(1);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                        sw_treasure1_p1=1;
+                        treasure1_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure2].x && y==houses[thing.treasure2].y){
                         new Treasure(2);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                        sw_treasure2_p1=1;
+                        treasure2_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure3].x && y==houses[thing.treasure3].y){
                         new Treasure(3);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                        sw_treasure3_p1=1;
+                        treasure3_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure4].x && y==houses[thing.treasure4].y){
                         new Treasure(4);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                        sw_treasure4_p1=1;
+                        treasure4_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure5].x && y==houses[thing.treasure5].y){
                         new Treasure(5);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                        sw_treasure5_p1=1;
+                        treasure5_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure6].x && y==houses[thing.treasure6].y){
                         new Treasure(6);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                        sw_treasure6_p1=1;
+                        treasure6_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure7].x && y==houses[thing.treasure7].y){
                         new Treasure(7);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                        sw_treasure7_p1=1;
+                        treasure7_l.setVisible(true);
                     }
                     if (x==houses[thing.treasure8].x && y==houses[thing.treasure8].y){
                         new Treasure(8);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                        sw_treasure8_p1=1;
+                        treasure8_l.setVisible(true);
                     }
                     //////////////////////////////////////////////////////////////////
                     if (x==houses[thing.trap1].x && y== houses[thing.trap1].y){
@@ -2657,7 +3318,6 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     ////////////////////////////////////////////////////////////////////
                     if (x==houses[thing.loot1].x && y==houses[thing.loot1].y && sw_loot_1==1){
                         sw_loot_1=0;
-                        int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
                         loot1.setVisible(true);
@@ -2668,82 +3328,94 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                         loot2.setVisible(true);
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        sw_loot_2_p1 =1;
                     }
                     if (x==houses[thing.loot3].x && y==houses[thing.loot3].y && sw_loot_3==1){
                         sw_loot_3=0;
-                        loot3.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot3.setVisible(true);
+                        sw_loot_3_p1 =1;
                     }
                     if (x==houses[thing.loot4].x && y==houses[thing.loot4].y && sw_loot_4==1){
                         sw_loot_4=0;
-                        loot4.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot4.setVisible(true);
+                        sw_loot_4_p1 =1;
                     }
                     if (x==houses[thing.loot5].x && y==houses[thing.loot5].y && sw_loot_5==1){
                         sw_loot_5=0;
-                        loot5.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot5.setVisible(true);
+                        sw_loot_5_p1 =1;
                     }
                     if (x==houses[thing.loot6].x && y==houses[thing.loot6].y && sw_loot_6==1){
                         sw_loot_6=0;
-                        loot6.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot6.setVisible(true);
+                        sw_loot_6_p1 =1;
                     }
                     if (x==houses[thing.loot7].x && y==houses[thing.loot7].y && sw_loot_7==1){
                         sw_loot_7=0;
-                        loot7.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot7.setVisible(true);
+                        sw_loot_7_p1 =1;
                     }
                     if (x==houses[thing.loot8].x && y==houses[thing.loot8].y && sw_loot_8==1){
                         sw_loot_8=0;
-                        loot8.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot8.setVisible(true);
+                        sw_loot_8_p1 =1;
                     }
                     if (x==houses[thing.loot9].x && y==houses[thing.loot9].y && sw_loot_9==1){
                         sw_loot_9=0;
-                        loot9.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot9.setVisible(true);
+                        sw_loot_9_p1 =1;
                     }
                     if (x==houses[thing.loot10].x && y==houses[thing.loot10].y && sw_loot_10==1){
                         sw_loot_10=0;
-                        loot10.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot10.setVisible(true);
+                        sw_loot_10_p1 =1;
                     }
                     if (x==houses[thing.loot11].x && y==houses[thing.loot11].y && sw_loot_11==1){
                         sw_loot_11=0;
-                        loot11.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot11.setVisible(true);
+                        sw_loot_11_p1 =1;
                     }
                     if (x==houses[thing.loot12].x && y==houses[thing.loot12].y && sw_loot_12==1){
                         sw_loot_12=0;
-                        loot12.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot12.setVisible(true);
+                        sw_loot_12_p1 =1;
                     }if (x==houses[thing.loot13].x && y==houses[thing.loot13].y && sw_loot_13==1){
                         sw_loot_13=0;
-                        loot13.setVisible(true);
                         int temp;
                         MONEY_PLAYER_1+=1000;
                         MONEY_PLAYER_1_L.setText(String.valueOf(MONEY_PLAYER_1));
+                        loot13.setVisible(true);
+                        sw_loot_13_p1 =1;
                     }
                     ////////////////////////////////////////////////////////////////////
                     if (x==houses[thing.market1].x && y==houses[thing.market1].y){
@@ -2813,12 +3485,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 } else {
                     System.out.println("PREVIOUS X1 : " + x1);
                     System.out.println("PREVIOUS Y1 : " + y1);
+                    previous_x[dice_number1-1]=x1;
+                    previous_y[dice_number1-1]=y1;
                     x1Old = 0;
                     y1Old = y1;
                     y1New = y1 + 59;
                     y1 = y1New;
-                    previous_x[dice_number1-1]=x1;
-                    previous_y[dice_number1-1]=y1;
                     if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                         System.out.println("THERE IS A BLOCK :D !!");
                         y1-=59;
@@ -2858,34 +3530,50 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     if (x1==houses[thing.treasure1].x && y1==houses[thing.treasure1].y){
                         new Treasure(1);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 1");
+                        sw_treasure1_p2=2;
+                        treasure1_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure2].x && y1==houses[thing.treasure2].y){
                         new Treasure(2);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 2");
+                        sw_treasure2_p2=2;
+                        treasure2_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure3].x && y1==houses[thing.treasure3].y){
                         new Treasure(3);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 3");
+                        sw_treasure3_p2=2;
+                        treasure3_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure4].x && y1==houses[thing.treasure4].y){
                         new Treasure(4);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 4");
+                        sw_treasure4_p2=2;
+                        treasure4_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure5].x && y1==houses[thing.treasure5].y){
                         new Treasure(5);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 5");
+                        sw_treasure5_p2=2;
+                        treasure5_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure6].x && y1==houses[thing.treasure6].y){
                         new Treasure(6);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 6");
+                        sw_treasure6_p2=2;
+                        treasure6_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure7].x && y1==houses[thing.treasure7].y){
                         new Treasure(7);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 7");
+                        sw_treasure7_p2=2;
+                        treasure7_l.setVisible(true);
                     }
                     if (x1==houses[thing.treasure8].x && y1==houses[thing.treasure8].y){
                         new Treasure(8);
                         System.out.println("YOU GOT TREASURE !!! TREASURE 8");
+                        sw_treasure8_p2=2;
+                        treasure8_l.setVisible(true);
                     }
                     /////////////////////////////////////////////////////////////////
                     if (x1==houses[thing.trap1].x && y1== houses[thing.trap1].y){
@@ -2923,92 +3611,118 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     ////////////////////////////////////////////////////////////////////
                     if (x1==houses[thing.loot1].x && y1==houses[thing.loot1].y && sw_loot_1==1){
                         sw_loot_1=0;
-                        loot1.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_1_p2=2;
+                        loot1.setVisible(true);
                     }
                     if (x1==houses[thing.loot2].x && y1==houses[thing.loot2].y && sw_loot_2==1){
                         sw_loot_2=0;
-                        loot2.setVisible(true);
+                        //loot2.setVisible(true);
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_2_p2=2;
+                        loot2.setVisible(true);
                     }
                     if (x1==houses[thing.loot3].x && y1==houses[thing.loot3].y && sw_loot_3==1){
                         sw_loot_3=0;
-                        loot3.setVisible(true);
+                        //loot3.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_3_p2=2;
+                        loot3.setVisible(true);
                     }
                     if (x1==houses[thing.loot4].x && y1==houses[thing.loot4].y && sw_loot_4==1){
                         sw_loot_4=0;
-                        loot4.setVisible(true);
+                        //loot4.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_4_p2=2;
+                        loot4.setVisible(true);
                     }
                     if (x1==houses[thing.loot5].x && y1==houses[thing.loot5].y && sw_loot_5==1){
                         sw_loot_5=0;
-                        loot5.setVisible(true);
+                        //loot5.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_5_p2=2;
+                        loot5.setVisible(true);
                     }
                     if (x1==houses[thing.loot6].x && y1==houses[thing.loot6].y && sw_loot_6==1){
                         sw_loot_6=0;
-                        loot6.setVisible(true);
+                        //loot6.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_6_p2=2;
+                        loot6.setVisible(true);
                     }
                     if (x1==houses[thing.loot7].x && y1==houses[thing.loot7].y && sw_loot_7==1){
                         sw_loot_7=0;
-                        loot7.setVisible(true);
+                        //loot7.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_7_p2=2;
+                        loot7.setVisible(true);
                     }
                     if (x1==houses[thing.loot8].x && y1==houses[thing.loot8].y && sw_loot_8==1){
                         sw_loot_8=0;
-                        loot8.setVisible(true);
+                        //loot8.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_8_p2=2;
+                        loot8.setVisible(true);
                     }
                     if (x1==houses[thing.loot9].x && y1==houses[thing.loot9].y && sw_loot_9==1){
                         sw_loot_9=0;
-                        loot9.setVisible(true);
+                        //loot9.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_9_p2=2;
+                        loot9.setVisible(true);
                     }
                     if (x1==houses[thing.loot10].x && y1==houses[thing.loot10].y && sw_loot_10==1){
                         sw_loot_10=0;
-                        loot10.setVisible(true);
+                        //loot10.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_10_p2=2;
+                        loot10.setVisible(true);
                     }
                     if (x1==houses[thing.loot11].x && y1==houses[thing.loot11].y && sw_loot_11==1){
                         sw_loot_11=0;
-                        loot11.setVisible(true);
+                        //loot11.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_11_p2=2;
+                        loot11.setVisible(true);
                     }
                     if (x1==houses[thing.loot12].x && y1==houses[thing.loot12].y && sw_loot_12==1){
                         sw_loot_12=0;
+                        //loot12.setVisible(true);
+                        int temp;
+                        MONEY_PLAYER_2+=1000;
+                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_12_p2=2;
                         loot12.setVisible(true);
-                        int temp;
-                        MONEY_PLAYER_2+=1000;
-                        MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
-                    }if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
+                    }
+                    if (x1==houses[thing.loot13].x && y1==houses[thing.loot13].y && sw_loot_13==1){
                         sw_loot_13=0;
-                        loot13.setVisible(true);
+                        //loot13.setVisible(true);
                         int temp;
                         MONEY_PLAYER_2+=1000;
                         MONEY_PLAYER_2_L.setText(String.valueOf(MONEY_PLAYER_2));
+                        sw_loot_13_p2=2;
+                        loot13.setVisible(true);
                     }
                     ////////////////////////////////////////////////////////////////////
                     if (x1==houses[thing.market1].x && y1==houses[thing.market1].y){
@@ -3138,26 +3852,263 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
     ActionListener dice_move = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            if(sw_loot_1_p1 ==1){
-                loot1.setVisible(true);
-            }
-            else
-                loot1.setVisible(false);
-
-
             if(SW_PLAYER==1){
+                if (sw_treasure1_p1==1){
+                    treasure1_l.setVisible(true);
+                }
+                else
+                    treasure1_l.setVisible(false);
+                if (sw_treasure2_p1==1){
+                    treasure2_l.setVisible(true);
+                }
+                else
+                    treasure2_l.setVisible(false);
+                if (sw_treasure3_p1==1){
+                    treasure3_l.setVisible(true);
+                }
+                else
+                    treasure3_l.setVisible(false);
+                if (sw_treasure4_p1==1){
+                    treasure4_l.setVisible(true);
+                }
+                else
+                    treasure4_l.setVisible(false);
+                if (sw_treasure5_p1==1){
+                    treasure5_l.setVisible(true);
+                }
+                else
+                    treasure5_l.setVisible(false);
+                if (sw_treasure6_p1==1){
+                    treasure6_l.setVisible(true);
+                }
+                else
+                    treasure6_l.setVisible(false);
+                if (sw_treasure7_p1==1){
+                    treasure7_l.setVisible(true);
+                }
+                else
+                    treasure7_l.setVisible(false);
+                if (sw_treasure8_p1==1){
+                    treasure8_l.setVisible(true);
+                }
+                else
+                    treasure8_l.setVisible(false);
                 if (sw_trap1_p1==1){
                     trap1_l.setVisible(true);
                 }
                 else
                     trap1_l.setVisible(false);
+                if (sw_trap2_p1==1){
+                    trap2_l.setVisible(true);
+                }
+                else
+                    trap2_l.setVisible(false);
+                if (sw_trap3_p1==1){
+                    trap3_l.setVisible(true);
+                }
+                else
+                    trap3_l.setVisible(false);
+                if (sw_trap4_p1==1){
+                    trap4_l.setVisible(true);
+                }
+                else
+                    trap4_l.setVisible(false);
+                if(sw_loot_1_p1 ==1){
+                    loot1.setVisible(true);
+                }
+                else
+                    loot1.setVisible(false);
+                if(sw_loot_2_p1 ==1){
+                    loot2.setVisible(true);
+                }
+                else
+                    loot2.setVisible(false);
+                if(sw_loot_3_p1 ==1){
+                    loot3.setVisible(true);
+                }
+                else
+                    loot3.setVisible(false);
+
+                if(sw_loot_4_p1 ==1){
+                    loot4.setVisible(true);
+                }
+                else
+                    loot4.setVisible(false);
+
+                if(sw_loot_5_p1 ==1){
+                    loot5.setVisible(true);
+                }
+                else
+                    loot5.setVisible(false);
+                if(sw_loot_6_p1 ==1){
+                    loot6.setVisible(true);
+                }
+                else
+                    loot6.setVisible(false);
+                if(sw_loot_7_p1 ==1){
+                    loot7.setVisible(true);
+                }
+                else
+                    loot7.setVisible(false);
+                if(sw_loot_8_p1 ==1){
+                    loot8.setVisible(true);
+                }
+                else
+                    loot8.setVisible(false);
+                if(sw_loot_9_p1 ==1){
+                    loot9.setVisible(true);
+                }
+                else
+                    loot9.setVisible(false);
+                if(sw_loot_10_p1 ==1){
+                    loot10.setVisible(true);
+                }
+                else
+                    loot10.setVisible(false);
+                if(sw_loot_11_p1 ==1){
+                    loot11.setVisible(true);
+                }
+                else
+                    loot11.setVisible(false);
+                if(sw_loot_12_p1 ==1){
+                    loot12.setVisible(true);
+                }
+                else
+                    loot12.setVisible(false);
+                if(sw_loot_13_p1 ==1){
+                    loot13.setVisible(true);
+                }
+                else
+                    loot13.setVisible(false);
             }
             if(SW_PLAYER==2){
+                if (sw_treasure1_p2==2){
+                    treasure1_l.setVisible(true);
+                }
+                else
+                    treasure1_l.setVisible(false);
+                if (sw_treasure2_p2==2){
+                    treasure2_l.setVisible(true);
+                }
+                else
+                    treasure2_l.setVisible(false);
+                if (sw_treasure3_p2==2){
+                    treasure3_l.setVisible(true);
+                }
+                else
+                    treasure3_l.setVisible(false);
+                if (sw_treasure4_p2==2){
+                    treasure4_l.setVisible(true);
+                }
+                else
+                    treasure4_l.setVisible(false);
+                if (sw_treasure5_p2==2){
+                    treasure5_l.setVisible(true);
+                }
+                else
+                    treasure5_l.setVisible(false);
+                if (sw_treasure6_p2==2){
+                    treasure6_l.setVisible(true);
+                }
+                else
+                    treasure6_l.setVisible(false);
+                if (sw_treasure7_p2==2){
+                    treasure7_l.setVisible(true);
+                }
+                else
+                    treasure7_l.setVisible(false);
+                if (sw_treasure8_p2==2){
+                    treasure8_l.setVisible(true);
+                }
+                else
+                    treasure8_l.setVisible(false);
                 if (sw_trap1_p2==2){
                     trap1_l.setVisible(true);
                 }
                 else
                     trap1_l.setVisible(false);
+                if (sw_trap2_p2==2){
+                    trap2_l.setVisible(true);
+                }
+                else
+                    trap2_l.setVisible(false);
+                if (sw_trap3_p2==2){
+                    trap3_l.setVisible(true);
+                }
+                else
+                    trap3_l.setVisible(false);
+                if (sw_trap4_p2==2){
+                    trap4_l.setVisible(true);
+                }
+                else
+                    trap4_l.setVisible(false);
+                if(sw_loot_1_p2 ==2){
+                    loot1.setVisible(true);
+                }
+                else
+                    loot1.setVisible(false);
+                if(sw_loot_2_p2 ==2){
+                    loot2.setVisible(true);
+                }
+                else
+                    loot2.setVisible(false);
+                if(sw_loot_3_p2 ==2){
+                    loot3.setVisible(true);
+                }
+                else
+                    loot3.setVisible(false);
+
+                if(sw_loot_4_p2 ==2){
+                    loot4.setVisible(true);
+                }
+                else
+                    loot4.setVisible(false);
+
+                if(sw_loot_5_p2 ==2){
+                    loot5.setVisible(true);
+                }
+                else
+                    loot5.setVisible(false);
+                if(sw_loot_6_p2 ==2){
+                    loot6.setVisible(true);
+                }
+                else
+                    loot6.setVisible(false);
+                if(sw_loot_7_p2 ==2){
+                    loot7.setVisible(true);
+                }
+                else
+                    loot7.setVisible(false);
+                if(sw_loot_8_p2 ==2){
+                    loot8.setVisible(true);
+                }
+                else
+                    loot8.setVisible(false);
+                if(sw_loot_9_p2==2){
+                    loot9.setVisible(true);
+                }
+                else
+                    loot9.setVisible(false);
+                if(sw_loot_10_p2 ==2){
+                    loot10.setVisible(true);
+                }
+                else
+                    loot10.setVisible(false);
+                if(sw_loot_11_p2 ==2){
+                    loot11.setVisible(true);
+                }
+                else
+                    loot11.setVisible(false);
+                if(sw_loot_12_p2 ==2){
+                    loot12.setVisible(true);
+                }
+                else
+                    loot12.setVisible(false);
+                if(sw_loot_13_p2 ==2){
+                    loot13.setVisible(true);
+                }
+                else
+                    loot13.setVisible(false);
             }
             if (actionEvent.getSource() == dice_button) {
                 dice_button.setVisible(false);
@@ -3198,6 +4149,12 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             if (actionEvent.getSource() == player1_info) {
+                sw=1;
+                v=-100;
+                v1=-100;
+                v3=v4=-100;
+                timer.start();
+                timer1.start();
                 System.out.println("pl1");
                 POWER_PLAYER_1_L.setVisible(true);
                 MONEY_PLAYER_1_L.setVisible(true);
@@ -3206,13 +4163,21 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 Upper_b1.setVisible(true);
             }
             if (actionEvent.getSource() == Upper_b1) {
-                POWER_PLAYER_1_L.setVisible(false);
-                MONEY_PLAYER_1_L.setVisible(false);
-                wallet_L1.setVisible(false);
-                power_L1.setVisible(false);
+                sw=2;
+                timer.start();
+                timer1.start();
+                System.out.println(sw);
+                //POWER_PLAYER_1_L.setVisible(false);
+                //MONEY_PLAYER_1_L.setVisible(false);
+               // wallet_L1.setVisible(false);
+                //power_L1.setVisible(false);
                 Upper_b1.setVisible(false);
             }
             if (actionEvent.getSource() == player2_info) {
+                sw=3;
+                v8=v5=v6=v7=1300;
+                timer.start();
+                timer1.start();
                 System.out.println("pl2");
                 POWER_PLAYER_2_L.setVisible(true);
                 MONEY_PLAYER_2_L.setVisible(true);
@@ -3221,10 +4186,13 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 Upper_b2.setVisible(true);
             }
             if (actionEvent.getSource() == Upper_b2) {
-                POWER_PLAYER_2_L.setVisible(false);
-                MONEY_PLAYER_2_L.setVisible(false);
-                wallet_L2.setVisible(false);
-                power_L2.setVisible(false);
+                sw=4;
+                timer.start();
+                timer1.start();
+                //POWER_PLAYER_2_L.setVisible(false);
+                //MONEY_PLAYER_2_L.setVisible(false);
+                //wallet_L2.setVisible(false);
+                //power_L2.setVisible(false);
                 Upper_b2.setVisible(false);
             }
         }

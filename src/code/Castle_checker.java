@@ -27,19 +27,19 @@ public class Castle_checker extends JFrame implements ActionListener {
         this.setTitle("CASTLE");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setSize(520,270);
+        this.setSize(600,270);
         this.setLayout(null);
-        Background.setBounds(0,0,520,300);
+        Background.setBounds(0,0,600,300);
         Background.setBackground(new Color(238, 130, 238));
         Background.setOpaque(true);
 
-        HORIZONTAL.setBounds(415,30,80,40);
-        HOR_L.setBounds(5,34,400,36);
+        HORIZONTAL.setBounds(455,30,80,40);
+        HOR_L.setBounds(45,34,400,36);
         HOR_L.setFont(new Font("ZEROGIRL",Font.BOLD,20));
         HOR_L.setText("ENTER YOUR HORIZONTAL OF QUEST :");
 
-        VERTICAL.setBounds(415,100,80,40);
-        VER_L.setBounds(5,104,350,36);
+        VERTICAL.setBounds(455,100,80,40);
+        VER_L.setBounds(45,104,350,36);
         VER_L.setFont(new Font("ZEROGIRL",Font.BOLD,20));
         VER_L.setText("ENTER YOUR VERTICAL OF QUEST :");
         //HO=Integer.parseInt(HO_s);
@@ -81,6 +81,7 @@ public class Castle_checker extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource()== OK){
+            OK.setVisible(false);
             String s1 = HORIZONTAL.getText();
             String s2 = VERTICAL.getText();
             int a = Integer.parseInt(s1);

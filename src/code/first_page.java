@@ -1,11 +1,9 @@
 package code;
 
 import javax.swing.*;
+import javax.swing.event.MouseInputListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 public class first_page implements ActionListener {
     JFrame first_frame=new JFrame("WELCOME");
@@ -21,8 +19,24 @@ public class first_page implements ActionListener {
     JLabel name=new JLabel("TRAVELLING SALESMAN");
     String  buttons="african",namef="TERMINAT";
     Font button=new Font(buttons,Font.BOLD,36);
-
+    Timer timer;
+    int y=-70;
+    public void movename(){
+        y++;
+        name.setLocation(260,y);
+        if (y==50){
+            timer.stop();
+        }
+    }
     first_page(){
+
+        timer=new Timer(10, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                movename();
+            }
+        });
+        timer.start();
 
         first_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         first_frame.setSize(1200, 700);
@@ -39,9 +53,48 @@ public class first_page implements ActionListener {
         start.setCursor(new Cursor(Cursor.HAND_CURSOR));
         start.addActionListener(this);
         start.setFont(button);
+        start.setBorder(BorderFactory.createRaisedBevelBorder());
+        start.addMouseListener(new MouseInputListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                start.setSize(210,90);
+                start.setLocation(297,297);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                start.setSize(200,80);
+                start.setLocation(300,300);
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+            }
+        });
         /*********************************************************************/
         //name.setOpaque(true);
-        name.setBounds(260,50,700,90);
+        name.setBounds(260,y,700,90);
         name.setForeground(new Color(0,255,255));
         name.setFont(new Font(namef,Font.BOLD,54));
         /*********************************************************************/
@@ -50,6 +103,45 @@ public class first_page implements ActionListener {
         Exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         Exit.setFont(new Font(buttons,Font.BOLD,36));
         Exit.addActionListener(this);
+        Exit.setBorder(BorderFactory.createRaisedBevelBorder());
+        Exit.addMouseListener(new MouseInputListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                Exit.setSize(180,90);
+                Exit.setLocation(497,557);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                Exit.setSize(170,80);
+                Exit.setLocation(500,560);
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+            }
+        });
         /********************************************************************/
         tutorial.setBackground(new Color(255,228,181));
         tutorial.setBounds(245,425,290,80);
@@ -57,18 +149,135 @@ public class first_page implements ActionListener {
         tutorial.setCursor(new Cursor(Cursor.HAND_CURSOR));
         tutorial.setFont(new Font(buttons,Font.BOLD,36));
         tutorial.addActionListener(this);
+        tutorial.setBorder(BorderFactory.createRaisedBevelBorder());
+        tutorial.addMouseListener(new MouseInputListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                tutorial.setLocation(242,422);
+                tutorial.setSize(300,90);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                tutorial.setLocation(245,425);
+                tutorial.setSize(290,80);
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+            }
+        });
         /******************************************************************/
         contactus.setBackground(new Color(255,228,181));
         contactus.setBounds(640,425,320,80);
         contactus.setCursor(new Cursor(Cursor.HAND_CURSOR));
         contactus.setFont(new Font(buttons,Font.BOLD,36));
         contactus.addActionListener(this);
+        contactus.setBorder(BorderFactory.createRaisedBevelBorder());
+        contactus.addMouseListener(new MouseInputListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                contactus.setSize(330,90);
+                contactus.setLocation(637,422);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                contactus.setSize(320,80);
+                contactus.setLocation(640,425);
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+            }
+        });
         /*****************************************************************/
         pregame.setBackground(new Color(255,228,181));
         pregame.setBounds(660,300,260,80);
         pregame.setCursor(new Cursor(Cursor.HAND_CURSOR));
         pregame.setFont(new Font(buttons,Font.BOLD,36));
         pregame.addActionListener(this);
+        pregame.setBorder(BorderFactory.createRaisedBevelBorder());
+        pregame.addMouseListener(new MouseInputListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                pregame.setLocation(657,297);
+                pregame.setSize(270,90);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                pregame.setLocation(660,300);
+                pregame.setSize(260,80);
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent mouseEvent) {
+
+            }
+        });
         /******************************************************************/
         first_page_pic.setIcon(background);
         first_page_pic.setOpaque(true);
@@ -83,7 +292,6 @@ public class first_page implements ActionListener {
         first_frame.add(pregame);
         first_frame.add(Exit);
         first_frame.add(first_page_pic);
-
     }
 
     @Override
@@ -119,7 +327,7 @@ public class first_page implements ActionListener {
         }
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         new first_page();
-    }*/
+    }
 }

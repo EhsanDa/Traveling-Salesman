@@ -10,6 +10,7 @@ public class Contact_Us extends JFrame {
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
+        this.setTitle("CONTACT US");
 
         m.setIcon(icon);
         m.setBounds(0,0,1200,700);

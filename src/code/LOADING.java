@@ -2,15 +2,50 @@ package code;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LOADING extends JFrame{
     JProgressBar loading=new JProgressBar(0, 2000);
     ImageIcon ICON=new ImageIcon("src/images/ICON.jpg");
     ImageIcon icon=new ImageIcon("src/images/LOADING PAGE.jpg");
     JLabel main_L=new JLabel();
-    JLabel waiting=new JLabel("wait ...");
+    JLabel waiting=new JLabel("wait");
+    String s1="wait ";
+    String s2="wait .";
+    String s3="wait ..";
+    String s4="wait ...";
     int i=0;
+    Timer timer;
+    int count=0;
+    int x=150;
+    public void wait_l(){
+        if (count==0){
+            waiting.setText(s1);
+        }
+        if (count==1){
+            waiting.setText(s2);
+        }
+        if (count==2){
+            waiting.setText(s3);
+        }
+        if (count==3){
+            waiting.setText(s4);
+        }
+    }
     LOADING(){
+        timer=new Timer(500, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                wait_l();
+                count++;
+                if (count==4){
+                    System.out.println("sssssssssssssssssssssssss");
+                    count=0;
+                }
+            }
+        });
+        timer.start();
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setSize(1200,700);
         this.setLocationRelativeTo(null);
@@ -43,8 +78,9 @@ public class LOADING extends JFrame{
             loading.setValue(i);
             i = i + 20;
             if (loading.getValue()==2000){
+                timer.stop();
                 this.dispose();
-                new first_page();
+                new enter_name();
             }
             try {
                 Thread.sleep(150);
