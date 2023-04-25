@@ -1192,7 +1192,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     break;
                 }
             }
-            if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && x + 59 < 900) {
+            if (SW_PLAYER == 1 && SW!=0 && dice_number1 > 0 && x + 59 < 850) {
                 System.out.println("PREVIOUS X : " + x);
                 System.out.println("PREVIOUS Y : " + y);
                 previous_x[dice_number1-1]=x;
@@ -1201,6 +1201,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 //xOld = x;
                 xNew = x + 59;
                 x = xNew;
+                if (x==x1 && y==y1){
+                    System.out.println("there is a fight");
+                    if (POWER_PLAYER_1>POWER_PLAYER_2){
+                        new fight(1);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                        POWER_PLAYER_2=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x1 = 243 + 11 * 59;
+                        y1 = 62;
+                        p_p2.setLocation(x1,y1);
+                    }
+                    if (POWER_PLAYER_1<POWER_PLAYER_2){
+                        new fight(2);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                        POWER_PLAYER_1=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x=243;
+                        y=62;
+                        p_p1.setLocation(x,y);
+                    }
+                }
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x-=59;
@@ -1482,7 +1507,7 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     break;
                 }
             }
-            if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && x1 + 59 < 900) {
+            if (SW_PLAYER == 2 && SW!=0 && dice_number1 > 0 && x1 + 59 < 850) {
                 System.out.println("PREVIOUS X1 : " + x1);
                 System.out.println("PREVIOUS Y1 : " + y1);
                 previous_x[dice_number1-1]=x1;
@@ -1491,6 +1516,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 x1Old = x1;
                 x1New = x1 + 59;
                 x1 = x1New;
+                if (x==x1 && y==y1){
+                    System.out.println("there is a fight");
+                    if (POWER_PLAYER_1>POWER_PLAYER_2){
+                        new fight(1);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                        POWER_PLAYER_2=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x1 = 243 + 11 * 59;
+                        y1 = 62;
+                        p_p2.setLocation(x1,y1);
+                    }
+                    if (POWER_PLAYER_1<POWER_PLAYER_2){
+                        new fight(2);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                        POWER_PLAYER_1=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x=243;
+                        y=62;
+                        p_p1.setLocation(x,y);
+                    }
+                }
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x1-=59;
@@ -1868,6 +1918,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 xOld = x;
                 xNew = x - 59;
                 x = xNew;
+                if (x==x1 && y==y1){
+                    System.out.println("there is a fight");
+                    if (POWER_PLAYER_1>POWER_PLAYER_2){
+                        new fight(1);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                        POWER_PLAYER_2=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x1 = 243 + 11 * 59;
+                        y1 = 62;
+                        p_p2.setLocation(x1,y1);
+                    }
+                    if (POWER_PLAYER_1<POWER_PLAYER_2){
+                        new fight(2);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                        POWER_PLAYER_1=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x=243;
+                        y=62;
+                        p_p1.setLocation(x,y);
+                    }
+                }
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x+=59;
@@ -2157,6 +2232,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 x1Old = x1;
                 x1New = x1 - 59;
                 x1 = x1New;
+                if (x==x1 && y==y1){
+                    System.out.println("there is a fight");
+                    if (POWER_PLAYER_1>POWER_PLAYER_2){
+                        new fight(1);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                        POWER_PLAYER_2=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x1 = 243 + 11 * 59;
+                        y1 = 62;
+                        p_p2.setLocation(x1,y1);
+                    }
+                    if (POWER_PLAYER_1<POWER_PLAYER_2){
+                        new fight(2);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                        POWER_PLAYER_1=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x=243;
+                        y=62;
+                        p_p1.setLocation(x,y);
+                    }
+                }
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     x1+=59;
@@ -2532,6 +2632,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 yOld = y;
                 yNew = y - 59;
                 y = yNew;
+                if (x==x1 && y==y1){
+                    System.out.println("there is a fight");
+                    if (POWER_PLAYER_1>POWER_PLAYER_2){
+                        new fight(1);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                        POWER_PLAYER_2=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x1 = 243 + 11 * 59;
+                        y1 = 62;
+                        p_p2.setLocation(x1,y1);
+                    }
+                    if (POWER_PLAYER_1<POWER_PLAYER_2){
+                        new fight(2);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                        POWER_PLAYER_1=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x=243;
+                        y=62;
+                        p_p1.setLocation(x,y);
+                    }
+                }
                 if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     y+=59;
@@ -2821,6 +2946,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                 y1Old = y1;
                 y1New = y1 - 59;
                 y1 = y1New;
+                if (x==x1 && y==y1){
+                    System.out.println("there is a fight");
+                    if (POWER_PLAYER_1>POWER_PLAYER_2){
+                        new fight(1);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                        POWER_PLAYER_2=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x1 = 243 + 11 * 59;
+                        y1 = 62;
+                        p_p2.setLocation(x1,y1);
+                    }
+                    if (POWER_PLAYER_1<POWER_PLAYER_2){
+                        new fight(2);
+                        //TODO DECREASING MONEY
+                        POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                        POWER_PLAYER_1=0;
+                        POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                        POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                        x=243;
+                        y=62;
+                        p_p1.setLocation(x,y);
+                    }
+                }
                 if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                     System.out.println("THERE IS A BLOCK :D !!");
                     y1+=59;
@@ -3198,6 +3348,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     yOld = y;
                     yNew = y + 59;
                     y = yNew;
+                    if (x==x1 && y==y1){
+                        System.out.println("there is a fight");
+                        if (POWER_PLAYER_1>POWER_PLAYER_2){
+                            new fight(1);
+                            //TODO DECREASING MONEY
+                            POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                            POWER_PLAYER_2=0;
+                            POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                            POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                            x1 = 243 + 11 * 59;
+                            y1 = 62;
+                            p_p2.setLocation(x1,y1);
+                        }
+                        if (POWER_PLAYER_1<POWER_PLAYER_2){
+                            new fight(2);
+                            //TODO DECREASING MONEY
+                            POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                            POWER_PLAYER_1=0;
+                            POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                            POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                            x=243;
+                            y=62;
+                            p_p1.setLocation(x,y);
+                        }
+                    }
                     if (x==houses[thing.wall1].x && y==houses[thing.wall1].y){
                         System.out.println("THERE IS A BLOCK :D !!");
                         y-=59;
@@ -3491,6 +3666,31 @@ public class board extends JFrame implements ActionListener /*,KeyListener*/ {
                     y1Old = y1;
                     y1New = y1 + 59;
                     y1 = y1New;
+                    if (x==x1 && y==y1){
+                        System.out.println("there is a fight");
+                        if (POWER_PLAYER_1>POWER_PLAYER_2){
+                            new fight(1);
+                            //TODO DECREASING MONEY
+                            POWER_PLAYER_1=POWER_PLAYER_1-POWER_PLAYER_2;
+                            POWER_PLAYER_2=0;
+                            POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                            POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                            x1 = 243 + 11 * 59;
+                            y1 = 62;
+                            p_p2.setLocation(x1,y1);
+                        }
+                        if (POWER_PLAYER_1<POWER_PLAYER_2){
+                            new fight(2);
+                            //TODO DECREASING MONEY
+                            POWER_PLAYER_2=POWER_PLAYER_2-POWER_PLAYER_1;
+                            POWER_PLAYER_1=0;
+                            POWER_PLAYER_2_L.setText(String.valueOf(POWER_PLAYER_2));
+                            POWER_PLAYER_1_L.setText(String.valueOf(POWER_PLAYER_1));
+                            x=243;
+                            y=62;
+                            p_p1.setLocation(x,y);
+                        }
+                    }
                     if (x1==houses[thing.wall1].x && y1==houses[thing.wall1].y){
                         System.out.println("THERE IS A BLOCK :D !!");
                         y1-=59;

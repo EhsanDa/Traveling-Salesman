@@ -24,6 +24,10 @@ public class Market4 extends JFrame implements ActionListener {
     JLabel power2=new JLabel();
     JLabel PO_L=new JLabel();
     JLabel MO_L =new JLabel();
+    JLabel money3=new JLabel();
+    JLabel MO_L1 =new JLabel();
+    JLabel loc=new JLabel();
+    JLabel loc_num=new JLabel();
     String text1="CLICK TO LOCATE A \n TREASURE";
     JButton Exit=new JButton();
     int sw_t;
@@ -31,7 +35,7 @@ public class Market4 extends JFrame implements ActionListener {
         board.dice_number1--;
         sw_t=board.SW_PLAYER;
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        this.setSize(500,500);
+        this.setSize(500,600);
         this.setLocationRelativeTo(null);
         this.setLayout(null);
         this.setResizable(false);
@@ -93,6 +97,23 @@ public class Market4 extends JFrame implements ActionListener {
         w2_b.setIcon(Weapon2);
         w2_b.addActionListener(this);
 
+        money3.setText("-4000");
+        money3.setBounds(80,450,100,36);
+        money3.setForeground(new Color(255, 0, 0));
+        money3.setFont(new Font("ZEROGIRL",Font.BOLD,30));
+
+        MO_L1.setIcon(PO);
+        MO_L1.setBounds(0,440,48,48);
+
+        loc.setText("There Is A Treasure In : ");
+        loc.setFont(new Font("ZEROGIRL",Font.BOLD,25));
+        loc.setBounds(15,500,400,50);
+
+        loc_num.setText("90");
+        loc_num.setBounds(360,483,80,80);
+        loc_num.setFont(new Font("ZEROGIRL",Font.BOLD,25));
+        loc_num.setVisible(false);
+
         LOCATE_TREASURE.setBounds(5,390,475,36);
         LOCATE_TREASURE.setCursor(new Cursor(Cursor.HAND_CURSOR));
         LOCATE_TREASURE.setBackground(new Color(192 , 255 , 246 ));
@@ -100,6 +121,7 @@ public class Market4 extends JFrame implements ActionListener {
         LOCATE_TREASURE.setForeground(new Color( 0 , 167 , 147));
         LOCATE_TREASURE.setFont(new Font("ZEROGIRL",Font.BOLD,28));
         LOCATE_TREASURE.setText(text1);
+        LOCATE_TREASURE.addActionListener(this);
 
         Exit.setBounds(0,10,50,50);
         Exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -121,6 +143,10 @@ public class Market4 extends JFrame implements ActionListener {
         main_l.add(MO_L);
         main_l.add(PO_L);
         main_l.add(LOCATE_TREASURE);
+        main_l.add(money3);
+        main_l.add(MO_L1);
+        main_l.add(loc);
+        main_l.add(loc_num);
         top.add(Exit);
     }
     @Override
@@ -185,6 +211,28 @@ public class Market4 extends JFrame implements ActionListener {
                     board.POWER_PLAYER_2_L.setText(String.valueOf(board.POWER_PLAYER_2));
                     board.MONEY_PLAYER_2_L.setText(String.valueOf(board.MONEY_PLAYER_2));
                     System.out.println(board.POWER_PLAYER_2_L.getText());
+                }
+            }
+        }
+        if (actionEvent.getSource()==LOCATE_TREASURE){
+            Quest q=new Quest();
+            int a=q.newQuest();
+            a=q.questplace;
+            System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh : "+a);
+            if (sw_t==1){
+                if (Integer.parseInt(board.MONEY_PLAYER_1_L.getText())>=4000) {
+                    board.MONEY_PLAYER_1 -= 4000;
+                    board.MONEY_PLAYER_1_L.setText(String.valueOf(board.MONEY_PLAYER_1));
+                    loc_num.setText(String.valueOf(a+1));
+                    loc_num.setVisible(true);
+                }
+            }
+            if (sw_t==2){
+                if (Integer.parseInt(board.MONEY_PLAYER_2_L.getText())>=4000) {
+                    board.MONEY_PLAYER_2 -= 4000;
+                    board.MONEY_PLAYER_2_L.setText(String.valueOf(board.MONEY_PLAYER_2));
+                    loc_num.setText(String.valueOf(a+1));
+                    loc_num.setVisible(true);
                 }
             }
         }

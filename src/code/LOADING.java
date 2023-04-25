@@ -80,7 +80,7 @@ public class LOADING extends JFrame{
             if (loading.getValue()==2000){
                 timer.stop();
                 this.dispose();
-                new enter_name();
+                new first_page();
             }
             try {
                 Thread.sleep(150);

@@ -299,7 +299,7 @@ public class first_page implements ActionListener {
         if (actionEvent.getSource()==start){
             first_frame.dispose();
             System.out.println("dast");
-            new board();
+            new enter_name();
             //LOADING1.iterate();
         }
         if (actionEvent.getSource()==pregame){
