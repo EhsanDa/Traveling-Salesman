@@ -1,5 +1,6 @@
 package code;
 
+import javax.sound.sampled.FloatControl;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -67,7 +68,11 @@ public class Setting extends JFrame implements ActionListener, KeyListener {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
                 volume=sound.getValue();
-                System.out.println(volume);;
+                System.out.println(volume);
+                float a=volume-40;
+                FloatControl gainControl =
+                        (FloatControl) Main.clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gainControl.setValue(a);
             }
         });
 
