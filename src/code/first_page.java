@@ -4,8 +4,15 @@ import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class first_page implements ActionListener {
+    static ArrayList<String> Saved=new ArrayList<>();
     JFrame first_frame=new JFrame("WELCOME");
     ImageIcon background = new ImageIcon("src/images/pxfuel.jpg");
     ImageIcon ICON=new ImageIcon("src/images/ICON.jpg");
@@ -303,8 +310,22 @@ public class first_page implements ActionListener {
             //LOADING1.iterate();
         }
         if (actionEvent.getSource()==pregame){
+            try {
+                File myObj = new File("src/Save_Files/Save.txt");
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    Saved.add(data);
 
-        }
+                }
+                for (int i = 0; i < Saved.size(); i++) {
+                    System.out.println(Saved.get(i));
+                }
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }       }
         if (actionEvent.getSource()==contactus){
             contactus.setEnabled(false);
             first_frame.setVisible(false);

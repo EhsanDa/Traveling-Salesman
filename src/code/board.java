@@ -5,9 +5,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class board extends JFrame implements ActionListener /*,KeyListener*/ {
-    int SW=-1;
+    static int SW=-1;
     int M = 280;
-    static int x = 243, y = 62;
+    static int x = 243;
+    static int y = 62;
 
     static int xNew = 0, yNew = 0, xOld = 0, yOld = 0;
     static int x1 = 243 + 11 * 59, y1 = 62;
